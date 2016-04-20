@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      patching patched patches &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">patching patched patches</h1>
+  <span class="post-date">28 Mar 2006</span>
+  I've been so busy and unsuccessful that I didn't blog anything :(<br /><br />This should in fact be an automated installations entry since it belongs to the same project.<br />However, the subject is so detached that I'd rather not contaminate the series with this post ;)<br /><br />The problem is as follows: I want a 2.6.16 kernel (latest) with some patches and with some patch-o-matic patches. I would like to have nf-HIPAC too.<br /><br />I wrote a script that does it all automagically, except make the patches of course.<br />Because 2.6.16 is so new, there are no patches yet to get everything working.<br />I had to ditch nf-HIPAC and I'm now just focusing on the patch-o-matic patches.<br /><br />I need to get the following patchlets to apply:<br /><dl><br /><dt>h323</dt><br /><dd>I removed this patchlet from patch-o-matic and applied the version found at <a href='http://nath323.sourceforge.net/'>http://nath323.sourceforge.net/</a></dd><br /><dt>rtsp</dt><br /><dd>I removed this patchlet from patch-o-matic and got a patch for the kernel from <a href='http://patchwork.netfilter.org/netfilter-devel/patch.pl?id=3371'>http://patchwork.netfilter.org/netfilter-devel/patch.pl?id=3371</a>. The patch didn't apply cleanly, so I edited the patchfile a bit. More details below</dd><br /><dt>ipp2p</dt><br /><dd>This patchlet didn't apply cleanly, but I didn't remove it. Instead, someone posted 2 patches to the netfilter-development mailinglist: <a href='http://lists.netfilter.org/pipermail/netfilter-devel/2006-March/023812.html'>patch 1</a> and <a href='http://lists.netfilter.org/pipermail/netfilter-devel/2006-March/023803.html'>patch 2</a>. This patch didn't work for me, so I did what I thought was best and recreated the patches. The first patch replaces 3 files with version 0.8.1 of the ipp2p module found on <a href='http://www.ipp2p.org/downloads_en.html'>http://www.ipp2p.org/downloads_en.html</a>. The second patch is a small patch that I manually edited.</dd><br /><dt>mms</dt><br /><dd>I didn't get this to work so I left it out for now</dd><br /><dt>pptp</dt><br /><dd>This is now built into the kernel</dd><br /></dl><br /><br />I've looked on google for a quick guide to the format of diff, but couldn't find any.<br /><br /><pre><br />diff -urN linux-2.6.15.orig/net/ipv4/netfilter/Makefile linux-2.6.15/net/ipv4/netfilter/Makefile<br />--- linux-2.6.15.orig/net/ipv4/netfilter/Makefile       2006-01-03 04:21:10.000000000 +0100<br />+++ linux-2.6.15/net/ipv4/netfilter/Makefile    2006-02-20 20:56:48.000000000 +0100<br />@@ -22,3 +22,5 @@<br /> obj-$(CONFIG_IP_NF_PPTP) += ip_conntrack_pptp.o<br />+obj-$(CONFIG_IP_NF_RTSP) += ip_conntrack_rtsp.o<br />+obj-$(CONFIG_IP_NF_NAT_RTSP) += ip_nat_rtsp.o<br /> obj-$(CONFIG_IP_NF_AMANDA) += ip_conntrack_amanda.o<br /> obj-$(CONFIG_IP_NF_TFTP) += ip_conntrack_tftp.o<br /></pre><br /><br />The above extract is the result of an edited patchfile.<br />The important (or most obscure) line is<br /><pre><br />@@ -22,3 +22,5 @@<br /></pre><br /><br />From what I can make up, this means: go to line 22, and replace the next 3 lines with the following 5 lines.<br />Also, the line right below that important line should be a line of text from the original file.<br /><br />I'm currently trying to figure out why ipp2p butts out with an error <br /><pre><br />unable to find ladd slot in src /tmp/pom-11487/net/ipv4/netfilter/Makefile (./patchlets/ipp2p/linux-2.6/./net/ipv4/netfilter/Makefile.ladd)<br /></pre><br /><br />From reading the Netfilter_POM.pm file used by the runme script, I uncover a mistery: ladd stands for lineadd.<br />A function called "apply_lineadd" spews out the error. It takes (among others) 2 arguments: $laddfile and $srcfile. The $srcfile is the first file mentioned in the error, $laddfile is the second. The first line in $laddfile is stored in $lookingfor. The line is looked for in the $srcfile. If it's not find, the error is printed.<br /><br />So, what does this mean for me ? in the net/ipv4/netfilter/Makefile, the first line of Makefile.ladd does not appear.<br /><br />More precisely, the Makefile.ladd file contains:<br /><pre><br />obj-$(CONFIG_IP_NF_MATCH_LIMIT) += ipt_limit.o<br />obj-$(CONFIG_IP_NF_MATCH_IPP2P) += ipt_ipp2p.o<br /></pre><br /><br />And ipt_limit.o does indeed not appear in the Makefile...<br />The reason for this is that the limit match moved from ip_tables to x_tables and is now known as xt_limit.o<br /><br />I replaced the lines above in the file patchlets/ipp2p/linux-2.6/./net/ipv4/netfilter/Makefile.ladd by:<br /><pre><br />obj-$(CONFIG_IP_NF_IPTABLES) += ip_tables.o<br />obj-$(CONFIG_IP_NF_MATCH_IPP2P) += ipt_ipp2p.o<br /></pre><br />
+</div>
+
+
+    </div>
+
+  </body>
+</html>

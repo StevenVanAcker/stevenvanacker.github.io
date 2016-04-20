@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      automated installations (12) &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">automated installations (12)</h1>
+  <span class="post-date">15 Mar 2006</span>
+  I solved the problem.<br /><br />Next to tracking where the bug appears, I set up a new virtual machine and duplicated everything the debian installer did when partitioning and mounting. That is: I created the same partitions, formatted ext3 and copied the /etc/fstab file.<br /><br />I believe now that I know what the cause is. In my partitioning scheme, the first partition started at sector 1, while the debian installer makes it start at sector 63.<br />I've seen this behaviour before when I was looking at partman-auto.<br />I'm not sure what is inside those 63 sectors (the first track), but I'd love to find out.<br /><br /><a href='http://www.ranish.com/part/primer.htm'>This link</a> explains that in the old days, the 62 sectors after the boot sector, were left unused so that each partition starts at cylinder boundary. I can't really believe that Linux has problems with this, but it might.<br /><br /><a href='http://www.win.tue.nl/~aeb/linux/Large-Disk-6.html'>Here</a> it is suggested that Linux has no alignment requirement at all.<br /><br />So now I've tried creating a partition from sector 1: works, creating an ext2 partition instead of ext3: works, toggling bootable flag: works.<br /><br />Next thing you'll tell me that I've been imagining this bug.<br /><br />Goddamnit. Now I've repeated every step I took in the first attempt and it still works.<br />[Oh the irony, being pissed because something works]<br /><br />The only thing I can think of now that could still be wrong is accidently trying to mount a ext2 filesystem as ext3: nothing !<br /><br />Bah<br /><br />this is what I do now:<br /><br /><pre><br />echo -e ",,83" | sfdisk /dev/discs/disc0/disc<br />mke2fs /dev/discs/disc0/part1<br />mkdir /target<br />mount /dev/discs/disc0/part1 /target<br />mkdir /target/etc<br />nano /target/etc/fstab<br /><br />    proc /proc proc defaults 0 0<br />    /dev/sda1 / ext2 defaults,errors=remount-ro 0 1<br /><br /></pre><br /><br />Well, so be it :)<br />Let's see if I can kick in some RAID.<br /><br /><pre><br />echo -e ",1000,fd\n,1000,fd" | sfdisk -uM /dev/discs/disc0/disc<br />modprobe md<br />modprobe raid1<br />mdadm --create /dev/md/0 -l raid1 -n 2 /dev/discs/disc0/part1 /dev/discs/disc0/part2<br />mke2fs /dev/md/0<br />mkdir /target<br />mount /dev/md/0 /target<br />nano /target/etc/fstab<br /><br />    proc /proc proc defaults 0 0<br />    /dev/md/0 / ext2 defaults,errors=remount-ro 0 1<br /><br /></pre><br /><br />Everything seems to work ok, except grub decided to be a bitch and not install itself.<br />That can be remedied :)<br /><br />After grub complains a number of times (I think 2 of 3), it drops you into the main menu where you can select "continue without a bootloader"<br />Before doing that, grub needs to be setup though.<br /><br /><pre><br />chroot /target /sbin/grub<br />    device (hd0) /dev/sda<br />    root (hd0,0)<br />    setup (hd0)<br />chroot /target /sbin/grub-install /dev/sda<br />chroot /target /sbin/update-grub<br /></pre><br /><br />update-grub would not generate /boot/grub/menu.lst because I entered /dev/md/0 instead of /dev/md0 in /etc/fstab<br /><br />Rebooting works.<br /><br />So, not only do I have to circumvent partman, but also the grub installer in debian installer.<br />I wonder how the debian installer would install grub on a RAID system though, since it has the option when doing it manually (I presume)<br /><br />
+</div>
+
+
+    </div>
+
+  </body>
+</html>

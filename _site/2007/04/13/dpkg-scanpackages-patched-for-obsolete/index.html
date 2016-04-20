@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      dpkg-scanpackages patched for obsolete package removal &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">dpkg-scanpackages patched for obsolete package removal</h1>
+  <span class="post-date">13 Apr 2007</span>
+  Creating private Debian packages in a repository has a lot of advantages. But when this repository gets large enough (and contains very old<br /><br />I maintain a repository of selfcreated Debian and Ubuntu packages. The packages I create get tweaked alot during testing, so that several versions of each package exists in the repository. After some time, these obsolete packages slow down dpkg-scanpackages alot and I've often wished to clean them up.<br /><br />After looking around a bit, I though <a href="http://packages.debian.org/stable/admin/apt-move">apt-move</a> would provide a solution. But this tool (like many other) seems to assume that I only have a cache repository in /var/apt/cache or where-ever. This is not the case.<br /><br />So I looked at the source of the problem: <a href="http://packages.debian.org/stable/utils/dpkg-dev">dpkg-scanpackages</a>. This tool detects the old versions (when reporting them) and is written in perl.<br /><br />So I created this patch for /usr/bin/dpkg-scanpackages:<br /><br /><pre><br />--- /usr/bin/dpkg-scanpackages 2005-05-26 19:42:35.000000000 +0200<br />+++ /tmp/dpkg-scanpackages 2007-04-13 10:45:59.211260520 +0200<br />@@ -109,15 +109,17 @@<br /> <br />     if (defined($p1{$p})) {<br />  if (&vercmp($tv{'Version'}, $pv{$p,'Version'})) {<br />+     if ($ENV{"DEBDELETE"} and -e $pfilename{$p}) { $str=" [DELETED]"; system "mv $pfilename{$p} /tmp/"; } else { $str=""; }<br />      print(STDERR " ! Package $p (filename $fn) is repeat but newer version;\n".<br />-      "   used that one and ignored data from $pfilename{$p} !\n")<br />+      "   used that one and ignored data from $pfilename{$p}$str!\n")<br />       || die $!;<br />      delete $p1{$p};<br />      for $k (keys %k1) {<br />   delete $pv{$p,$k};<br />      }<br />  } else {<br />-     print(STDERR " ! Package $p (filename $fn) is repeat;\n".<br />+     if ($ENV{"DEBDELETE"} and -e $fn) { $str=" [DELETED]"; system "mv $fn /tmp/"; } else { $str=""; }<br />+     print(STDERR " ! Package $p (filename $fn$str) is repeat;\n".<br />     "   ignored that one and using data from $pfilename{$p} !\n")<br />   || die $!;<br />      next;<br /></pre><br /><br />To delete the obsolete (old) versions of packages found in the repository, just define the "DEBDELETE" environment variable and run dpkg-scanpackages.<br /><br />Example:<br /><pre><br />(root/aclb3) /home/deepstar/repository# DEBDELETE=1 /tmp/dpkg-scanpackages ubuntu/ /dev/null|gzip -9c > ubuntu/Packages.gz <br /> ! Package singularity-encfs (filename ubuntu//singularity-encfs-1176454666.deb) is repeat but newer version;<br />   used that one and ignored data from ubuntu//singularity-encfs-1176453995.deb [DELETED]!<br /> ** Packages in archive but missing from override file: **<br />  singularity-backup-client singularity-backup-server singularity-<br />  encfs singularity-icons singularity-versioning<br /><br /> Wrote 5 entries to output Packages file.<br />(root/aclb3) /home/deepstar/repository# <br /></pre>
+</div>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: using the 16F627 (or any PIC) UART
+date: '2007-08-17T01:22:00.001+02:00'
+author: Steven Van Acker
+tags:
+- English
+- PIC
+- Building Stuff
+modified_time: '2009-02-03T14:05:12.277+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-1638933011179961676
+blogger_orig_url: http://www.singularity.be/2007/08/using-16f627-or-any-pic-uart.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />Last night, I have successfully used the PIC in my own circuit. Blinking some leds is the equivalent of a "hello world" program. Now it's time to do something more interactive.<br /><br />Instead of jumping in the deep water straight away, I'll just make a LED blinker that is interactive. By writing a byte to the PIC, I can drive 8 bits.<br /><br />First things first though: I need to learn about how the UART is used on the PIC.<br /><br />I've read the first paragraphes on http://www.rentron.com/Myke7.htm and I'm finding it very interesting. Most pages I find concerning PIC are either way over my head (hundreds of lines of assembler) or just contain links to other places.<br />I'm glad there is also some information for newbies on the web :)<br /><br />[Update]<br />After reading most of the site mentioned above, I know this is not what I need. Instead of using the UART, the site talks about bit banging, which is actually reading out the individual bits sent over the serial line...<br /><br />Next link: http://www.epanorama.net/links/microprocessor.html#pic<br /><br />[Update]<br />http://www.avitresearch.co.uk/USBTTL/tutorial.htm<br />StevensBlogSpotFilterThing --><br />Last night, I have successfully used the PIC in my own circuit. Blinking some leds is the equivalent of a "hello world" program. Now it's time to do something more interactive.<br /><br />Instead of jumping in the deep water straight away, I'll just make a LED blinker that is interactive. By writing a byte to the PIC, I can drive 8 bits.<br /><br />First things first though: I need to learn about how the UART is used on the PIC.<br /><br />I've read the first paragraphes on http://www.rentron.com/Myke7.htm and I'm finding it very interesting. Most pages I find concerning PIC are either way over my head (hundreds of lines of assembler) or just contain links to other places.<br />I'm glad there is also some information for newbies on the web :)<br /><br />[Update]<br />After reading most of the site mentioned above, I know this is not what I need. Instead of using the UART, the site talks about bit banging, which is actually reading out the individual bits sent over the serial line...<br /><br />Next link: http://www.epanorama.net/links/microprocessor.html#pic<br /><br />[Update]<br />http://www.avitresearch.co.uk/USBTTL/tutorial.htm

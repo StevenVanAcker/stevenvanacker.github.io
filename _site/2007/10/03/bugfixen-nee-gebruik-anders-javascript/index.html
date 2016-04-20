@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Bugfixen ? Nee! Gebruik anders JavaScript om de bug te omzeilen! &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Bugfixen ? Nee! Gebruik anders JavaScript om de bug te omzeilen!</h1>
+  <span class="post-date">03 Oct 2007</span>
+  Ik weet niet of het nu aan mij ligt of aan mijn omgeving, maar tegenwoordig moet ik mij druk maken in allerlei onnozelheden terwijl niemand de absurditeit ervan inziet.<br /><br />Om de (ogenschijnlijk) lange reeks aan voorbeelden te beginnen: de LUDIT OTRS.<br /><br />OTRS staat voor <a href='http://otrs.org'>Opensource Ticket Request System</a> en is het systeem dat wij gebruiken om helpdesk mails en andere mails te verwerken. Zoals ik in mijn <a href='/node/6464'>vorige post over Internet Netiquette</a> al heb gezegd, zijn er goeie redenen om in mail-communicatie tussen meerdere personen (in se dus OTRS), onderaan (en tussenin) te reageren op die mails.<br /><br />Maar blijkbaar wordt dat niet echt verstaan, zelfs niet op LUDIT. In plaats van de standaard manier te gebruiken waarmee OTRS werkt (dus onderaan de mail reageren, zoals eender welk systeem dat niet door kleuters uitgevonden is), werd de code van OTRS aangepast om standaard BOVENAAN de mail te reageren (dus zoals een systeem dat wel door kleuters uitgevonden is, nvdr.)<br /><br />Nu blijkt ook dat de makers van OTRS niet voorzien hebben dat iemand dat zou doen, en dus niet instelbaar per gebruiker. Resultaat: iedereen moet bovenaan mails reageren.<br /><br />Om een hele verhitte "politieke" discussie te vermijden ben ik op zoek gegaan naar een manier waarop dit wel kon. Tevergeefs zo blijkt in eerste instantie (bedankt aan iedereen die mee gezocht heeft).<br /><br />Mijn oplossing zal dus anders zijn. In plaats van het OTRS systeem aan te passen (dat ik trouwens niet beheer), zal ik via javascript het textarea veld in mijn browser wijzigen. Waar dus standaard de begroeting, het antwoord en de signatuur automatisch bovenaan de mail wordt geplakt, zal mijn browser via javascript die tekst intercepteren en bewerken. Voor mij lijkt het dus alsof er correct op de mail gereageerd wordt.<br /><br />En omdat ik nu eenmaal gul ben en in opensource geloof, laat ik mijn code via deze weg vrij op internet.<br /><br />De code is bruikbaar onder zowel Firefox als Opera. Voor firefox dien je de <a href='https://addons.mozilla.org/en-US/firefox/addon/748'>Greasemonkey</a> addon te installeren, voor Opera moet je de UserJS directory instellen in de Preferences en de code naar die directory copieren. Let wel op: bij Opera moet je ook <a href='http://www.opera.com/support/tutorials/userjs/using/'>toestemming geven om UserJS te gebruiken op HTTPS sites</a>.<br /><br />Hier is de code: http://www.singularity.be/Trashcan/ludit_otrs_reply_at_bottom.user.js<br />
+</div>
+
+
+    </div>
+
+  </body>
+</html>

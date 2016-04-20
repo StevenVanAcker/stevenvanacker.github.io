@@ -1,0 +1,12 @@
+---
+layout: post
+title: automated installations (15)
+date: '2006-04-04T12:57:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:39:09.789+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-8866103704633344104
+blogger_orig_url: http://www.singularity.be/2006/04/automated-installations-15.html
+---
+
+Yes! part 15<br /><br />While installing a system with the new installation CD, an interesting problem arose.<br />We have backups of all our systems. But how do we get a backup back onto a system ?<br />The rescue CD doesn't have the backup software installed :)<br /><br />Thinking further about it, it makes sense to integrate a rescue CD with backup software, onto the installation CD.<br />We use <a href='http://rescuecd.sourceforge.net/'>Timo's Rescue CD set</a> as rescue CD.<br /><br />My mission for the day will be to put this CD on my installation CD.<br />A quick glance onto the rescue CD tells me that the entire thing is a disk-image. This will make it a lot easier to integrate :)<br /><br />The Timo CD contains 3 files that need to be copied. First there is the kernel and initrd, located in /isolinux/vmlinuz and /isolinux/initrdfs.gz respectively. Then there is the disk image, located in /boot/rootfs.isofs.img<br /><br />Next step is to add the aliases in /isolinux/isolinux.cfg. I added a "rescue" and a "rescueram" alias.<br /><br />After testing, I noticed that the Timo CD won't find the CD drive unless I also copy the file /RESCUECD, which is an empty file, to my installation CD.<br /><br />Rebuilding the CD makes it about double its size (now 235MB, which leaves 400MB for other goodies :)). It boots nicely.

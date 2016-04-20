@@ -1,0 +1,12 @@
+---
+layout: post
+title: acidfree patch for img_assist!
+date: '2005-11-09T19:38:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T00:04:49.586+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-8594416519218871085
+blogger_orig_url: http://www.singularity.be/2005/11/acidfree-patch-for-imgassist.html
+---
+
+Finally, I patched img_assist so it would work together with acidfree.<br />Besides now being able to insert pictures in every node (img_assist inserted links, I changed it to be able to insert thumbnails), one can now browse the acidfree photo albums and make a choice from that. It's a dirty patch, but it works. If you install it without acidfree installed, it will screw up :)<br /><br />Demonstration:<br /><br />[img_assist|fid=1000274|thumb=1|alt=118_large.jpg]<br /><br /><br />I also fixed some bugs, of which the most important one is the "max preview size" or something which switches to displaying links instead of thumbnails in the img_assist popup window, when there are too many thumbnails to be displayed. Somehow, the counter used counted too much photos, which is now fixed.<br />Another "bug" is that in the preview pane of the img_assist window, the entire picture would be loaded, rescaled and displayed, all on the client side. This is of course not what I wanted :) I'm not going to download a 800KB photo to see it resized in a small window, when I want to preview it. That's what thumbnails are for! (also fixed in the patch)<br /><br />Because of the way I coded this patch (I mapped the acidfree image ID's onto regular image ID's, but with an offset of 1000000) you can run into trouble if you have more than a third of a million pictures in the standard image database. Since I don't plan to use that, I'm safe :)<br />

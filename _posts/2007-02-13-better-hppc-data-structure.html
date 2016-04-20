@@ -1,0 +1,12 @@
+---
+layout: post
+title: Better HPPC data-structure
+date: '2007-02-13T18:55:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-17T09:26:35.171+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6450138574278652000
+blogger_orig_url: http://www.singularity.be/2007/02/better-hppc-data-structure.html
+---
+
+Here is what the datastructure looks like now (same dataset of 10 IP's):<br />[G2:10986]<br /><br />As you can see, most redundant nodes have been removed. Instead of creating new nodes along the way, the new algorithm tries to be smart about things and only adds new nodes when it needs to: when a node already exists in some branch, a new node is created that contains that old node and the newly added one.

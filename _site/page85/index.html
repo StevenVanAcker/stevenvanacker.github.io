@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/03/03/lame-ass-bofh/">
+        lame-ass bofh
+      </a>
+    </h1>
+
+    <span class="post-date">03 Mar 2006</span>
+
+    I was surfing around and decided to take a look at the new <a href='http://www.theregister.co.uk/odds/bofh/'>BOFH episodes</a>. After reading the last 3 or so, I came to the conclusion that Simon Travaglia (author of BOFH episodes) has lost his edge. BOFH these days is totally lame. It reminds me of the tough talk I sometimes hear when hanging out with other nerds. "Oh noes, I typed rm -rf / when I should actually have type ps" *geeky laughter follows* and then a part of me dies because I know why it should be funny to geeks but actually isn't.<br /><br />BOFH is getting just like that. He used to get around just fine without having to resort to words. His superiority eradiated from the story. But I guess these days are over and I need to face the fact that I'm getting old, remembering the good old days...<br /><br />I should start rereading the old BOFH episodes again. Without the stupid Boss and PFY, where users trembled in fear when they met the BOFH.<br /><br />*I pick up the phone*<br />&lt;me&gt; Yes?<br />&lt;BOFH&gt; Hi, I'm the new version of the BOFH<br />&lt;me&gt; What's your username ?<br />*He tells me*<br />*clickety*<br /><br />&lt;/irony&gt;
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/02/28/row-row-row-your-boat-gently-down/">
+        row row row your boat gently down the stream
+      </a>
+    </h1>
+
+    <span class="post-date">28 Feb 2006</span>
+
+    Man I'm getting fat! I should start dieting again :(<br />Maybe not eating that much pizza's would help too ;)<br /><br />I was planning to do some cardio training today at the gym. I normally do 1 hour cycling and 30 minutes rowing. When I do powertraining I have a warmup session of 10 minutes rowing.<br /><br />The gym has 3 rowing machines. 2 of those are the same brand and type and those are the ones I like  best. They have a monitor mounted on them with all kinds of nerdy details about how bad I'm rowing.<br /><br />Since december or so, one of the rowing machines broke down and the gym-people put a paper on it with "Monitor battery is empty. Rowing still works"<br />Well, tough luck right ? I still had the other machine.<br /><br />Now we're 3 months later and the note is still attached to the rowing machine. Even worse, the other machine also broke down because of the same problem. And yet even worse: the last machine also broke down. Well isn't that a cats ass!<br /><br />Last month (when only 1 machine broke down), I went up to the counter and asked if there were any plans to replace the batteries. The answer was that the battery was of some special type and that they had to order it and blabla.... but it would be fixed !<br /><br />Well, I took the liberty of doing some research.<br /><br />The machines are <a href='http://www.concept2.nl'>Concept2</a> <a href='http://www.concept2.com/05/rower/indoorrower.asp'>Indoor Rower Model D</a> with a <a href='http://www.concept2.com/05/rower/pm3_intro.asp'>PM3 Monitor</a>.<br />The <a href='http://www.concept2.com/05/rower/service/pdf/PM3battery_info.pdf'>battery information sheet</a> tells us that the monitor uses 2 D(IEC LR20) batteries.<br /><br />This is what such a battery looks like:<br /><br />[img_assist|fid=1017719|thumb=1|alt=6171_large.jpg]<br /><br />Looks like your average off-the-shelf battery to me.<br />People should know better trying to fool me. Perhaps I'll complain...
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/02/27/mondays-suck/">
+        mondays suck
+      </a>
+    </h1>
+
+    <span class="post-date">27 Feb 2006</span>
+
+    Ok, this has been the worst monday in the history of mondays.<br />I'm glad the day is over and I'm still alive.<br /><br />Time to think about some fun stuff.<br />I finished the quest for a mainboard, researching all socket 939 mainboards that are listed on the snogard site. It would be lovely if someone designed some kind of protocol that described a piece of hardware in generic terms, for easy comparison. If all manufacturers put definitions of all their hardware online, you could do queries like: I want to see all mainboards with 4 SATA2 connectors, firewire, onboard video and a DVI connector.<br /><br />Anyways, after all the research I've still not found a mainboard I want to buy (actually, I'm sick of looking at mainboard specs for the moment and will revisit this topic later)<br />I have however been thinking about usecases for my new multimedia center.<br /><br />The server should serve the following functions:<br /><ul><br /><li>storage server</li><br /><li>internet gateway</li><br /><li>TV</li><br /><li>TV recorder</li><br /><li>Movie/DVD player</li><br /><li>radio</li><br /><li>Music/CD player</li><br /><li>Videogame console</li><br /><li>control center for lots of stuff like lights, heating, ... and burglar alarm</li><br /></ul><br /><br /><br />
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/02/26/quest-for-mainboard/">
+        quest for a mainboard
+      </a>
+    </h1>
+
+    <span class="post-date">26 Feb 2006</span>
+
+    As I've posted before, I've come to the conclusion that I will need an AMD motherboard with 939 socket and at least 4 (probably 5) PCI slots. Audio and video should be onboard, otherwise I'll need another PCI slot.<br /><br />I've looked at this over and over again, but never wrote down my findings and thus I have to start over every time.<br /><br />I will be looking at the mainboards found <a href="http://www.snogard.de/index.php?kategorieId=145">here</a>:<br /><br />Abit mainboards<br /><br /><pre><br />AN8 SLI <br />&lt;4800+, 2xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Soundkarte, Gbit LAN, S-ATA II RAID, FW <br />129,90 €*<br /></pre><br /><a href="http://www.abit-usa.com/products/mb/techspec.php?categories=1&model=275">http://www.abit-usa.com/products/mb/techspec.php?categories=1&model=275</a><br /><br />[A PCI-E 1x card will also fit in a 16x slot, according to <a href="http://en.wikipedia.org/wiki/PCI_Express">http://en.wikipedia.org/wiki/PCI_Express</a>]<br /><br />No videocard :(<br />It has enough slots, soundcard and onboard Gbit LAN though<br /><br /><pre><br />Fatal1ty AN8 SLI <br />&lt;4800+, 2xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Soundkarte, Gbit LAN, S-ATA II RAID, FW, Guru Panel LCD <br />169,90 €*   <br /></pre><br /><a href="http://www.abit-usa.com/products/mb/products.php?categories=1&model=246">http://www.abit-usa.com/products/mb/products.php?categories=1&model=246</a><br />Again enough slots, gbit and sound, but no video card<br /><br /><pre><br />AN8 32X <br />&lt;4800+, 2xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID, FW <br />194,90 €*<br /></pre><br /><a href="http://www.abit-usa.com/products/mb/products.php?categories=1&model=310">http://www.abit-usa.com/products/mb/products.php?categories=1&model=310</a><br /><br />Once more, no videocard but enough of everything else.<br /><br />On to AsRock !<br /><br /><pre><br />939A8X-M <br />&lt;4800+, 3xPCI, 1xAGP, 4xDDR, Sound, LAN, S-ATA RAID <br />49,90 €*   <br /></pre><br /><a href="http://www.asrock.com/product/939A8X-M.htm">http://www.asrock.com/product/939A8X-M.htm</a><br /><br />This one doesn't have enough slots (1 AGP doesn't count :) and no video<br />it has 100MBit LAN and sound though<br /><br /><pre> <br />939S56-M <br />&lt;4800+, 2xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, LAN, S-ATA RAID <br />54,90 €* <br /></pre><br /><a href="http://www.asrock.com/product/939S56-M.htm">http://www.asrock.com/product/939S56-M.htm</a><br /><br />Barely enough slots but no video. Also it has 100MBit and sound.<br /><pre> <br />939Dual-SATA2<br />&lt;4800+, 1x AGP, 3xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, LAN, S-ATA II, S-ATA RAID <br />62,90 €*   <br /></pre><br /><a href="http://www.asrock.com/product/939Dual-SATA2.htm">http://www.asrock.com/product/939Dual-SATA2.htm</a><br /><br />same remark.<br /><br /><pre><br />939NF4G-SATA2 <br />&lt;4800+, 2xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, LAN, VGA shared, S-ATA II RAID <br />64,90 €*   <br /></pre><br /><a href="http://www.asrock.com/product/939NF4G-SATA2.htm">http://www.asrock.com/product/939NF4G-SATA2.htm</a><br />This is promising: it has 2 PCI slots and 2 PCI-E, video and audio onboard and 100MBit LAN<br /><br /><pre><br />939SLI-eSATA2<br />&lt;4800+, 3xPCI, 1xPCIe x1, 1xPCIe x8, 1xPCIe x16, AM2 Port, 4xDDR, Sound, LAN, S-ATA II RAID <br />69,90 €*<br /></pre><br /><a href="http://www.asrock.com/product/939SLI-eSATA2.htm">http://www.asrock.com/product/939SLI-eSATA2.htm</a><br /><br />This one has more than enough slots, but no video on board. I could buy a videocard and plug it into one of the extra slots though...<br />100MBit and sound onboard<br /><br />Time for Asus<br /><br /><pre><br />A8N-VM <br />&lt;4800+, 3xPCI, 2xPCIe x1, 1xPCIe x4, 1xPCIe x16, 4xDDR, VGA shared, Sound, LAN, 2x S-ATA II RAID <br />72,90 €*   <br /></pre><br /><a href="http://www.asus.com/products4.aspx?l1=3&l2=15&l3=0&model=768&modelmenu=1">http://www.asus.com/products4.aspx?l1=3&l2=15&l3=0&model=768&modelmenu=1</a><br /><br />Although in the description, there are a lot of PCI slots, I can only see 3 on the picture (2 PCI and 1 PCI-E 16x. Screwup ?<br /><br /><pre><br />A8S-X<br />&lt;4800+, 3xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA RAID <br />77,90 €*   <br /></pre><br /><a href="http://www.asus.com/products4.aspx?l1=3&l2=15&l3=0&model=755&modelmenu=1">http://www.asus.com/products4.aspx?l1=3&l2=15&l3=0&model=755&modelmenu=1</a><br />Same here. On the picture there is only 1 PCI-E 16x slot. There are enough slots in total however.<br />No video card :( <br />Gbit LAN and sound.<br /><br /><br /><pre><br />A8V-E SE<br />&lt;4800+, 3xPCI, 2xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA RAID <br />77,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=143&model=576&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=143&model=576&modelmenu=1</a><br /><br />Enough slots, no video, gbit and sound<br /><br /><pre><br />A8N5X<br />&lt;4800+, 3xPCI, 2xPCIe x1, 1xPCIe x4, 1xPCIe x16, 4xDDR, Gbit LAN, S-ATA RAID <br />82,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=207&model=596&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=207&model=596&modelmenu=1</a><br /><br />Enough slots, no video, sound and gbit<br /><br /><pre><br />A8N-E <br />&lt;4800+, 3xPCI, 2xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID <br />99,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=171&model=455&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=171&model=455&modelmenu=1</a><br />Enough slots, no video, sound and gbit<br /><br /><pre><br />A8N-SLI SE<br />&lt;4800+, 3xPCI, 1xPCIe x1, 1x PCIe x4, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID <br />111,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=789&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=789&modelmenu=1</a><br />Enough slots, no video, sound and gbit<br /><br /><pre><br />A8R-MVP<br />&lt;4800+, 3xPCI, 1xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID, FW <br />114,90 €*   <br /></pre><br /><br />This one doesn't exist on the ASUS site ?<br /><br /><pre><br />A8N-SLI <br />&lt;4800+, 3xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID, FW <br />119,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=382&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=382&modelmenu=1</a><br /><br />Enough slots, no video, sound and gbit<br /><br /><pre><br />A8N-SLI Deluxe <br />&lt;4800+, 3xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Dual Gbit LAN, Dual RAID, FW <br />149,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=375&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=375&modelmenu=1</a><br /><br />Enough slots, no video, sound and 2! gbit<br /><br /><pre><br />A8N-SLI Premium <br />&lt;4800+, 3xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Dual Gbit LAN, S-ATA II, Dual RAID, FW <br />157,90 €*   <br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=539&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=539&modelmenu=1</a><br />Enough slots, no video, sound and 2! gbit<br /><br /><pre><br />A8N32-SLI Deluxe <br />&lt;4800+, 3xPCI, 2xPCIe x1, 1xPCIe x4, 1xPCIe x16, 4xDDR, Dual Gbit LAN, S-ATA RAID, FW <br />99,90 €*<br /></pre><br /><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=226&model=744&modelmenu=1">http://www.asus.com/products.aspx?l1=3&l2=15&l3=226&model=744&modelmenu=1</a><br /><br />Enough slots, no video, sound and 2! gbit<br /><br />So far, not much good :(<br />I'm thinking I will probably have to buy a videocard...<br /><br />ECS Elitegroup:<br /><br /><pre><br />nFORCE4-A939<br />&lt;4000+, 3xPCI, 2xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA <br />66,90 €*<br /></pre><br /><a href="http://www.ecs.com.tw/ECSWeb/Products/ProductsDetail.aspx?MenuID=16&LanID=9&DetailID=493&DetailName=Specification">http://www.ecs.com.tw/ECSWeb/Products/ProductsDetail.aspx?MenuID=16&LanID=9&DetailID=493&DetailName=Specification</a><br /><br />Again, enough slots, sound and LAN, but no video...<br /><br />Epox:<br /><br /><pre><br />EP-9NPA+ Ultra <br />&lt;4800+, 3xPCI, 3xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA <br />106,90 €*<br /></pre><br /><a href="http://www.epox.com.tw/eng/products_content.php?ps=403">http://www.epox.com.tw/eng/products_content.php?ps=403</a><br /><br />Although the specs indicate otherwise (PCI-E VGA), I see nothing that indicates it has a videocard on board.<br />The rest of the specs is OK<br /><br /><pre><br />EP-9NPA+SLI <br />&lt;4800+, 3xPCI, 1xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, 4x S-ATA II RAID, FW <br />136,90 €*<br /></pre><br /><a href="http://www.epox.com.tw/eng/products_content.php?ps=390#report">http://www.epox.com.tw/eng/products_content.php?ps=390#report</a><br /><br />Same problem here, with the added attraction that the link is to the EP-9NPA3 SLI motherboard, not the one I'm looking for because it doesn't exist on the site.<br /><br />Gigabyte mainboards!<br /><br /><pre><br />GA-K8NMF-9<br />&lt;4800+, 2xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, LAN, 4x S-ATA, RAID, FW <br />64,90 €*<br /></pre><br /><a href="http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8NMF-9.htm">http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8NMF-9.htm</a><br /><br />Barely enough slots, but no video :(<br />There's LAN and audio<br /><br /><pre><br />GA-K8NF-9<br />&lt;4800+, 3xPCI, 2xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA <br />84,90 €*<br /></pre><br /><a href="http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8NF-9.htm">http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8NF-9.htm</a><br /><br />Enough slots but again no video<br />audio and lan ok<br /><pre><br />GA-K8N Pro-SLI<br />&lt;4800+, 2xPCI, 2xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID, FW<br />111,90 €*<br /></pre><br /><a href="http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8N%20Pro-SLI.htm">http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8N%20Pro-SLI.htm</a><br />enough slots, no video<br />lan ok audio ok<br /><br />sigh<br /><br />Last but not least: MSI mainboards<br /><br /><pre>K8T Neo2-F <br />&lt;4800+, 4xPCI, 1xAGP, 2xDDR, Sound, Gbit LAN, S-ATA RAID <br />64,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=650">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=650</a><br />This one has 5 PCI slots and 1 AGP (probably shared). 4 SATA ports and 4 PATA. GBit LAN and audio, but no video :(<br /><br /><pre><br />K8NGM2-L <br />&lt;4800+, 2xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, LAN, VGA shared, S-ATA II RAID <br />79,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=702">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=702</a><br /><br />Barely enough slots, but this one has video! (and not just anything, a NVidia geforce 6100). GBit LAN and audio too.<br />Even an optional DVI connector<br /><br /><pre><br />K8N Neo4-F <br />&lt;4800+, 4xPCI, 1xPCIe x1, 1x PCIe x4, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA RAID <br />84,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=652">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=652</a><br />More than enough slots but no video (although this one could have a PCI-E card without losing too much slots). Audio and GBit LAN ok<br /><br /><pre><br />RS482M4-ILD <br />&lt;4800+, 2xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, LAN, VGA shared, S-ATA RAID, FW <br />89,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=693">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=693</a><br /><br />barely enough slots, it has video (with DVI and TV-out), audio and LAN<br /><br /><pre><br />K8NGM2-FID <br />&lt;4800+, 2xPCI, 1xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, VGA shared, S-ATA II RAID, FW <br />89,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=702">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=702</a><br /><br />barely enough slots, video(optional DVI and TV-out), audio and LAN<br /><pre><br />K8N Neo2 Platinum <br />&lt;3800+, 5xPCI, 1xAGP, 4xDDR, Sound, Dual LAN, S-ATA RAID, FW <br />109,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=607">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=607</a><br /><br />5PCI and 1AGP slot, no video, audio and LAN<br />can support 4 SATA disks and 2 PATA<br /><pre><br />K8N SLI-F <br />&lt;4800+, 3xPCI, 1xPCIe x1, 2xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA II RAID <br />109,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=681">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=681</a><br />well enough slots, audio and LAN ok, but no video<br /><pre><br />K8N Neo4 Platinum <br />&lt;4800+, 4xPCI, 2xPCIe x1, 1xPCIe x16, 4xDDR, Sound, Gbit LAN, S-ATA <br />124,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=637">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=637</a><br />enough slots, audio and 2 GBit ports!<br />no video, but could fit a videocard in there instead of one networkcard<br /><br /><pre><br />K8N-Diamond-54G <br />&lt;4800+, 3xPCI, 2xPCIe x16, 4xDDR, Sound, Dual Gbit LAN, S-ATA II RAID, FW, W-LAN, BT <br />159,90 €*   <br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=638">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=638</a><br />This link is for the K8N-Diamond, not the 54G<br /><br />My guess is the 54G stands for wireless ?<br />Depending on how you interpret "share" it has just enough slots.<br />4 SATA and 2 PATA, no video but audio and 2GBit ports<br /><br /><pre><br />K8N Diamond Plus <br />&lt;4800+, 3xPCI, 2xPCIe x16, 4xDDR, Sound, Dual Gbit LAN, S-ATA II RAID, FW <br />196,90 €*<br /></pre><br /><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=710">http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=710</a><br /><br />This one has tons of slots, 2 GBit ports and place for 6 SATA disks. it also has audio but no video.<br />A videocard can fit in one of the many slots though<br /><br /><table><br /><tr><br />    <th>Mainboard</th><br />    <th>PCI slots</th><br />    <th>PCI-e slots</th><br />    <th>AGP slots</th><br />    <th>SATA ports</th><br />    <th>PATA ports</th><br />    <th>LAN ports</th><br />    <th>video</th><br />    <th>audio</th><br />    <th>Price</th><br /></tr><br /><tr><br />    <td><a href="http://www.abit-usa.com/products/mb/techspec.php?categories=1&model=275">Abit AN8 SLI</a></td><br />    <td>2</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>129,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.abit-usa.com/products/mb/products.php?categories=1&model=246">Abit Fatal1ty AN8 SLI</a></td><br />    <td>2</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>169,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.abit-usa.com/products/mb/products.php?categories=1&model=310">Abit AN8 32X</a></td><br />    <td>2</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>194,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asrock.com/product/939A8X-M.htm">AsRock 939A8X-M</a></td><br />    <td>3</td><br />    <td>0</td><br />    <td>1</td><br />    <td>2</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>49,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asrock.com/product/939S56-M.htm">AsRock 939S56-M</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>2</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>54,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asrock.com/product/939Dual-SATA2.htm">AsRock 939Dual-SATA2</a></td><br />    <td>3</td><br />    <td>2</td><br />    <td>1</td><br />    <td>3</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>62,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asrock.com/product/939NF4G-SATA2.htm">AsRock 939NF4G-SATA2</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>2</td><br />    <td>2</td><br />    <td>1</td><br />    <td>X</td><br />    <td>X</td><br />    <td>64,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asrock.com/product/939SLI-eSATA2.htm">AsRock 939SLI-eSATA2</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>69,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products4.aspx?l1=3&l2=15&l3=0&model=768&modelmenu=1">Asus A8N-VM</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>2</td><br />    <td>2</td><br />    <td>1</td><br />    <td>X</td><br />    <td>X</td><br />    <td>72,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products4.aspx?l1=3&l2=15&l3=0&model=755&modelmenu=1">Asus A8S-X</a></td><br />    <td>3</td><br />    <td>2</td><br />    <td>0</td><br />    <td>2</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>77,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=143&model=576&modelmenu=1">Asus A8V-E SE</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>2</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>77,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=207&model=596&modelmenu=1">Asus A8N5X</a></td><br />    <td>3</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>82,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=171&model=455&modelmenu=1">Asus A8N-E</a></td><br />    <td>4</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>99,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=789&modelmenu=1">Asus A8N-SLI SE</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>111,90 €</td><br /></tr><br /><tr><br />    <td>Asus A8R-MVP</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=382&modelmenu=1">Asus A8N-SLI</a></td><br />    <td>3</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>119,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=375&modelmenu=1">Asus A8N-SLI Deluxe</a></td><br />    <td>3</td><br />    <td>4</td><br />    <td>0</td><br />    <td>8</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>149,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=148&model=539&modelmenu=1">Asus A8N-SLI Premium</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>8</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>157,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=226&model=744&modelmenu=1">Asus A8N32-SLI Deluxe</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>5</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>99,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.ecs.com.tw/ECSWeb/Products/ProductsDetail.aspx?MenuID=16&LanID=9&DetailID=493&DetailName=Specification">ECS EliteGroup nFORCE4-A939</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>4</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>66,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.epox.com.tw/eng/products_content.php?ps=403">Epox EP-9NPA+ Ultra</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>106,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.epox.com.tw/eng/products_content.php?ps=390#report">Epox EP-9NPA+SLI</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>136,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8NMF-9.htm">Gigabyte GA-K8NMF-9</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>64,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8NF-9.htm">Gigabyte GA-K8NF-9</a></td><br />    <td>3</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>84,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.gigabyte.de/MotherBoard/Products/ComparisonSheet_GA-K8N%20Pro-SLI.htm">Gigabyte GA-K8N Pro-SLI</a></td><br />    <td>2</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>111,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=650">MSI K8T Neo2-F</a></td><br />    <td>5</td><br />    <td>0</td><br />    <td>1</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>64,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=702">MSI K8NGM2-L</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td>X</td><br />    <td>X</td><br />    <td>79,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=652">MSI K8N Neo4-F</a></td><br />    <td>4</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>84,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=693">MSI RS482M4-ILD</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td>X</td><br />    <td>X</td><br />    <td>89,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=702">MSI K8NGM2-FID</a></td><br />    <td>2</td><br />    <td>2</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td>X</td><br />    <td>X</td><br />    <td>89,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=607">MSI K8N Neo2 Platinum</a></td><br />    <td>5</td><br />    <td>0</td><br />    <td>1</td><br />    <td>4</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>109,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=681">MSI K8N SLI-F</a></td><br />    <td>3</td><br />    <td>4</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>1</td><br />    <td></td><br />    <td>X</td><br />    <td>109,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=637">MSI K8N Neo4 Platinum</a></td><br />    <td>4</td><br />    <td>3</td><br />    <td>0</td><br />    <td>4</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>124,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=638">MSI K8N-Diamond-54G</a></td><br />    <td>3</td><br />    <td>4</td><br />    <td>0</td><br />    <td>6</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>159,90 €</td><br /></tr><br /><tr><br />    <td><a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=710">MSI K8N Diamond Plus</a></td><br />    <td>2</td><br />    <td>5</td><br />    <td>0</td><br />    <td>6</td><br />    <td>2</td><br />    <td>2</td><br />    <td></td><br />    <td>X</td><br />    <td>196,90 €</td><br /></tr><br /><br /></table><br /><br />After doing all this research (we're now 1 day later), a friend of mine suggested that I use VLAN's for my multiple networks, which would cut down the number of network cards I need to 1.<br />Also, the <a href="http://www.hauppauge.com/pages/products/data_pvr500mce.html">Hauppauge PVR500</a> is a TV-tuner card which has 2 tuners on it + 2 hardware MPEG encoders.<br />That would cut down another slot :)
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/02/26/most-famous-classic-in-all-world-of/">
+        The most famous classic, in all the world of music
+      </a>
+    </h1>
+
+    <span class="post-date">26 Feb 2006</span>
+
+    While I'm on this blog, I should record some stupid things.<br /><br />I should check if mythtv has the ability to keep a database of timings with each media-file so I can skip commercials or intro/outro generics for each of them. I'm thinking about for example That 70's show, which starts with some content, then a generic, then the rest of the content, then a closing generic and then sometimes some content at the end. I'd love to have a meta-database with timings so I can skip the boring parts.<br /><br />Next, I tested my infrared led in Windows XP with my GSM and it worked ok. That gives me hope that its not broken, despite what tests showed in linux.<br /><br />Last but not least, I dug up my old wireless headphones and they still work ! This means I can listen to music all the time without bothering anyone :) They have a 80m range, so I could go to the store across the street while listening to my music :P that would be awesome<br />
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page86">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page84">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

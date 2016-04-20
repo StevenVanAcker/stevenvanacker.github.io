@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/08/22/downloading-sourcecs-in-rpm-specfile/">
+        downloading sourcecs in an RPM specfile
+      </a>
+    </h1>
+
+    <span class="post-date">22 Aug 2008</span>
+
+    <!-- StevensBlogSpotFilterThing<br />Here's a quick hack to download all sourcefiles from a specfile automatically.<br /><br />[PRE]<br />#!/bin/bash<br /><br />specfile=$1<br /><br />OLDIFS=$IFS<br />IFS="<br />"<br /><br />sedcmd="sed"<br /><br />for varline in `cat "$specfile" |grep "^%define"`;<br />do<br />    var=`echo "$varline" | awk '{print $2}'`<br />    val=`echo "$varline" | awk '{print $3}'`<br /><br />    sedscript="s:%{$var}:$val:g"<br />    sedcmd="$sedcmd -e $sedscript"<br />done<br /><br />IFS=$OLDIFS<br /><br />mkdir -p /usr/src/redhat/SOURCES<br />for url in `cat $specfile | $sedcmd | grep "^Source" | awk '{print $2}'`;<br />do<br /> f=`echo "$url" | sed 's:.*/::'`<br /> wget -O "/usr/src/redhat/SOURCES/$f" "$url"<br />done<br />[/PRE]<br />StevensBlogSpotFilterThing --><br />Here's a quick hack to download all sourcefiles from a specfile automatically.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />#!/bin/bash<br /><br />specfile=$1<br /><br />OLDIFS=$IFS<br />IFS="<br />"<br /><br />sedcmd="sed"<br /><br />for varline in `cat "$specfile" |grep "^%define"`;<br />do<br />    var=`echo "$varline" | awk '{print $2}'`<br />    val=`echo "$varline" | awk '{print $3}'`<br /><br />    sedscript="s:%{$var}:$val:g"<br />    sedcmd="$sedcmd -e $sedscript"<br />done<br /><br />IFS=$OLDIFS<br /><br />mkdir -p /usr/src/redhat/SOURCES<br />for url in `cat $specfile | $sedcmd | grep "^Source" | awk '{print $2}'`;<br />do<br /> f=`echo "$url" | sed 's:.*/::'`<br /> wget -O "/usr/src/redhat/SOURCES/$f" "$url"<br />done<br /></pre>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/08/22/building-rpms-spec-file/">
+        building RPMs: the spec-file
+      </a>
+    </h1>
+
+    <span class="post-date">22 Aug 2008</span>
+
+    <!-- StevensBlogSpotFilterThing<br />Today I find myself in the need to build an RPM of the "ratbox" ircd, with some patches. To get a headstart, I decided to look around for an existing spec-file and I found one here:<br /><a href="http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec">http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec</a><br /><br />Now, I was under the impression that RPM was some standard and that therefore, a spec-file had some standards as well. The spec-file I downloaded comes from the <a href="http://www.openpkg.org">OpenPKG project</a> and seems to have some non-standard "extensions".<br /><br />First of all, my rpmbuild complains about this line:<br />[PRE]<br />Class:        BASE<br />[/PRE]<br /><br />I removed that line<br /><br />Next, some pre-build dependencies fail<br />[PRE]<br />error: Failed build dependencies:<br /> OpenPKG is needed by ratbox-2.2.8-20080112.i386<br /> openpkg >= 20060823 is needed by ratbox-2.2.8-20080112.i386<br />[/PRE]<br /><br />I removed those dependencies<br /><br />After that, the %prep section fails:<br />[PRE]<br />Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.26173<br />+ umask 022<br />+ cd /usr/src/redhat/BUILD<br />+ %setup -q -c<br />/var/tmp/rpm-tmp.26173: line 24: fg: no job control<br />error: Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br /><br /><br />RPM build errors:<br />    Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br />[/PRE]<br /><br />That's apparently because there are spaces in front of "%setup" and friends. I removed them.<br /><br />And now I get:<br />[PRE]<br />error: File /usr/src/redhat/SOURCES/ircd-ratbox-2.2.8.tgz: No such file or directory<br />[/PRE]<br /><br />Right. Quadruple fail. I guess I'll just have to write my own spec file instead.<br />StevensBlogSpotFilterThing --><br />Today I find myself in the need to build an RPM of the "ratbox" ircd, with some patches. To get a headstart, I decided to look around for an existing spec-file and I found one here:<br /><a href="http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec">http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec</a><br /><br />Now, I was under the impression that RPM was some standard and that therefore, a spec-file had some standards as well. The spec-file I downloaded comes from the <a href="http://www.openpkg.org">OpenPKG project</a> and seems to have some non-standard "extensions".<br /><br />First of all, my rpmbuild complains about this line:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />Class:        BASE<br /></pre><br /><br />I removed that line<br /><br />Next, some pre-build dependencies fail<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />error: Failed build dependencies:<br /> OpenPKG is needed by ratbox-2.2.8-20080112.i386<br /> openpkg >= 20060823 is needed by ratbox-2.2.8-20080112.i386<br /></pre><br /><br />I removed those dependencies<br /><br />After that, the %prep section fails:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.26173<br />+ umask 022<br />+ cd /usr/src/redhat/BUILD<br />+ %setup -q -c<br />/var/tmp/rpm-tmp.26173: line 24: fg: no job control<br />error: Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br /><br /><br />RPM build errors:<br />    Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br /></pre><br /><br />That's apparently because there are spaces in front of "%setup" and friends. I removed them.<br /><br />And now I get:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />error: File /usr/src/redhat/SOURCES/ircd-ratbox-2.2.8.tgz: No such file or directory<br /></pre><br /><br />Right. Quadruple fail. I guess I'll just have to write my own spec file instead.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/08/20/nothing-to-see-here-move-along/">
+        nothing to see here, move along
+      </a>
+    </h1>
+
+    <span class="post-date">20 Aug 2008</span>
+
+    <!-- StevensBlogSpotFilterThing<br />It's so sad to realise that I've wasted my time the last couple of days. I've played with putting Windows XP clients in a Samba domain to have roaming profiles and the ability for users to change their passwords through a familiar (ctrl-alt-del) interface in Windows. But the people I was looking at this for, don't want any kind of filesharing ;)<br /><br />Using scponly with WinSCP as an alternative for Samba has been another of those wastes of time. Not because it's a bad or unwanted idea, but because I actually wanted to deploy the chrooted version of scponly (scponlyc) instead. It turns out that setting up scponlyc becomes increasingly more and more complex as you're looking at the details. I don't mind setting up a chroot, but not with the script provided with the scponly package (since it starts adding users with useradd instead of adduser..., that's 2 undesireable things already). And I guess I can live with it that users see the entire chroot directory structure when they use scponly, although it probably is not necessary: I'm suren there's a way to hide all of those directories in files, only to make things even more complex. And then finally things went wrong went I used bindmounts and putting users into extra groups, to allow them to work on the same files together...<br /><br />All in vain, such a waste of time...<br />StevensBlogSpotFilterThing --><br />It's so sad to realise that I've wasted my time the last couple of days. I've played with putting Windows XP clients in a Samba domain to have roaming profiles and the ability for users to change their passwords through a familiar (ctrl-alt-del) interface in Windows. But the people I was looking at this for, don't want any kind of filesharing ;)<br /><br />Using scponly with WinSCP as an alternative for Samba has been another of those wastes of time. Not because it's a bad or unwanted idea, but because I actually wanted to deploy the chrooted version of scponly (scponlyc) instead. It turns out that setting up scponlyc becomes increasingly more and more complex as you're looking at the details. I don't mind setting up a chroot, but not with the script provided with the scponly package (since it starts adding users with useradd instead of adduser..., that's 2 undesireable things already). And I guess I can live with it that users see the entire chroot directory structure when they use scponly, although it probably is not necessary: I'm suren there's a way to hide all of those directories in files, only to make things even more complex. And then finally things went wrong went I used bindmounts and putting users into extra groups, to allow them to work on the same files together...<br /><br />All in vain, such a waste of time...
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/08/16/automatically-creating-samba-accounts/">
+        Automatically creating Samba accounts with adduser
+      </a>
+    </h1>
+
+    <span class="post-date">16 Aug 2008</span>
+
+    <!-- StevensBlogSpotFilterThing<br />I'm setting up an environment with a lot of Windows users. This means using Samba.<br />On the samba server, each user has a unix account for mail, and a samba account. Setting up password syncing between unix accounts and samba accounts is <a href="http://jaka.kubje.org/wp/2007/05/14/unix-samba-password-sync-on-debian-etch/">described el is sewhere</a>.<br /><br />Now it would be nice if the "adduser" command also created a samba user. I've searched for a way to do this, and found no pre-baked solution.<br /><br />"adduser" is a perlscript which calls "groupadd", "useradd" and "passwd" to create the user.<br />What I did is hijack the "useradd" command to execute "/usr/sbin/useradd" (What it was supposed to execute) and "smbpasswd -n -a username".<br /><br />This is the script:<br />[PRE]<br />#!/usr/bin/perl<br /><br />system "/usr/sbin/useradd", @ARGV;<br />my $ret = $?;<br /><br />system "/usr/bin/smbpasswd", ("-n", "-a", $ARGV[-1]);<br /><br />exit $ret;<br />[/PRE]<br /><br />Place it in "/root/bin/" and add "/root/bin/" to your PATH. "adduser" will now automagically create samba accounts aswell.<br />StevensBlogSpotFilterThing --><br />I'm setting up an environment with a lot of Windows users. This means using Samba.<br />On the samba server, each user has a unix account for mail, and a samba account. Setting up password syncing between unix accounts and samba accounts is <a href="http://jaka.kubje.org/wp/2007/05/14/unix-samba-password-sync-on-debian-etch/">described el is sewhere</a>.<br /><br />Now it would be nice if the "adduser" command also created a samba user. I've searched for a way to do this, and found no pre-baked solution.<br /><br />"adduser" is a perlscript which calls "groupadd", "useradd" and "passwd" to create the user.<br />What I did is hijack the "useradd" command to execute "/usr/sbin/useradd" (What it was supposed to execute) and "smbpasswd -n -a username".<br /><br />This is the script:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />#!/usr/bin/perl<br /><br />system "/usr/sbin/useradd", @ARGV;<br />my $ret = $?;<br /><br />system "/usr/bin/smbpasswd", ("-n", "-a", $ARGV[-1]);<br /><br />exit $ret;<br /></pre><br /><br />Place it in "/root/bin/" and add "/root/bin/" to your PATH. "adduser" will now automagically create samba accounts aswell.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/08/16/peugeot-205-te-koop/">
+        Peugeot 205 te koop
+      </a>
+    </h1>
+
+    <span class="post-date">16 Aug 2008</span>
+
+    <!-- StevensBlogSpotFilterThing<br />Na wat werk is mijn Peugeot 205 terug in werkende staat. Volgens mijn juist-niet-deskundig oog (ik ben MAAR een hulpmecanicien ;)) zou die door de keuring moeten geraken. Nu moet ik dus nog een koper vinden.<br /><br />[PRE]<br />Peugeot 205 Forever 1.1l (1124cc) benzine<br />bouwjaar 1995<br />5-deurs<br />118004km<br />44kw<br />[/PRE]<br /><br />StevensBlogSpotFilterThing --><br />Na wat werk is mijn Peugeot 205 terug in werkende staat. Volgens mijn juist-niet-deskundig oog (ik ben MAAR een hulpmecanicien ;)) zou die door de keuring moeten geraken. Nu moet ik dus nog een koper vinden.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />Peugeot 205 Forever 1.1l (1124cc) benzine<br />bouwjaar 1995<br />5-deurs<br />118004km<br />44kw<br /></pre>
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page14">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page12">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

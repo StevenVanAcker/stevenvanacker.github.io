@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      some calculations &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">some calculations</h1>
+  <span class="post-date">13 Jul 2007</span>
+  After doing a lot of reading on the subject, I finally started doing some calculations regarding sizes. It's not much, but it's a start.<br /><br />Because I'm lazy and I don't want to drill a zillion holes in the platen, I will go with a single-hole design. This also happens to be the best way to work with differently sized plastic sheets.<br /><br />The polystyrene sheets sold at the hardware store are 100cmx200cm. The 100cmx100cm sheets are cheaper, so I will be buying those. This means my machine needs to be able to work with 100cmx100cm sheets MAX.<br /><br />One of the applications I want to use vacuforming for, is to create a cover for my lawnmower robot. I estimate it will be pretty big (because I'm an amateur ;)<br /><br />So, I will design my vacuform machine to have a 100cmx100cm platen.<br /><br />Because of this size, I'll also create an over/under model. This means that all the components are aligned vertically. The oven on top, the platen right below it. Total surface area for this machine will be 1m^2, which is OK for me.<br /><br />So, I'm basically  building a giant closet with 3 levels: 1 for the oven, 1 for the platen, and 1 below the platen where I can place my vacuum cleaner or vacuum pump and tank. I won't consider the oven at this point, because it needs to be constructed from a heat-resistant material and I don't have a clue about that yet. <br /><br />The local hardwarestore sells MDF panels of 244cmx122cm big (both 12 and 18mm thick).<br />This is how to plan to cut them up: 2 big panels of 102cmx102cm, and 8 102cmx10cm pieces. I'll have a 20cmx40cm piece leftover (in white).<br />[G2:11432]<br /><br />I'll get 4 metal L-profiles of 2m long to use as corners. The 8 MDF pieces will fit between those metal profiles, making 2 squares: 1 for the platen, 1 for the shelf below. The bigger 102cmx102cm pieces will rest on top of those squares (just like shelves).<br /><br />The reason that all pieces are 102cm long and not 100cm, is because I want some room to maneuver with the holding frame for the plastic. 1cm on each side should be enough room to maneuver.<br /><br />Hopefully, I will get all this stuff from the hardware store and start putting it together tomorrow.<br /><br />Also, I've been wondering if my vacuum cleaner is powerful enough to pull plastic with this thing. On the TK560 forums, the power of a vacuumcleaner is measured with inches of mercury. Now my vacuum cleaner doesn't mention anything like that in it's manual ;)<br /><br />Here is an online convertor between pressure units:<br />http://www.vacuum-guide.com/english/equipment/calculatorpressure.htm<br /><br />I haven't checked if my vacuumcleaner is powerful enough yet...
+</div>
+
+
+    </div>
+
+  </body>
+</html>

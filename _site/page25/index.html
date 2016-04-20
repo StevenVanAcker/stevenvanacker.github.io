@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/04/01/configuring-isa-through-powershell-some/">
+        Configuring ISA through Powershell: some examples
+      </a>
+    </h1>
+
+    <span class="post-date">01 Apr 2008</span>
+
+    I have been working on automating the unattended installation of ISA last week. The installation itself can be done by using the <a href="http://www.microsoft.com/technet/isa/2006/installation_ee/default.mspx?mfr=true">Appendix C: Unattended Setup</a> section of the ISA 2006 EE installation guide.<br /><br />Configuring ISA can be done using Microsoft Powershell. There are really not much examples out there on how this is accomplished, so I will provide some here.<br /><br /><br /><b>Selecting a network template and default policy</b><br /><br /><pre><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /># template: Edge firewall<br /># default policy: block all<br /><br />$arr.SelectNetworkTemplateAndPolicy("Edge Firewall", "Block all")<br /></pre><br /><br /><b>Enabling NLB on the External network and using a dedicated heartbeat network</b><br /><pre><br />$fpcNLBOperationModeUnicast = 0<br /><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /><br />$arr.NetworkConfiguration.NLBConfiguration.NLBIntegrationEnabled = $true<br /><br /># Get the external network<br />$ext = $arr.NetworkConfiguration.Networks | where-Object { $_.name -eq "External" }<br /><br /># NLB settings<br />$ext.NLBCluster.SetVIPAndMask("10.33.113.108","255.255.255.0")<br />$ext.NLBCluster.OperationMode = $fpcNLBOperationModeUnicast<br />$ext.NLBCluster.NLBEnabled = $true<br /><br />$ext.save()<br /><br /># let NLB communication go over the specialised network<br /># FIXME: one for each ISA<br />$isa = $arr.Servers | Select-Object -first 1<br />$isa.IntraArrayAddress = "192.168.51.138"<br />$isa.save()<br /></pre><br /><br /><b>Enabling SCOM Monitoring</b><br /><pre><br /># get the ENUM value for the MOM group<br />$fpcSystemPolicyConfigGroup_MOM = 18<br /><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /># we want to allow connections to SCOM from the ISA server<br /># First, lets define a group "Remote Monitoring Computers" that will hold all SCOM computers<br /><br />$newset = $arr.RuleElements.ComputerSets.Add("Remote Monitoring Computers")<br /><br /># Now we add an IP address in it, and name it "SCOM"<br /># We only have 1 SCOM computer at the moment.<br /><br />$newset.Computers.Add("SCOM","10.32.6.11")<br /><br /># save this new computer set<br /><br />$arr.save()<br /><br /># To enable the MOM System Policy, we need to do something counter intuitive<br /># We can't modify the System Policy directly (stored in $arr.SystemPolicy),<br /># so we create a new instance of the configgroup we would like to change. <br /># In our case, the MOM group. Store it in $mom<br /><br />$mom = $arr.SystemPolicy.CreateConfigurationGroupInstance($fpcSystemPolicyConfigGroup_MOM)<br /><br /># This instance, we can modify. First, enable the configgroup<br /><br />$mom.Enabled = $true<br /><br /># And now, add the "Remote Monitoring Computers" as destination for this config group<br /># The 0 means we allow connections, 1 would be "Exclude"<br /><br />$mom.DestinationSelectionIPs.ComputerSets.add("Remote Monitoring Computers",0)<br /><br /># saving this instance will make the changes in the System Policy<br /><br />$mom.save()<br /></pre><br /><br /><b>Enabling ICMP from Remote Monitoring Computers</b><br /><pre><br /># get the ENUM value<br />$fpcSystemPolicyConfigGroup_RemoteMgmt_ICMP = 8<br /><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /><br /># if adding the computerset fails, that means its already added, but the policy could be disabled<br /># so enable it now and save it, then add the computerset<br />$icmp = $arr.SystemPolicy.CreateConfigurationGroupInstance($fpcSystemPolicyConfigGroup_RemoteMgmt_ICMP)<br />$icmp.Enabled = $true<br />$icmp.save()<br /><br />""<br />"The following command may fail with a flashy red error, but that's ok"<br />""<br /><br />$icmp = $arr.SystemPolicy.CreateConfigurationGroupInstance($fpcSystemPolicyConfigGroup_RemoteMgmt_ICMP)<br />$icmp.SourceSelectionIPs.ComputerSets.add("Remote Monitoring Computers",0)<br />$icmp.save()<br /><br /></pre><br /><br /><b>Creating an access rule for outgoing SCOM 2007 traffic</b><br /><pre><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /><br /># First, create a new protocol definition<br />$proto = $arr.RuleElements.ProtocolDefinitions.Add("System Center Operations Manager 2007 agent")<br /># outbound to port 5723<br />$proto.PrimaryConnections.AddTCP(1, 5723, 5723)<br />$proto.save()<br /><br />$scomrule = $arr.ArrayPolicy.PolicyRules.AddAccessRule("Outbound to SCOM")<br /><br /># Allow<br />$scomrule.Action = 0<br /># only the following selected protocols ...<br />$scomrule.AccessProperties.ProtocolSelectionMethod = 1<br /># ... The SCOM 2007 protocol<br />$scomrule.AccessProperties.SpecifiedProtocols.Add("System Center Operations Manager 2007 agent", 0)<br /># From Local Host<br />$scomrule.SourceSelectionIPs.Networks.Add("Local Host", 0)<br /># To Remote Monitoring Computers<br />$scomrule.AccessProperties.DestinationSelectionIPs.ComputerSets.Add("Remote Monitoring Computers", 0)<br /># By All Users<br />$scomrule.AccessProperties.UserSets.Add("All Users", 0)<br /><br />$scomrule.save()<br /></pre><br /><br /><b>Creating an access rule for SQL logging</b><br /><pre><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /><br /># First, create a new protocol definition<br />$proto = $arr.RuleElements.ProtocolDefinitions.Add("SQL Cluster")<br /># outbound to port 3572<br />$proto.PrimaryConnections.AddTCP(1, 3572, 3572)<br />$proto.save()<br /><br /># Next, create a computerset for the SQL cluster<br />$newset = $arr.RuleElements.ComputerSets.Add("SQL Server Cluster")<br />$newset.Computers.Add("SQL Server for ISA","10.32.6.45")<br />$newset.save()<br /><br /><br />$scomrule = $arr.ArrayPolicy.PolicyRules.AddAccessRule("Outbound to SQL Cluster")<br /><br /># Allow<br />$scomrule.Action = 0<br /># only the following selected protocols ...<br />$scomrule.AccessProperties.ProtocolSelectionMethod = 1<br /># ... The SQL Cluster protocol<br />$scomrule.AccessProperties.SpecifiedProtocols.Add("SQL Cluster", 0)<br /># From Local Host<br />$scomrule.SourceSelectionIPs.Networks.Add("Local Host", 0)<br /># To SQL Cluster<br />$scomrule.AccessProperties.DestinationSelectionIPs.ComputerSets.Add("SQL Server Cluster", 0)<br /># By All Users<br />$scomrule.AccessProperties.UserSets.Add("All Users", 0)<br /><br />$scomrule.save()<br /></pre><br /><br /><b>Enabling SQL Logging and setting the parameters</b><br /><pre><br />$fpcProxyWebLog = 1<br />$fpcProxyFwLog = 2<br />$fpcSQLDirectConnection = 4<br /><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /><br /><br />$log = $arr.Logging.item($fpcProxyFwLog)<br /><br />$log.SQLServerName = "sqlsrviisa.pad.kuleuven.be"<br />$log.SQLServerPort = 3572<br />$log.LogDBTableName = "FirewallLog"<br />$log.SQLForceEncryption = $false<br />$log.LogDBUserName = "PAD\ICTS_ISA_SQL"<br />$log.LogType = $fpcSQLDirectConnection<br />$log.SQLDatabase = "db_isa_firewall"<br /><br />$log.save()<br /><br /><br />$log = $arr.Logging.item($fpcProxyWebLog)<br /><br />$log.SQLServerName = "sqlsrviisa.pad.kuleuven.be"<br />$log.SQLServerPort = 3572<br />$log.LogDBTableName = "WebProxyLog"<br />$log.SQLForceEncryption = $false<br />$log.LogDBUserName = "PAD\ICTS_ISA_SQL"<br />$log.LogType = $fpcSQLDirectConnection<br />$log.SQLDatabase = "db_isa_proxy"<br /><br />$log.save()<br /></pre><br /><br /><b>Publishing IMAPs and POPs</b><br /><pre><br />$fpcAllIPAddresses = 0<br />$fpcSpecifiedIPAddress = 2<br /><br /><br /># find our little array, reference it from $arr<br />$root = new-object -comobject "FPC.Root" -strict<br />$arr = $root.Arrays | select-object -first 1<br /><br /><br /># A new server publishing rule<br />$imaps = $arr.ArrayPolicy.PolicyRules.AddServerPublishingRule("Publish IMAPs","10.32.6.6", "IMAPS Server")<br /><br /># listen on the external side<br />$imaps.ServerPublishingProperties.IPsOnNetworks.Add("External", $fpcSpecifiedIPAddress, "10.33.113.108")<br /><br /># and make connections appear to come from the ISA server<br />$imaps.ServerPublishingProperties.UseFirewallIPAsSource = $true<br />$imaps.save()<br /><br />$pops = $arr.ArrayPolicy.PolicyRules.AddServerPublishingRule("Publish POPs", "10.32.6.6", "POP3S Server")<br />$pops.ServerPublishingProperties.IPsOnNetworks.Add("External", $fpcSpecifiedIPAddress, "10.33.113.108")<br />$pops.ServerPublishingProperties.UseFirewallIPAsSource = $true<br />$pops.save()<br /></pre>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/31/i-hate-experts-exchangecom/">
+        I hate experts-exchange.com
+      </a>
+    </h1>
+
+    <span class="post-date">31 Mar 2008</span>
+
+    I'm trying to find out how I can prevent a .BAT batch script from exiting when it encounters an error. Looking on google gives me a number of hits, with useful information apparently on www.experts-exchange.com. However, the useful information is blanked out with the following message:<br /><br /><blockquote><br />All comments and solutions are available to Premium Service Members only. <br /><br />Start your 7 day free trial and see for yourself why Experts Exchange is the easiest and most proven technology resource in the world. Get Started<br /><br />Already a member? Login to view this solution.<br /></blockquote>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/31/rdesktop-limitation/">
+        rdesktop limitation
+      </a>
+    </h1>
+
+    <span class="post-date">31 Mar 2008</span>
+
+    It appears that rdesktop puts a limitation on the amount of characters used in the shell I want to execute. Apparently, only 256 characters are passed.<br />This means I will have to make some meta-batch scripts instead of passing all of the scripts through "rdesktop -s"
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/31/3003-flirtende-vrouwen-zijn-te-subtiel/">
+        Flirten
+      </a>
+    </h1>
+
+    <span class="post-date">31 Mar 2008</span>
+
+    <!-- StevensBlogSpotFilterThing<br /><blockquote><br /><a href="http://www.gva.be/nieuws/in_de_rand/default.asp?art={618169D4-AA69-492D-A37D-95B660E332ED}">30/03 Flirtende vrouwen zijn te subtiel voor mannen</a><br /><br />Elke vrouw kent wel een aantal discrete flirttechnieken om de aandacht van een man te trekken, van een zwoele blik over de schouder tot een vluchtige aanraking. Maar, zo schrijft de Sunday Telegraph, ze verspillen hun tijd.<br /><br />Want de meeste mannen zijn simpelweg blind voor dergelijke subtiele gebaren. Alleen wanneer een vrouw haar belangstelling extreem duidelijk maakt, zal de man de boodschap begrijpen.<br /><br />Dat blijkt uit onderzoek dat werd verricht aan de universiteit van Indiana en waarvan de resultaten volgende maand worden gepubliceerd in het vakblad Psychological Science. De vorsers ondervroegen zo'n 300 studenten van beide geslachten om na te gaan of de mannen gevoelig waren voor signalen. Ze toonden hen foto's van vrouwen en moesten die onderbrengen in de vakjes 'vriendschappelijk', 'seksueel geïnteresseerd' of 'afwijzend'. <br /><br />Daaruit bleek in de eerste plaats dat de mannelijke studenten veel slechter scoorden dan de meisjes en dat ze me name moeite hadden met het maken van een onderscheid tussen vriendschappelijkheid en verliefdheid. Vaak zagen ze in seksuele signalen een blijk van vriendschap, en in vriendelijkheid dan weer een duidelijke versiertechniek. De onderzoekers concluderen daaruit dat mannen de neiging hebben ' te verdwalen' in een wereld van subtiele gebaren die ze niet kunnen herkennen. <br /><br /><b>Vrouwen superieur</b><br /><br />Volgens relatie-auteur Kathy Lette is dit een nieuw bewijs voor haar stelling dat vrouwen superieur zijn. "Vrouwen zijn zeer goed in het gebruiken én lezen van lichaamstaal, mannen kunnen alleen babbelen", zegt ze. "Dat is erg verwarrend voor een vrouw, want de doorsnee-man beseft vaak pas dat we op hem vallen als we zijn kind baren ofwel denkt hij juist dat alle vrouwen constant op hem vallen".<br /><br /></blockquote><br /><br />Wat een rare conclusie. Misschien weten vrouwen gewoon niet wat ze willen en spelen ze met gevoelens. Dat zou er toe leiden dat mannen op de duur niet meer weten wat vrouwen eigenlijk willen zeggen.<br />StevensBlogSpotFilterThing --><br /><blockquote><br /><a href="http://www.gva.be/nieuws/in_de_rand/default.asp?art={618169D4-AA69-492D-A37D-95B660E332ED}">30/03 Flirtende vrouwen zijn te subtiel voor mannen</a><br /><br />Elke vrouw kent wel een aantal discrete flirttechnieken om de aandacht van een man te trekken, van een zwoele blik over de schouder tot een vluchtige aanraking. Maar, zo schrijft de Sunday Telegraph, ze verspillen hun tijd.<br /><br />Want de meeste mannen zijn simpelweg blind voor dergelijke subtiele gebaren. Alleen wanneer een vrouw haar belangstelling extreem duidelijk maakt, zal de man de boodschap begrijpen.<br /><br />Dat blijkt uit onderzoek dat werd verricht aan de universiteit van Indiana en waarvan de resultaten volgende maand worden gepubliceerd in het vakblad Psychological Science. De vorsers ondervroegen zo'n 300 studenten van beide geslachten om na te gaan of de mannen gevoelig waren voor signalen. Ze toonden hen foto's van vrouwen en moesten die onderbrengen in de vakjes 'vriendschappelijk', 'seksueel geïnteresseerd' of 'afwijzend'. <br /><br />Daaruit bleek in de eerste plaats dat de mannelijke studenten veel slechter scoorden dan de meisjes en dat ze me name moeite hadden met het maken van een onderscheid tussen vriendschappelijkheid en verliefdheid. Vaak zagen ze in seksuele signalen een blijk van vriendschap, en in vriendelijkheid dan weer een duidelijke versiertechniek. De onderzoekers concluderen daaruit dat mannen de neiging hebben ' te verdwalen' in een wereld van subtiele gebaren die ze niet kunnen herkennen. <br /><br /><b>Vrouwen superieur</b><br /><br />Volgens relatie-auteur Kathy Lette is dit een nieuw bewijs voor haar stelling dat vrouwen superieur zijn. "Vrouwen zijn zeer goed in het gebruiken én lezen van lichaamstaal, mannen kunnen alleen babbelen", zegt ze. "Dat is erg verwarrend voor een vrouw, want de doorsnee-man beseft vaak pas dat we op hem vallen als we zijn kind baren ofwel denkt hij juist dat alle vrouwen constant op hem vallen".<br /><br /></blockquote><br /><br />Wat een rare conclusie. Misschien weten vrouwen gewoon niet wat ze willen en spelen ze met gevoelens. Dat zou er toe leiden dat mannen op de duur niet meer weten wat vrouwen eigenlijk willen zeggen.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/28/unattended-isa-server-2006-installation/">
+        Unattended ISA Server 2006 installation with rdesktop and powershell
+      </a>
+    </h1>
+
+    <span class="post-date">28 Mar 2008</span>
+
+    In the <a href="http://singularitybe.blogspot.com/2008/03/using-rdesktop-to-script-windows.html">last post</a> I explained how to use rdesktop to script Windows.<br />In this post, I will show you how to install ISA Server 2006 Enterprise Edition using rdesktop completely automated. Or as they say, an unattended installation.<br /><br />I have the advantage of hindsight, but I will explain it without the lessons learned so you may learn why I do some things the way I do them now :)<br /><br />It's worth noting that I performed this installation on a virtual machine in VMWare. I created a snapshot right before I started the installation, so it was easy to redo the whole thing without having to reinstall Windows.<br /><br />One of the advantages of Enterprise Edition (EE) over the Standard Edition (SE), is that EE used a centralised configuration server called CSS (Configuration Storage Server). Using SE with 5 ISA servers, you would have to configure each of them separately. In EE, you only need to point all the ISA servers to a CSS, and they will fetch the configuration.<br /><br />So, I will first setup the CSS on one of the ISA servers (It's normally setup on a different machine, but I don't have one handy right now), then I will install ISA server on ISA1, and then ISA2 (We have 2 ISA servers in loadbalancing)<br /><br />The second Windows Server 2003 installation CD was required during installation of the CSS. To avoid having to swap CDs all the time (that wouldn't be very unattended), I loaded it into the virtual CD-drive and took a snapshot after that.<br /><br /><a href="http://www.microsoft.com/technet/isa/2006/installation_ee/default.mspx?mfr=true">ISA Server 2006 Enterprise Edition Installation Guide</a><br /><br /><b>Installing the CSS on ISA1</b><br /><br />The unattended installation of any ISA component depends on 2 things: a configuration file with the values you want filled into the textboxes, and invoking the setup.exe program with the correct parameters.<br /><br />Let's start with the latter.<br /><br /><pre><br />setup.exe /v" /qb FULLPATHANSWERFILE=\"X:\INIFiles\InstallNewManagementServer.ini\""<br /></pre><br /><br />This is how to invoke the setup.exe program in my case. I trimmed a bit of the front, setup.exe is actually located in C:\software\isa-server-enterprise\FPC\<br />Instead of passing this entire commandline to rdesktop, I chose to put it in a batch script called "install_css.bat". To be correct, the name should be "install_css_and_mgmt.bat" because it will also install an ISA Firewall Management Client, but that's not important.<br /><br />There are 3 flags in the command line above. The "/v" option is the only one passed to setup.exe, and I presume that its parameter will just be passed to some .msi installer at a later stage. But to be honest, I have no idea what it does.<br />The "/qb" option specifies how verbose the installation should be and it is explained in Appendix C of the Microsoft site I linked to above.<br />Finally, "FULLPATHANSWERFILE" specifies where the INI file with the answers is located. In my case, it's (of course) located in the INIFils directory on the X: drive which is actually a directory on my client computer.<br /><br />The INI-file contains the following:<br /><pre><br />[Setup Property Assignment]<br /><br />ADDLOCAL=Storage_Server,MSFirewall_Management<br />ENTERPRISE_MODE=New<br />ENTERPRISE_NAME="Katholieke Universiteit Leuven"<br />PIDKEY=...<br /></pre><br /><br />Sadly for you, I stripped out the product key (PIDKEY) ;)<br /><br />The INI-file above is edited from an example INI file that can be found on the ISA installation CD under \FPC\Unattended_Setup_Sample\Enterprise_Edition\<br /><br />As shown in the INI, the unattended installation will install a CSS and management client, and create a new enterprise.<br /><br />I use the following rdesktop line (more or less) to install it:<br /><br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -u p0036393 -d PAD -s "cmd.exe /K net use x: \\\\tsclient\local & x:\install_css.bat & logoff"<br /></pre><br /><br /><b>Installing the ISA server itself on ISA1 and creating a new array</b><br /><br />After this installation, it's time to setup ISA itself on ISA1. All we need to do, is use another INI file for this and start the installation the same way. I created a batch script called "install_isa_new_array.bat" with this content:<br /><br /><pre><br />setup.exe /v" /qb FULLPATHANSWERFILE=\"X:\INIFiles\InstallNewArrayAndServer.ini\""<br /></pre><br /><br />InstallNewArrayAndServer.ini contains this:<br /><pre><br />[Setup Property Assignment]<br />ADDLOCAL=MSFirewall_Services,MSFirewall_Management,MSDE<br />ARRAY_MODE=New<br />ARRAY_NAME=Verteron<br />ARRAY_INTERNALNET=1 10.32.6.0-10.32.6.255<br />STORAGESERVER_COMPUTERNAME=ISA.example.com<br />PIDKEY=...<br /></pre><br /><br />This INI file instructs the installer to create a new array (an ISA loadbalancing term) called "Verteron". And the array will use the IP-range 10.32.6.0/24 on its internal interface. The 1 in front of the "ARRAY_INTERNALNET" value indicates the amount of ranges to follow.<br /><br />[In case you are wondering where <a href="http://memory-alpha.org/en/wiki/Verteron_array">"Verteron"</a> comes from, the Active Directory domain in which the Microsoft Exchange environment will be setup is called LUNA]<br /><br />ISA1 will be pointed to the CSS on ISA.example.com for its configuration.<br /><br />As expected, the installation will do its thing. But after some time you'll see that the RDP session no longer responds. (Even worse, currently, my entire desktop stops working and I have to kill rdesktop to get my desktop back).<br />The cause of this is ISA. After the ISA installation, the ISA firewall is running. This firewall blocks RDP to the ISA. It appears that my client computer is added to the group "Remote Management Computers", but with the wrong IP. ISA registers an 192.168.x.x address, but because I'm behind a NAT, the ISA server sees another IP and drops it. This is very annoying! It appears that rdesktop passes the local IP address to ISA. It would have made more sense if ISA added the IP that it saw on its side, instead of relying on the IP rdesktop sends.<br /><br />In any case, you will no longer be able to login to the ISA.<br /><br />Solution ? Yes, there is one, but it works only a bit. The trick is to add your IP address to the group "Enterprise Remote Management Computers" after the CSS is installed, but before the ISA is installed.<br /><br />Of course, configuring this by hand is totally out of the question. Remember that I'm lazy in that way. Nature provided me with 10 fingers so I could use a keyboard. Using a mouse is inefficient, unless I could use 2 mice with 5 buttons each.<br /><br />Time to get scripting. This time we won't get away with some funky batch script because ISA doesn't offer any interface towards it. What ISA does provide though, is a way to access it through PowerShell.<br /><br />Here is the script to add the IP address 12.34.56.78 (with name "My NAT Gateway") to the group "Enterprise Remote Management Computers":<br /><br /><pre><br />$root = new-object -comobject "FPC.Root" -strict<br /><br />$remotemgmt = $root.Enterprise.RuleElements.ComputerSets | where-object { $_.name -eq "Enterprise Remote Management Computers" }<br /><br />$remotemgmt.Computers.add("My NAT Gateway", "12.34.56.78")<br />$remotemgmt.Computers.save()<br /></pre><br /><br />The first line in the script gets the root of the FPC tree. [There is no explanation of FPC on <a href="http://en.wikipedia.org/wiki/FPC">wikipedia</a>. Maybe some kind soul should provide one]<br />Next, we look at the computersets in our enterprise, and filter out the one called "Enterprise Remote Management Computers". We add our NAT Gateway to it and save.<br /><br />That's all.<br /><br />There is more information on the <a href="http://msdn2.microsoft.com/en-us/library/ms828074.aspx">ISA Server Administration Object Model</a> on Microsoft MSDN.<br /><br />So, how can we execute this script on Windows ? The first step is to download and install <a href="http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx">PowerShell v1.0</a>.<br />Then, 2 hurdles remain before things will be allright.<br /><br />First, PowerShell scripts execution is disabled by default.<br />Demonstration:<br /><br /><pre><br />C:\Documents and Settings\p0036393>c:\WINDOWS\system32\windowspowershell\v1.0\po<br />wershell.exe x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1<br />File X:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1 cannot be loaded because<br /> the execution of scripts is disabled on this system. Please see "get-help abou<br />t_signing" for more details.<br />At line:1 char:49<br />+ x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1 <<<<<br /><br />C:\Documents and Settings\p0036393><br /></pre><br /><br />A way to enable the execution of scripts is the following:<br /><pre><br />c:\windows\system32\windowspowershell\v1.0\powershell -command "set-executionpolicy unrestricted"<br /></pre><br /><br />This sets the execution policy to "unrestricted".<br /><br />I placed this command inside a script called "enable_powershell.bat". Hurdle 1 is behind us.<br /><br />Next problem: PowerShell requires you to sign your scripts and whatnot, which is a really gay policy.<br /><br /><pre><br />C:\Documents and Settings\p0036393>c:\WINDOWS\system32\windowspowershell\v1.0\po<br />wershell.exe x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1<br /><br />Security Warning<br />Run only scripts that you trust. While scripts from the Internet can be useful,<br /> this script can potentially harm your computer. Do you want to run<br />X:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1?<br />[D] Do not run  [R] Run once  [S] Suspend  [?] Help (default is "D"):<br /></pre><br /><br />The reason why I can't execute this script, is because it is located on the X: drive and that's a network drive. So to get around that, I copy the script to C:, execute it and then remove it.<br />Problem solved.<br /><br />This is a batch script to automate the execution of powershell scripts located somewhere where pwoershell doesn't like it:<br /><br /><pre><br />@copy %1 c:\temp.ps1<br /><br />@echo Executing %1 ...<br /><br />@c:\windows\system32\windowspowershell\v1.0\powershell.exe c:\temp.ps1<br /><br />@del c:\temp.ps1<br /></pre><br /><br />I called it "execute_ps1.bat"<br /><br />Now the stage is set. To add the gateway IP address to the correct group on the ISA, we execute a powershell script with the following rdesktop line:<br /><br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -s "cmd.exe /K net use x: \\\\tsclient\local & x:\enable_powershell.bat & x:\execute_ps1.bat x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1 & logoff"<br /></pre>
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page26">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page24">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

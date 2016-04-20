@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'Mediawiki + OpenID (FC9): undefined function wfLoadExtensionMessages'
+date: '2008-07-31T09:31:00.002+02:00'
+author: Steven Van Acker
+tags:
+- MediaWiki
+- OpenID
+- English
+- Fedora
+modified_time: '2008-07-31T09:52:42.695+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-7634621421163745936
+blogger_orig_url: http://www.singularity.be/2008/07/mediawiki-openid-fc9-undefined-function.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />Yesterday I ran into this problem:<br /><br />[PRE]<br />[Tue Jul 22 15:59:58 2008] [error] [client 172.16.1.2] PHP Fatal error:  Call to undefined function wfLoadExtensionMessages() in /usr/share/mediawiki/extensions/OpenID/OpenID.setup.php on line 153<br />[/PRE]<br /><br />Through google cache I found a reason for this error:<br />[PRE]<br /> The problem is that wfLoadExtensionMessages was added in a later version of MediaWiki around 1.10 or 1.11 whereas I am using 1.8.2 which does not have this function.<br />[/PRE]<br /><br />The version of mediawiki in Fedora 9 at this moment is 1.10.4, which is too old.<br />I pondered patching the code and defining this function, but I think it would be a bad idea.<br /><br />wfLoadExtensionMessages is a localization function used to load i18n messages from mediawiki extensions: <a href="http://www.mediawiki.org/wiki/Manual:Extensions#Internationalizing_your_extension">http://www.mediawiki.org/wiki/Manual:Extensions#Internationalizing_your_extension</a><br /><br />Maybe I should install from source *shrug*<br />StevensBlogSpotFilterThing --><br />Yesterday I ran into this problem:<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />[Tue Jul 22 15:59:58 2008] [error] [client 172.16.1.2] PHP Fatal error:  Call to undefined function wfLoadExtensionMessages() in /usr/share/mediawiki/extensions/OpenID/OpenID.setup.php on line 153<br /></pre><br /><br />Through google cache I found a reason for this error:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br /> The problem is that wfLoadExtensionMessages was added in a later version of MediaWiki around 1.10 or 1.11 whereas I am using 1.8.2 which does not have this function.<br /></pre><br /><br />The version of mediawiki in Fedora 9 at this moment is 1.10.4, which is too old.<br />I pondered patching the code and defining this function, but I think it would be a bad idea.<br /><br />wfLoadExtensionMessages is a localization function used to load i18n messages from mediawiki extensions: <a href="http://www.mediawiki.org/wiki/Manual:Extensions#Internationalizing_your_extension">http://www.mediawiki.org/wiki/Manual:Extensions#Internationalizing_your_extension</a><br /><br />Maybe I should install from source *shrug*

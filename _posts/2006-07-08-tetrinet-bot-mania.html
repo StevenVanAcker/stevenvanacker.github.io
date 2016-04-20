@@ -1,0 +1,12 @@
+---
+layout: post
+title: tetrinet bot mania
+date: '2006-07-08T22:21:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-17T09:20:03.232+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-8482464165928111423
+blogger_orig_url: http://www.singularity.be/2006/07/tetrinet-bot-mania.html
+---
+
+A couple weeks ago, I infected everyone here with a tetrinet addiction. A couple days ago, I started writing an automated player for tetrinet.<br /><br />Tetrinet has (without doubt) the ugliest protocol I've ever seen. It starts out by letting the client register with an obfuscated hexadecimal string that encodes the username and the protocol version. The encryption key is derived from the IP. This all seems sortof pointless to me, since everyone knows the IP of the tetrinet server. Anyway, the rest of the protocol is plaintext and it uses character 0xFF as a termination character (again pretty silly).<br />To add to the uglyness, the protocol puts all the hard work on the client side. The server just seems to forward all messages between the clients. This makes it ideal for cheating, since a player can make up blocks, change other peopl's playingfields and other funky things. <br /><br />After playing with the protocol a bit, I made a player that just spits out new play-fields all the time. I've been able to recreate the animation of a bouncing smiley on my first attempt.<br /><br />Right now, I'm making a perl library so I can make several virtual players, all with their own AI.<br />And there lies the problem. I can't find a good heuristic for the AI. Obviously, the less lines are in the tetris playfield, the better. But the AI should also form completed lines. One of the things I should try, is take the number of "holes" in the playfield into account in the heuristic.<br /><br />It would also be nice if the AI was able to think ahead and (something that I have neglected so far) use some strategy to use the special blocks at the correct time (or at all even, since right now it just ignores them).

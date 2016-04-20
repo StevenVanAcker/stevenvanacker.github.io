@@ -1,0 +1,12 @@
+---
+layout: post
+title: openprinting vector driver
+date: '2007-07-04T09:59:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-19T21:35:55.780+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-751563887343241051
+blogger_orig_url: http://www.singularity.be/2007/07/openprinting-vector-driver.html
+---
+
+According to <a href='http://www.linux-foundation.org/en/OpenPrinting/WritingAndPackagingPrinterDrivers'>this site</a>, I need to use the OpenPrinting Vector API to make a plotter driver that can be used by GhostScript.<br /><br />The <a href='http://www.cups.org/documentation.php/spec-raster.html'>CUPS raster driver</a> renders postscript to a raster image, which is not what I want. I want pen-strokes! :)<br /><br />Unfortunately, it doesn't look like the openprinting vector people are anywhere close to a useable software yet. So I might have to do some weird stuff...<br /><br />The people in #ghostscript on freenode advised me to extend the IJS driver. But that doesn't look right to me. According to <a href='http://www.linuxprinting.org/show_driver.cgi?driver=hpijs'>this page</a>, the data fed to the IJS driver is a bitmap (so a rastered image).<br /><br />I wonder how other plotters do their stuff...

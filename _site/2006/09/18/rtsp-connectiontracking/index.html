@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      RTSP connectiontracking &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">RTSP connectiontracking</h1>
+  <span class="post-date">18 Sep 2006</span>
+  I spent most of last week trying to figure out how connection tracking and NAT works in the 2.6 kernel. There is a patch for connectiontracking of RTSP in patch-o-matig-ng, but it didn't compile without Full NAT enabled. So I had to fix it, and I did.<br /><br />Here are the notes I made while figuring out how everything fits together:<br /><br /><pre><br />net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:<br />        ipv4_conntrack_in() and ipv4_conntrack_local() get registered into PREROUTING<br /><br />        ipv4_conntrack_in() and ipv4_conntrack_local() call nf_conntrack_in()<br /><br />net/netfilter/nf_conntrack_core.c:<br />        nf_conntrack_in()<br /><br />        # if ((*pskb)->nfct) {<br />        #         NF_CT_STAT_INC(ignore);<br />        #         return NF_ACCEPT;<br />        # }<br /><br />        previously seen or untracked packets are ignored<br />        "The association between a packet and a conntrack is established by means of a pointer"<br />        nfct is that pointer (struct nf_conntrack *nfct; in struct sk_buff, include/linux/skbuff.h)<br /><br />        # l3proto = __nf_ct_l3proto_find((u_int16_t)pf);<br />        # if ((ret = l3proto->prepare(pskb, hooknum, &dataoff, &protonum)) <= 0) {<br />        #         DEBUGP("not prepared to track yet or error occured\n");<br />        #         return -ret;<br />        # } <br /><br />        __nf_ct_l3proto_find() looks up a protocol number and returns a struct nf_conntrack_l3proto *. <br />        This contains pointers to functions like invert_tuple and others.<br />        layer3 is IP -> ipv4, ipv6, ...<br />        e.g. net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c calls  nf_conntrack_l3proto_register() <br />        to register these functions for ipv4<br /><br />        prepare() fills in some variables for some packet.<br />                dataoff = the offset into the skbuf where data can be found (after the IP header)<br />                protonum = layer 4 protocol number of the packet<br /><br />        # proto = __nf_ct_proto_find((u_int16_t)pf, protonum);<br /><br />        __nf_ct_proto_find() looks up the layer4 protocol number and returns a struct nf_conntrack_protocol *. <br />        This structure also contains pointers to functions<br />        layer4 -> tcp, udp, icmp <br />        e.g. net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c calls nf_conntrack_protocol_register()<br /><br />        # if (proto->error != NULL &&<br />        #     (ret = proto->error(*pskb, dataoff, &ctinfo, pf, hooknum)) <= 0) {<br />        #         NF_CT_STAT_INC(error);<br />        #         NF_CT_STAT_INC(invalid);<br />        #         return -ret;<br />        # }<br /><br />        the error() hook, e.g. tcp_error() in net/netfilter/nf_conntrack_proto_tcp.c does some checking:<br />        "Protect conntrack agaist broken packets. Code taken from ipt_unclean.c."<br /><br />        # ct = resolve_normal_ct(*pskb, dataoff, pf, protonum, l3proto, proto,<br />        #                        &set_reply, &ctinfo);<br /><br />        "The subsystem tries to look up a conntrack that matches with the packet received. <br />        If no conntrack is found, it will be created. This mechanism is implemented in the <br />        function resolve_normal_ct."<br /><br />                resolve_normal_ct()     - creates a tuple from the connection<br />                                        - the tuple is looked up (to find the conntrack)<br />                                        - if it doesn't exist, one is created and returned with <br />                                          init_conntrack(), which calls expectfn() <br />                                          "< Gandalf__> it's a functionpointer that helpers can set <br />                                           if they want to be notified that the expectation was used"<br />                                        - if the packet is a reply, set the ctinfo to established and <br />                                          mark as a reply. set_reply is 1<br />                                        - otherwise (meaning packets have gone both ways), categorize <br />                                          the packet and set ctinfo to either established, related or <br />                                          new, set_reply = 0<br />                                        - nfct in the packet is no longer NULL<br />                                        - nfctinfo in the packet is set to ctinfo<br />        # if (!ct) {<br />        #         /* Not valid part of a connection */<br />        #         NF_CT_STAT_INC(invalid);<br />        #         return NF_ACCEPT;<br />        # } <br />        #<br />        # if (IS_ERR(ct)) {<br />        #         /* Too stressed to deal. */<br />        #         NF_CT_STAT_INC(drop);<br />        #         return NF_DROP;<br />        # }<br />        #<br />        # NF_CT_ASSERT((*pskb)->nfct);<br /><br />        the returned conntrack is checked.<br /><br />        # ret = proto->packet(ct, *pskb, dataoff, ctinfo, pf, hooknum);<br /><br />        "/* Returns verdict for packet, or -1 for invalid. */"<br />        checks whether packet is a valid packet in this connection (packet in window etc)<br /><br />        # if (ret < 0) {<br />        #         /* Invalid: inverse of the return code tells<br />        #          * the netfilter core what to do */<br />        #         DEBUGP("nf_conntrack_in: Can't track with proto module\n");<br />        #         nf_conntrack_put((*pskb)->nfct);<br />        #         (*pskb)->nfct = NULL;<br />        #         NF_CT_STAT_INC(invalid);<br />        #         return -ret;<br />        # }<br /><br />        nf_conntrack_put() calls destroy on the conntrack<br />        "/* Called when a conntrack entry has already been removed from the hashes<br />          * and is about to be deleted from memory */"<br /><br />        # if (set_reply && !test_and_set_bit(IPS_SEEN_REPLY_BIT, &ct->status))<br />        #         nf_conntrack_event_cache(IPCT_STATUS, *pskb);<br /><br />        if this is the first reply (?), call nf_conntrack_event_cache() # FIXME: what does event cache do ???<br /><br />net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.c:<br />        ipv4_conntrack_help() gets registered into LOCAL INPUT and POSTROUTING<br /><br />        ipv4_conntrack_help()<br />                matches the packet against a conntrack<br />                calls nfct_help() on the conntrack to get a helper function<br />                calls the helper function<br /><br />net/ipv4/netfilter/ip_conntrack_core.c:<br />        ip_conntrack_helper_register() is used to register helper functions<br /><br /><br /><br />ip_nat_*.c mostly just set a hook at init()<br /><br /><br />info on expectfn:<br />        ip_nat_irc.c:<br />        /* When you see the packet, we need to NAT it the same as the<br />         * this one. */<br />        exp->expectfn = ip_nat_follow_master;<br /><br /><br /><br /><br />probable flow:<br />        - new connection comes into prerouting. no conntrack exists so one is created with <br />          init_conntrack() and expectfn() is called if this is a connection we were expecting <br />          and the helper wants to be notified.<br />        - on other packets going out on postrouting or local input, the helper is called, <br />          which checks if an expectation should be launched.<br />        - in this function, also the nat hook is called, which can mangle the packet (like FTP port stuff) <br />          and launches the expectation<br /><br /></pre><br /><br />The <a href="http://people.netfilter.org/pablo/docs/login.pdf">article about netfilter's connectiontracking</a> by Pablo Neira Ayuso was very helpful, as was the <a href="http://www.kernelnewbies.org/">kernel newbies</a> website.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

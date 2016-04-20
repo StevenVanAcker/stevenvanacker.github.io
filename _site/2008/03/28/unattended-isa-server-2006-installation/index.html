@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Unattended ISA Server 2006 installation with rdesktop and powershell &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Unattended ISA Server 2006 installation with rdesktop and powershell</h1>
+  <span class="post-date">28 Mar 2008</span>
+  In the <a href="http://singularitybe.blogspot.com/2008/03/using-rdesktop-to-script-windows.html">last post</a> I explained how to use rdesktop to script Windows.<br />In this post, I will show you how to install ISA Server 2006 Enterprise Edition using rdesktop completely automated. Or as they say, an unattended installation.<br /><br />I have the advantage of hindsight, but I will explain it without the lessons learned so you may learn why I do some things the way I do them now :)<br /><br />It's worth noting that I performed this installation on a virtual machine in VMWare. I created a snapshot right before I started the installation, so it was easy to redo the whole thing without having to reinstall Windows.<br /><br />One of the advantages of Enterprise Edition (EE) over the Standard Edition (SE), is that EE used a centralised configuration server called CSS (Configuration Storage Server). Using SE with 5 ISA servers, you would have to configure each of them separately. In EE, you only need to point all the ISA servers to a CSS, and they will fetch the configuration.<br /><br />So, I will first setup the CSS on one of the ISA servers (It's normally setup on a different machine, but I don't have one handy right now), then I will install ISA server on ISA1, and then ISA2 (We have 2 ISA servers in loadbalancing)<br /><br />The second Windows Server 2003 installation CD was required during installation of the CSS. To avoid having to swap CDs all the time (that wouldn't be very unattended), I loaded it into the virtual CD-drive and took a snapshot after that.<br /><br /><a href="http://www.microsoft.com/technet/isa/2006/installation_ee/default.mspx?mfr=true">ISA Server 2006 Enterprise Edition Installation Guide</a><br /><br /><b>Installing the CSS on ISA1</b><br /><br />The unattended installation of any ISA component depends on 2 things: a configuration file with the values you want filled into the textboxes, and invoking the setup.exe program with the correct parameters.<br /><br />Let's start with the latter.<br /><br /><pre><br />setup.exe /v" /qb FULLPATHANSWERFILE=\"X:\INIFiles\InstallNewManagementServer.ini\""<br /></pre><br /><br />This is how to invoke the setup.exe program in my case. I trimmed a bit of the front, setup.exe is actually located in C:\software\isa-server-enterprise\FPC\<br />Instead of passing this entire commandline to rdesktop, I chose to put it in a batch script called "install_css.bat". To be correct, the name should be "install_css_and_mgmt.bat" because it will also install an ISA Firewall Management Client, but that's not important.<br /><br />There are 3 flags in the command line above. The "/v" option is the only one passed to setup.exe, and I presume that its parameter will just be passed to some .msi installer at a later stage. But to be honest, I have no idea what it does.<br />The "/qb" option specifies how verbose the installation should be and it is explained in Appendix C of the Microsoft site I linked to above.<br />Finally, "FULLPATHANSWERFILE" specifies where the INI file with the answers is located. In my case, it's (of course) located in the INIFils directory on the X: drive which is actually a directory on my client computer.<br /><br />The INI-file contains the following:<br /><pre><br />[Setup Property Assignment]<br /><br />ADDLOCAL=Storage_Server,MSFirewall_Management<br />ENTERPRISE_MODE=New<br />ENTERPRISE_NAME="Katholieke Universiteit Leuven"<br />PIDKEY=...<br /></pre><br /><br />Sadly for you, I stripped out the product key (PIDKEY) ;)<br /><br />The INI-file above is edited from an example INI file that can be found on the ISA installation CD under \FPC\Unattended_Setup_Sample\Enterprise_Edition\<br /><br />As shown in the INI, the unattended installation will install a CSS and management client, and create a new enterprise.<br /><br />I use the following rdesktop line (more or less) to install it:<br /><br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -u p0036393 -d PAD -s "cmd.exe /K net use x: \\\\tsclient\local & x:\install_css.bat & logoff"<br /></pre><br /><br /><b>Installing the ISA server itself on ISA1 and creating a new array</b><br /><br />After this installation, it's time to setup ISA itself on ISA1. All we need to do, is use another INI file for this and start the installation the same way. I created a batch script called "install_isa_new_array.bat" with this content:<br /><br /><pre><br />setup.exe /v" /qb FULLPATHANSWERFILE=\"X:\INIFiles\InstallNewArrayAndServer.ini\""<br /></pre><br /><br />InstallNewArrayAndServer.ini contains this:<br /><pre><br />[Setup Property Assignment]<br />ADDLOCAL=MSFirewall_Services,MSFirewall_Management,MSDE<br />ARRAY_MODE=New<br />ARRAY_NAME=Verteron<br />ARRAY_INTERNALNET=1 10.32.6.0-10.32.6.255<br />STORAGESERVER_COMPUTERNAME=ISA.example.com<br />PIDKEY=...<br /></pre><br /><br />This INI file instructs the installer to create a new array (an ISA loadbalancing term) called "Verteron". And the array will use the IP-range 10.32.6.0/24 on its internal interface. The 1 in front of the "ARRAY_INTERNALNET" value indicates the amount of ranges to follow.<br /><br />[In case you are wondering where <a href="http://memory-alpha.org/en/wiki/Verteron_array">"Verteron"</a> comes from, the Active Directory domain in which the Microsoft Exchange environment will be setup is called LUNA]<br /><br />ISA1 will be pointed to the CSS on ISA.example.com for its configuration.<br /><br />As expected, the installation will do its thing. But after some time you'll see that the RDP session no longer responds. (Even worse, currently, my entire desktop stops working and I have to kill rdesktop to get my desktop back).<br />The cause of this is ISA. After the ISA installation, the ISA firewall is running. This firewall blocks RDP to the ISA. It appears that my client computer is added to the group "Remote Management Computers", but with the wrong IP. ISA registers an 192.168.x.x address, but because I'm behind a NAT, the ISA server sees another IP and drops it. This is very annoying! It appears that rdesktop passes the local IP address to ISA. It would have made more sense if ISA added the IP that it saw on its side, instead of relying on the IP rdesktop sends.<br /><br />In any case, you will no longer be able to login to the ISA.<br /><br />Solution ? Yes, there is one, but it works only a bit. The trick is to add your IP address to the group "Enterprise Remote Management Computers" after the CSS is installed, but before the ISA is installed.<br /><br />Of course, configuring this by hand is totally out of the question. Remember that I'm lazy in that way. Nature provided me with 10 fingers so I could use a keyboard. Using a mouse is inefficient, unless I could use 2 mice with 5 buttons each.<br /><br />Time to get scripting. This time we won't get away with some funky batch script because ISA doesn't offer any interface towards it. What ISA does provide though, is a way to access it through PowerShell.<br /><br />Here is the script to add the IP address 12.34.56.78 (with name "My NAT Gateway") to the group "Enterprise Remote Management Computers":<br /><br /><pre><br />$root = new-object -comobject "FPC.Root" -strict<br /><br />$remotemgmt = $root.Enterprise.RuleElements.ComputerSets | where-object { $_.name -eq "Enterprise Remote Management Computers" }<br /><br />$remotemgmt.Computers.add("My NAT Gateway", "12.34.56.78")<br />$remotemgmt.Computers.save()<br /></pre><br /><br />The first line in the script gets the root of the FPC tree. [There is no explanation of FPC on <a href="http://en.wikipedia.org/wiki/FPC">wikipedia</a>. Maybe some kind soul should provide one]<br />Next, we look at the computersets in our enterprise, and filter out the one called "Enterprise Remote Management Computers". We add our NAT Gateway to it and save.<br /><br />That's all.<br /><br />There is more information on the <a href="http://msdn2.microsoft.com/en-us/library/ms828074.aspx">ISA Server Administration Object Model</a> on Microsoft MSDN.<br /><br />So, how can we execute this script on Windows ? The first step is to download and install <a href="http://www.microsoft.com/windowsserver2003/technologies/management/powershell/default.mspx">PowerShell v1.0</a>.<br />Then, 2 hurdles remain before things will be allright.<br /><br />First, PowerShell scripts execution is disabled by default.<br />Demonstration:<br /><br /><pre><br />C:\Documents and Settings\p0036393>c:\WINDOWS\system32\windowspowershell\v1.0\po<br />wershell.exe x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1<br />File X:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1 cannot be loaded because<br /> the execution of scripts is disabled on this system. Please see "get-help abou<br />t_signing" for more details.<br />At line:1 char:49<br />+ x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1 <<<<<br /><br />C:\Documents and Settings\p0036393><br /></pre><br /><br />A way to enable the execution of scripts is the following:<br /><pre><br />c:\windows\system32\windowspowershell\v1.0\powershell -command "set-executionpolicy unrestricted"<br /></pre><br /><br />This sets the execution policy to "unrestricted".<br /><br />I placed this command inside a script called "enable_powershell.bat". Hurdle 1 is behind us.<br /><br />Next problem: PowerShell requires you to sign your scripts and whatnot, which is a really gay policy.<br /><br /><pre><br />C:\Documents and Settings\p0036393>c:\WINDOWS\system32\windowspowershell\v1.0\po<br />wershell.exe x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1<br /><br />Security Warning<br />Run only scripts that you trust. While scripts from the Internet can be useful,<br /> this script can potentially harm your computer. Do you want to run<br />X:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1?<br />[D] Do not run  [R] Run once  [S] Suspend  [?] Help (default is "D"):<br /></pre><br /><br />The reason why I can't execute this script, is because it is located on the X: drive and that's a network drive. So to get around that, I copy the script to C:, execute it and then remove it.<br />Problem solved.<br /><br />This is a batch script to automate the execution of powershell scripts located somewhere where pwoershell doesn't like it:<br /><br /><pre><br />@copy %1 c:\temp.ps1<br /><br />@echo Executing %1 ...<br /><br />@c:\windows\system32\windowspowershell\v1.0\powershell.exe c:\temp.ps1<br /><br />@del c:\temp.ps1<br /></pre><br /><br />I called it "execute_ps1.bat"<br /><br />Now the stage is set. To add the gateway IP address to the correct group on the ISA, we execute a powershell script with the following rdesktop line:<br /><br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -s "cmd.exe /K net use x: \\\\tsclient\local & x:\enable_powershell.bat & x:\execute_ps1.bat x:\PowerShellScripts\allow_RDP_from_kulnetnat.ps1 & logoff"<br /></pre>
+</div>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,12 @@
+---
+layout: post
+title: mod_chroot
+date: '2006-04-02T14:07:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:39:06.616+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6009411505303428834
+blogger_orig_url: http://www.singularity.be/2006/04/modchroot.html
+---
+
+mod_chroot wouldn't work together with SSL (apache-ssl).<br />It appears it needs /dev/null and /var/run/gcache_port to be in its chroot.<br />If those are not there, port 443 will server HTTP instead of HTTPS

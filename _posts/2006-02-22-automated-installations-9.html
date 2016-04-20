@@ -1,0 +1,12 @@
+---
+layout: post
+title: automated installations (9)
+date: '2006-02-22T16:13:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:27:12.292+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-2320497762191829362
+blogger_orig_url: http://www.singularity.be/2006/02/automated-installations-9.html
+---
+
+Old and busted: exim4<br />new hotness: postfix<br /><br />After specifying that the kulnet-common-packages (a package that depends on all the common packages we want on all servers) CONFLICTS with exim4 and all other exim-* packages, postfix was installed automatically.<br /><br />The only problem was the configuration. Apparently, configuring postfix through preseed is a bad idea (if it works at all). But that's ok!<br />We have several differently configured postfix instances on our servers. Some need to be just a satellite system, while others should be fullfledged mailservers.<br /><br />I made a package kulnet-postfix that writes the standard config for a satellite system, from the postinst script. And it works nicely :)<br /><br />The kulnet-postfix package will be installed separate from kulnet-common-packages because not all servers need that kind of mail configuration.<br /><br />[TODO: I need a question in the debian installer to select what kind of system should be installed. All other questions so far are asked from within the netcfg package. I'm considering asking that new question there aswell. It doesn't exactly have anything to do with network configuration, but I'm too lazy to find out where the right place would be. In fact, it's probably better to add it there to make the patch to go from a standard debian CD to our install CD, smaller]<br /><br />I've also made a kulnet-ntpdate and a kulnet-openntpd package, both depending on ntpdate and openntpd respectively. The kulnet- packages just (over)write the default configuration. In our case, we use ntp.kuleuven.be instead of the standard pool.ntp.org. For some reason, restarting openntpd from the kulnet-openntpd postinst script, makes the debian installer hang after the postinst script exits. I have no idea why. For now, I just commented out the restart of openntpd.<br />

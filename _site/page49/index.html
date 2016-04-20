@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/06/20/redesign/">
+        redesign
+      </a>
+    </h1>
+
+    <span class="post-date">20 Jun 2007</span>
+
+    Allright, it's been a long time since I worked on HPPC. The reason is that I couldn't understand how the nf-HIPAC people got to a O(log(log(N)) time complexity (where N is 2^32 btw), which would mean 5 steps to lookup an IP address in the entire namespace, and still be memory efficient.<br /><br />I still don't understand the log(log(n)) part, but nonw I'm a step closer to a more efficient algorithm. A colleague of mine claimed that he knew how to get this kind of complexity by splitting IP-addresses in their bytes and using those to index a tree of tables. <br /><br />This seems to work nicely in theory: 32 bits split in bytes is 4 bytes, so only 4 lookups. That's less than the 5 HIPAC claims, so it's even better :)<br />But ! This method is not O(log(log(N)) because it doesn't scale. In a 32bit world like IPv4, the time complexity would be 4 steps, but for IPv6 (128 bit), it would be 16 steps. This is because we don't "search" the bytes in a binary tree, but treat them linearly. First byte 0, then byte 1, etc. So the true complexity of this method is actually log(N)/8, which is O(log(N)). That's the same as my previous method, but a lot faster.<br /><br />The memory complexity is also doable. The entire tree (minus the end-nodes), would be about 64MB big (assuming 32bit pointers, each table with 256 entries would be 1KB in size. Then there are 1 + 2^8 + 2^16 tables, which is 65792 KB total).<br /><br />Definitely worth implementing. I already copied the HPPC code to my new laptop installation and installed the build-essential package.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/06/20/niks/">
+        niks
+      </a>
+    </h1>
+
+    <span class="post-date">20 Jun 2007</span>
+
+    Vandaag rijles 6, maar daar heb ik het al over gehad.<br />Vandaag 4.5km gaan lopen, maar daar heb ik het al eens over gehad.<br />Dit weekend bier gebouwen, maar daar ken ik nie genoeg van om iets over te zeggen.<br />Vrijdag presentatie gehad, maar zo speciaal was dat nu niet.<br /><br />Er valt niks meer te zeggen, misschien moet ik het nog eens anders proberen...<br /><br />Als enig lelijk eendje uit een gezin van 11, lijkt bij mij het artistiek gen te ontbreken. Maar dat weet ik niet uit ervaring, het is mij altijd gezegd geweest.<br />Ik blijf maar op de harde manier leren dat woorden niks betekenen, maar in plaats van mij daar slecht bij te voelen kan ik ook eens proberen om er iets positiefs uit te halen. Vermits iedereen mij altijd gezegd heeft dat ik niet artistiek aangelegd ben en ik er nu vanuit ga gaan dat dat op niks gebaseerd is, ga ik het eens zelf uitproberen.<br /><br />Ik ga leren cartoons tekenen, omdat mij dat leuk lijkt. http://www.squidoo.com/How-to-Draw-Cartoons/<br />Samen met leren gitaar leren, heb ik 2 dingen die ik zelfs op vakantie kan doen op mijn eentje. En natuurlijk kan ik nog een paar honderd boeken uitlezen. Als ik nu nog de tijd had om vakantie te nemen, dan was het helemaal goed...
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/06/16/opnieuw-student/">
+        opnieuw student!
+      </a>
+    </h1>
+
+    <span class="post-date">16 Jun 2007</span>
+
+    Ik heb mij deze week ingeschreven als student in het <a href="http://www.cvovtileuven.be/">centrum voor volwassenenonderwijs in het VTI leuven</a>, voor de cursus automechanica: klein onderhoud en banden 1&2 in avondschool. Volgend jaar vanaf 3 september zal ik elke maandag van 17.55 tot 22.35 aldaar les volgen en hopelijk iets nuttigs bijleren.<br /><br />Oorspronkelijk ging ik mij ook inschrijven voor de cursus BMBE hoeklassen A, maar die cursus was al volzet. Ik sta nu als eerste op de wachtlijst, hopend dat er iemand afzegt voordat het jaar begint :)<br /><br />De cursus automechanica volg ik uit algemene interesse. De cursus lassen wil ik volgen om mijn constructietechnieken uit te breiden. Ik kan met hout werken, en plastiek heb ik ook al gemaakt en bewerkt. Maar met metaal heb ik nog niet al teveel gewerkt. Metaal is een stevig constructiemateriaal dat met wat laswerk kan gebruikt worden in grote constructies. Wat ik juist ga doen met dat lassen zal waarschijnlijk eerder in de "Geek Stuff" sectie komen te staan, in het engels ;) Sorry voor al die mensen die nooit die sectie lezen :P<br /><br />Nu dat ik bijna mijn voorlopig rijbewijs heb en alleen mag gaan rondrijden met mijn Twingo, kan ik een hele hoop projectjes die op mij staan te wachten, eindelijk verderzetten. Zo wil ik binnenkort wat polystyreen platen gaan kopen, tesamen met wat ander materiaal, en mezelf een vacuform machine maken. Die machine kan ik dan gebruiken om plastiek in de juiste vorm te bewerken voor gebruik in andere projectjes. Meer weten ? Leer engels en lees de Geek Stuff sectie!
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/06/11/4km/">
+        4km
+      </a>
+    </h1>
+
+    <span class="post-date">11 Jun 2007</span>
+
+    nie meer nie minder. Volgens lijntje-cursus wordt er na het lopen nog een tijdje vet omgezet in lycogeen of zoiets, dat dan energie geeft. Spie zegt dat ook. Ik heb daar echter nooit iets van gemerkt. Waar anders mensen gaan lopen om achteraf keihard te kunnen blokken, ben ik compleet bekaf...<br />Maar ik zal het eens proberen. Deze vrijdag heb ik een presentatie die ik nog moet ineenboksen. Aangezien ik mij niemeer schuldig moet voelen dat ik niet gaan lopen ben vandaag, kan ik gerust wat niksen OF beter nog: presentatie maken.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/06/10/prettige-vaderdag-op-verkiezingen-2007/">
+        prettige vaderdag op verkiezingen 2007
+      </a>
+    </h1>
+
+    <span class="post-date">10 Jun 2007</span>
+
+    Wie het moest gemist hebben, het is naast de federale kiesdag ook vaderdag vandaag.<br />Ik ben vanmorgen om 6u opgestaan om mij zo snel mogelijk naar Kapelle-op-den-Bos te begeven, omdat ik mij daar vrijwillig wou aanbieden als bijzitter. Het is niet gelukt :( Er waren genoeg mensen komen opdagen.<br /><br />Maar geen ramp: het was vandaag ook vaderdag, dus ik was bij de bakker voordat de koffiekoeken uitverkocht waren.<br /><br />Tot mijn niet-verrassing ontplooiden de verkiezingsresultaten zich vandaag grotendeels zoals ik had verwacht: VLD en SPA kregen slaag van de kiezer voor hun wanbeleid de laatste 8 jaar, groen krijgt wat meer stemmen door de film van Al Gore en CD&V komt als winnaar uit de bus. Tot zover mijn correcte voorspelling.<br /><br />Wat ik niet had voorspeld was het succes van Lijst De Decker, aangezien ik dacht dat ze de kiesdrempel niet zouden halen. Dat lijkt op dit moment wel zo te zijn (21.45u). Ook mijn voorspelling dat Vlaams Belang voor de eerste keer geen stemmen zou bijkrijgen (door hun geringe media-aandacht en concurrentie van LDD), lijkt niet juist. Op dit moment zijn ze nog 2.5% gestegen tegenover 2003, maar hebben dan weer 1 zetel minder ?! (van 18 naar 17). Ik ben niet echt zeker wat ik daarvan moet maken. Eerder vandaag stond het verschil nog op 4.5%, dan 3.6%, dan nog wat minder, nu nog slechts 2.5%.<br />Ik hoop stiekem dat dat tot een negatief verschil zakt. Niet omdat ik ze uit politieke overwegingen wil zien verliezen (democratie is democratie), maar omdat ik een weddenschap heb afgesloten met Spie dat het Vlaams Belang bij deze verkiezingen niet vooruitgaat. En ik wil mij nog wel eens laten trakteren in de Lodge door Spie ;)<br /><br />[update 23:20]<br />nog maar 1.6% :)
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page50">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page48">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

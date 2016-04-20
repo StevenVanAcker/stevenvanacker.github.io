@@ -1,0 +1,12 @@
+---
+layout: post
+title: automated installations (14)
+date: '2006-03-17T14:57:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:32:55.390+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-1715334571148154769
+blogger_orig_url: http://www.singularity.be/2006/03/automated-installations-14.html
+---
+
+I triggered something that I only saw once before.<br />The grub-installer is confused about where to install the bootsector and asks the user.<br />This is of course something I don't want to see in an automated installation.<br />[img_assist|fid=1017728|thumb=1|alt=6189_large.png]<br /><br />Setting the grub-installer/bootdev value to "(hd0)" in preseed solves that problem.<br /><br />I've now tested all combinations of 1 or 2 disks and single or RAID install. It works nicely :)<br />Wiping the disks with dd every time I install slows things down too much so I made it an installation feature. So far I've listed 4 installation features: WipeDisks, RAID, DRBD and KeepAlived. The last 2 do nothing yet and that's what I will work on next.<br /><br />You want screenshot ?<br />[img_assist|fid=1017731|thumb=1|alt=6190_large.png]<br /><br />At the moment, I have 8 screens where the user is prompted a question.<br />A lot of the answers can be precalculated. So I'm considering having a less "serial" configuration where the user has to go through all questions.<br /><br />I'll make a single config menu where all precalculated answers are listed. The user can then select which ones to change.<br /><br />Done! :)<br /><br />it looks like this:<br />[img_assist|fid=1017734|thumb=1|alt=6191_large.png]<br /><br />With option 8 leading to the previous screenshot.<br />

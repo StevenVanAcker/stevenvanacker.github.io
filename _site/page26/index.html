@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/28/using-rdesktop-to-script-windows/">
+        Using rdesktop to script Windows
+      </a>
+    </h1>
+
+    <span class="post-date">28 Mar 2008</span>
+
+    For the past couple months, our university has been spending a huge amount of money and workforce to deploy a Microsoft Exchange environment in place of our current well-functioning, well-tested, lowmaintenance and cheap mail solution.<br /><br />To make this Exchange environment available from the outside, ISA Server 2006 Enterprise Edition (Internet Security and Acceleration Server 2006 from Microsoft) will be implemented to publish the different services to the internet. This task falls onto 2 people, of which I represent half.<br /><br />Being the lazy sucker that I am, I plan to not do a lot of clicking, because that would mean making very detailed documentation with screenshots and whatnot. Instead, I want everything to be scripted. To do this, I decided to use a combination of rdesktop (for the RDP connection to the Windows Server) and powershell (for the scripting on the Windows side).<br /><br />There is not that much information on automating the ISA Server 2006 installation, once the installation of the executables is done. But I've managed to advance a great deal in this area in the last week. The question I ask myself now, is how to transfer this knowledge into the Internet knowledge pool.<br /><br /><b>Executing a batch script remotely using rdesktop</b><br /><br />Rdesktop opens an RDP connection to a host and shows the result. But just having a Windows desktop sitting there is not of much use to me. I want to execute a command on that Windows server. The rdesktop tool has a "-s" flag which specifies which shell to run on the remote side. And we can use that one to start pretty much anything. However, just opening "cmd.exe" will suffice.<br /><br /><pre><br />rdesktop isa.example.com -u p0036393 -d PAD -g 1240x1024 -s "cmd.exe"<br /></pre><br /><br />The above command has quite a few options that I will explain:<br /><dl><br /><dt>isa.example.com</dt><br /><dd>The remote host we want to connect to, in this case, the ISA server</dd><br /><dt>-u p0036393</dt><br /><dd>The user to login as</dd><br /><dt>-d PAD</dt><br /><dd>The domain to logon to</dd><br /><dt>-g 1240x1024</dt><br /><dd>The resolution of the displayed desktop</dd><br /><dt>-s "cmd.exe"</dt><br /><dd>The shell to use</dd><br /></dl><br /><br />You can also specify a password on the commandline with the "-p" flag, but I won't do that here.<br /><br />Executing cmd.exe by itself is not of much use either. We want to execute a script or something like that. This can be accomplished with the "/C" and "/K" flags of cmd.exe. They both do almost the same thing. The difference is that "/C" will close the cmd.exe windows when the specified command finished, while "/K" will keep it open.<br /><br />When doing tests, I recommend using "/K", because then you can type "logoff" to log out of the Windows environment. If you use "/C", cmd.exe terminated and you are left in a empty desktop, where even right-click doesn't do anything. The only way to get out of there is then to close the rdesktop window, but that won't close the session. You'll have to log into the Windows server and kill the session manually. I think there are only 3 available RDP sessions. When you've used them up, you need to clean up the mess or won't be able to login with RDP again.<br />So take the advise, and just use "/K" and logout every time.<br /><br />This command will echo "hello world" and drop you into the shell:<br /><br /><pre><br />rdesktop isa.example.com -u p0036393 -d PAD -g 1240x1024 -s "cmd.exe /K echo hello world"<br /></pre><br /><br />This is the basis to do some nice scripting on Windows with rdesktop, but it's really impractical to put the entire script on 1 line behind cmd.exe, if it even allows long lines (which I doubt).<br /><br />Another way to do this, would be to create a batch file like this:<br /><pre><br />echo hello world<br /></pre><br /><br />save it as "C:\hello.bat"<br /><br />and execute it with rdesktop:<br /><pre><br />rdesktop ... -s "cmd.exe /K C:\hello.bat"<br /></pre><br /><br />Of course, if you're like me, you don't want to go through the trouble of copying your files to a Windows server, with the intent to execute them through rdesktop later on. The whole idea is to script everything using rdesktop.<br /><br />Fortunately, rdesktop has a cool feature that allows you to make a local directory available on the remote server. You can do this with the "-r disk:" option, which looks like this:<br /><br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com<br /></pre><br /><br />In this example, I make my homedirectory "/home/deepstar" available on isa.example.com for the duration of the RDP session. The directory will be called "local" on the remote side and you can find it as "\\tsclient\local"<br /><br />Now I can access all my files on the Windows host, including the batch script I created locally.<br />Unfortunately, cmd.exe can not access \\tsclient\local for some reason (something to do with UNC path and a registry setting). So we have to make it available in another way.<br /><br />Using the "net" command in Windows, you can map a network drive onto a local drive:<br /><br /><pre><br />net use x: \\tsclient\local<br /></pre><br /><br />This will map \\tsclient\local to X:, which is available from cmd.exe.<br /><br />Now, unlike in bash, cmd.exe uses the "&" or "&&" keyword to separate commands on the commandline. So, to map the networkdrive to X: and execute the batch script all in a single invocation of rdesktop, this would be the commandline:<br /><br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -s "cmd.exe /K net use x: \\\\tsclient\local & x:\hello.bat"<br /></pre><br /><br />Mind the 4 backslahes before "tsclient", this is to escape the \ character in bash.<br />X:\hello.bat is actually /home/deepstar/hello.bat on the client computer.<br /><br />Well, that is really something.<br />Still, something is missing to make this method really usable for scripting. After the command is executed on the remote side, we want to log out and close rdesktop automatically. To do that, we need to log off of Windows.<br /><br />Windows has the "logoff" command for that, which does exactly what you'd expect: log you off. After logging off, rdesktop exits automatically.<br /><br />This rdesktop invocation will start the batch script and log out of windows:<br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -s "cmd.exe /K net use x: \\\\tsclient\local & x:\hello.bat & logoff"<br /></pre><br /><br />Just as an extra, it is also possible to reboot your Windows server from the commandline. To do that, invoke the "shutdown /r" command on Windows. This will announce that a reboot will happen in 30 seconds, and after those 30 seconds, it will actually reboot. There is also a "/t" option to specify how long should be waited instead of the default 30 seconds.<br /><br />This command will execute the batch script and reboot the server without waiting:<br /><pre><br />rdesktop -r disk:local="/home/deepstar/" isa.example.com -s "cmd.exe /K net use x: \\\\tsclient\local & x:\hello.bat & shutdown /t 0 /r"<br /></pre>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/25/looking-for-blog-client-software/">
+        Looking for blog client software
+      </a>
+    </h1>
+
+    <span class="post-date">25 Mar 2008</span>
+
+    I am in need of a blog client that works together with blogger.com. The web interface could be called nice (I like how it saves a draft of my post every so often), but it lacks some fundamental features. For example, I would like to include images in my blogposts. On drupal, I could use filters to link my blog to a gallery2-style image album. There is no such plugin on Blogger. And that is why I am looking at blog clients.<br /><br />If I can find a blogclient that works with blogger (which uses Atom API), I would like it to have the following features:<br /><br /><ul><br /><li>Allow me to login to Blogger. Apparently, this is not that evident because the only Blogger-capable client that is in the Ubuntu repositories, Drivel, believes that the username I have on blogger is illegal because it has a '+' sign in it.</li><br /><li>It should have the option for user-contributed modules or plugins, so people can extend the client. Or alternatively, it should be written in a user-friendly programming language like python so I can try to extend it myself (and submit the patch to the interweb of course)</li><br /><li>It should allow me to work offline. This is a must, because my internet connection is very flaky at this point in time</li><br /><li>Preferably, it should allow me to import and export blogger posts so I can backup all my posts and restore them in case they need restoring. It would also provide a way for people moving from other blog software to migrate to Blogger by just importing all their posts.</li><br /></ul><br /><br />Now there, thats not too much to ask is it ?<br /><br /><b>[Update]</b><br />I found a python blog client called <a href="http://www.voidspace.org.uk/python/firedrop2/">Firedrop2</a>, but it doesn't seem to support Blogger.<br />I installed python-gdata again to see if I could hack something together. I ran into the same problems with python-gdata and python-elementtree. There is <a href="https://bugs.launchpad.net/ubuntu/+source/python-gdata/+bug/138349">bug report</a> that describes my problem and postulates <a href="http://launchpadlibrarian.net/10259060/python-gdata_1.0-1ubuntu1.debdiff">a solution</a>. Oddly enough, this fix has not been applied to the ubuntu package yet, although it has existed for some time.<br /><br /><b>[Update]</b><br />The python-gdata package is so obviously broken, that I don't understand that noone is paying attention to it. I've posted a <a href="https://bugs.launchpad.net/ubuntu/+source/python-gdata/+bug/206872">bugreport to raise the severity of the previously reported bug</a>. The result will probably be a "fixed in the next version" reply, which would sortof work for me since the next release of Ubuntu is about a month away.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/24/puppet/">
+        Puppet
+      </a>
+    </h1>
+
+    <span class="post-date">24 Mar 2008</span>
+
+    There was a time when I was very openminded and pragmatic. Sadly though, I've been pushed into some kind of defensive posture for a while now because everyone keeps attacking me on my choice to use Debian and Debian derivatives over anything else. Because of this, a lot of my replies can be snappy and condescending.<br /><br />I'll apologize for that right now :)<br /><br />One of the readers (Karanbir Singh) of this blog (who ever thought people would be reading this) suggested that I look at <a href="http://reductivelabs.com/trac/puppet/">Puppet</a> or CFEngine as a better means of maintaining a large number of servers.<br />At first I was very sceptic about this solution and replied very quickly that it was probably no good in my case. However, after thinking about it for a while walking in the snow (yes, spring has just begun and its snowing... this global warming thing is starting to act up) I realised that it is (or could be) actually a nice solution.<br /><br /><b>Current approach</b><br /><br />My current approach to maintain lots of Debian servers is based on some kind of server templates. I've finetuned a Debian install CD to do a fully automated installation using preseeding. The installation CD makes sure my server is setup with the correct network settings, correct firewall, correct partition scheme, debian repositories and a whole lot more stuff. In addition, the installation process installs a virtual package (or metapackage, if you want to call it that) which depends on a lot of other software. This list of software consists of all the tools that are commonly used on all servers.<br /><br />The result is the installation is a clean empty server, more or less like a stemcell. From this base, some extra software can be installed and some configuration changed to shape it into its final form.<br /><br />A webserver for example will start from a base installation, which takes care of things like postfix config, backup schedules, syslog configuration, SSH-keys for maintenance, ... etc.<br />On top of that, I just install apache with apt-get, change the configuration of apache, and its done.<br /><br />This process is very easy to document, because the documentation only needs to consist of the parameters I passed to the installation process (basically, servername and IP address), and the command "apt-get install apache" and a copy of the apache configuration.<br /><br />Considering the state of the servers I found when I started working at the university, my installation CD and process were a major revolution. I will not regress to the previous way of managing the servers.<br /><br /><b>Trying CentOS and Puppet</b><br /><br />Now I'm trying CentOS. I wanted to use the same approach to maintaining CentOS servers as I used for Debian servers. But CentOS is obviously different.<br /><br />Instead of trying the tried-and-true method to maintain my Debian servers on CentOS servers, maybe I should try Puppet.<br />I have seen talks about Puppet on several occasions, but I always assumed that I would need to have a central configuration server accessible by all other servers. This contradicts what my paranoid mindset tells me to do: build network security in layers. Allow connections outward, but limit inward connections as much as possible.<br />Maybe Puppet can also push configurations to servers instead of having the data going the other way. And then still, I could setup a central configserver with a copy of the real data, and push the data onto it from the central configserver.<br /><br />Enough ways of satisfying my mind.<br /><br />So how do I map my current setup on Puppet ? I don't know yet.<br />Some elements that are needed: <br /><ul><br /><li>installing packages</li><br /><li>removing packages</li><br /><li>copying or generating configuration files</li><br /><li>being able to use multiple different puppet "profiles" for each server (for example a "generic server" profile and a "webserver" profile)</li><br /></ul><br /><br />Maybe I need more, but I'll start with this. I've joined the #puppet channel on freenode IRC to see what kind of souls roam there, and I have found them very helpful. If I run into problems, I'm sure I can ask them there.<br /><br />An interesting blog with posts on Puppet: <a href="http://plathrop.tertiusfamily.net/blog/">http://plathrop.tertiusfamily.net/blog/</a>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/22/how-good-is-centos-anyway/">
+        How good is CentOS anyway ?
+      </a>
+    </h1>
+
+    <span class="post-date">22 Mar 2008</span>
+
+    This past week I have been following a Microsoft course on ISA Server 2006, a very exhausting experience mainly because I had to use public transportation for 4 hours every day.<br /><br />Now I'm looking into automating CentOS 5 again. Just like my Debian installations, I want standardize my CentOS installations as much as possible.<br /><br />What does this mean ? Well, I want to reduce CentOS installation to a triviality. I've accomplished this by using kickstart and getting the installation of a barebones CentOS system to take up about 5 minutes.<br />I also want to install all the packages I use commonly on servers, on all servers by default. Things like bash-completion, tcpdump, nmap, SSH keys, and a lot more (including some homemade packages).<br /><br />To do this on Debian, I created a virtual package called "kulnet-common-packages" which has dependencies on all the packages I want to have on all servers. Installing this package will also install all the dependencies. Furthermore, if I ever add a new package to the dependencies of this virtual package, all servers will automatically install it on the next upgrade.<br /><br />Right. So CentOS uses RPM packages, which I have never created before. I get the feeling that creating RPM packages is a long and complicated process, while it shouldn't have to be. <br /><br />Someone on freenode's #centos or #fedora recommended that I use Yum groups for this. Basically, a Yum group is a list of packages that has a single name. You can install a group by doing "yum groupinstall &lt;groupnanme&gt;"<br /><br />This sounds like a good idea. However, I do have some questions regarding these yum groups. For example, how do I create one ? And if I created one and installed such group on a server, will the server install the new packages on this list if I add them ? Can I add any packages to a yum group ? What about packages that are already listed in another yum group ? And can I include a yumgroup into another yumgroup with a reference ?<br /><br />Noone seems to be able to answer those questions. Even worse, I can't find any documentation on yum groups, except on how to install those yumgroups that already exist.<br /><br />This makes me wonder about how good redhat systems actually are. On Debian systems, I have never needed any commercial support because I could find all the information I wanted on the internet. But now I can understand Redhats business model. Since there is no documentation on the internet, you have to buy it from Redhat instead.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2008/03/16/centos-5/">
+        CentOS 5
+      </a>
+    </h1>
+
+    <span class="post-date">16 Mar 2008</span>
+
+    Next to Fedora 8, I plan to try out Centos 5 because it is supposed to be more secure and stable (why else would Redhat use it over Fedora ?)<br /><br />It appears I can reuse the kickstart file I created for Fedora 8, since the installation went ok.<br /><br />But then come the problems.<br /><br />Under Debian, after a basic install, I can use this sequence of commands to install any package thats known in the Debian universe:<br /><br /><pre><br />. /etc/bash_completion<br />apt-get install &lt;some package&gt;<br /></pre><br /><br />I include bash_completion here because it is a vital tool for me on any modern Linux system (because I'm a bad typer, I rely on bash completion a lot. And it's also a lot faster to work with)<br /><br />Under CentOS, there is no bash_completion and there is no apt-get. Instead, there is yum.<br />So first thing to try: <br /><pre><br />yum install bash-completion<br /></pre><br /><br />FAIL! bash completion is not a standard package in CentOS. So what do I need to do to get bash_completion in CentOS ?<br /><br />First, I need to magically be aware that this package is availabnle in a thirdparty repository called "RPMForge" (http://wiki.centos.org/Repositories)<br />Next, I need to configure RPMForge on my CentOS installation:<br /><br /><ul><br /><li>Install the priorities package with yum:<br /><br /><pre><br />yum install yum-priorities<br /></pre><br /></li><br /><li><br /><li>check /etc/yum/pluginconf.d/priorities.conf to see that its configured correctly (it was)</li><br /><li>Edit all *.repo files in /etc/yum.repos.d/ and add a "priority=N" line in every config section where N differs depending on the section you're in<br /><br /><blockquote><br />[base], [addons], [updates], [extras] ... priority=1 <br />[centosplus],[contrib] ... priority=2<br />Third Party Repos such as rpmforge ... priority=N  (where N is > 10 and based on your preference)<br /></blockquote><br /><br />I really like that last line, where I can choose N based on "my preference". I took 13 since I have no idea how I should decide what my preference is <br /></li><br /><li>Next, I need to wget an RPM here and install it<br /><pre><br />wget http://apt.sw.be/redhat/el5/en/i386/RPMS.dag/rpmforge-release-0.3.6-1.el5.rf.i386.rpm<br />rpm -Uvh rpmforge-release-0.3.6-1.el5.rf.i386.rpm<br /></pre><br /></li><br /><li>yum check-update to check that it worked (! remember, this is supposed to be a stable system)</li><br /><li>And finally, install some package<br /><br /><pre><br />yum install &lt;some package&gt;<br /></pre><br /></li><br /></ul><br /><br />But wait, it's not over yet!<br /><br />So now I have installed bash-completion using yum<br /><pre><br />yum install bash-completion<br /></pre><br />And it pulled it from RPMForge yay!<br /><br />So, what did all this get me ?<br /><br />Under CentOS, I can install 6537 (over 4000!) packages. I'm impressed.<br />Under Debian stable, I can install 19939 packages.<br /><br />I checked the versions of bash and SSH under both CentOS 5 and Debian stable (currently Etch). They are the same: bash 3.1.17 and OpenSSH 4.3<br /><br /><br />I hope kickstart is able to configure everything for me and install bash-completion by default.<br />We'll see...
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page27">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page25">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

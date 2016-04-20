@@ -1,0 +1,12 @@
+---
+layout: post
+title: finishing up singularity-bluetooth
+date: '2007-06-08T10:32:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-19T21:06:17.769+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6278693294193739454
+blogger_orig_url: http://www.singularity.be/2007/06/finishing-up-singularity-bluetooth.html
+---
+
+The package that takes care of all my bluetooth stuff (browsing phone, sending SMS), is almost complete. The only<br />problem now lies with gnome-phone-manager.<br /><br />I want to start gnome-phone-manager (let's call it phonemanager for short ;) when I log in, and I want it systemwide.<br />My first though was to add it to /etc/X11/Xsession.d, but that doesn't seem to be the correct place to add it (according to Ubuntu people). They suggest I add it to /etc/xdg/autostart, so I did. The problem with phonemanager now is that it needs to notificationarea to add itself too and the notificationarea isn't there yet when phonemanager is started. It's also the only program to bitch about it :)<br /><br />Maybe I can find a way around it...<br /><br />[update 10 minutes later]<br />Creating a wrapper that sleeps for 5 seconds before calling the phonemanager program, seems to do the trick.<br />It's a bit dirty, but hey :) I don't care: it will be packaged

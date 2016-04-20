@@ -1,0 +1,12 @@
+---
+layout: post
+title: evolution crashes, beagle crashes, what's next ?
+date: '2007-04-14T09:49:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-21T09:49:58.625+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-3913840379092353496
+blogger_orig_url: http://www.singularity.be/2007/04/evolution-crashes-beagle-crashes-whats.html
+---
+
+As I reported in <a href="/node/6360">a previous message</a>, I packaged the encrypted filesystem setup, the auto-versioning setup and the auto-backup setup. That wraps up phase 1 and 2 of the <a href="/node/6345/">new laptop installation</a>.<br /><br />I was working on phase 5: calendar and timesheet system, which involves setting up a calendar system for meetings, birthdays and the like, and integrate it with my timesheet system (karm).<br />What I wanted to do yesterday, was to look around in <a href="http://www.gnome.org/projects/evolution/">evolution</a> a bit, to see what I can do with it.<br /><br />But when starting evolution, it just falls on its face and crashes. It seems like org-gnome-evolution-startup-wizard plugin located in /usr/lib/evolution/2.8/plugins/ is the main cause of that. SO after just moving the lib and eplug file from that directory to /tmp, I was able to startup evolution. It didn't last long though. After a few clicks, evolution crashed...<br />I would have sent an email through the bugtracker, but my email is not configured in that vmware.<br /><br />So that's when I installed and started <a href="http://beagle-project.org/Main_Page">beagle</a> to see what it can do. It's supposed to have a plugin system to search inside unknown filetypes, and I wanted to check that out.<br />No such luck. Beagle crashes aswell.<br /><br />What's going on here Ubuntu ? Is Ubuntu Edgy being neglected because Feisty is coming up next thursday ? Meh...<br /><br />Maybe I'll just look into the VPN part for now...<br />Or maybe nothing at all, since it's going to 24 degrees outside :)

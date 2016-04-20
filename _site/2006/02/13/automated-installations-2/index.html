@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      automated installations (2) &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">automated installations (2)</h1>
+  <span class="post-date">13 Feb 2006</span>
+  I signed up for the debian-boot mailinglist and asked my question. No answer yet.<br />In a futile attempt to find more answers I tried google and found the <a href='http://wiki.debian.org/DebianInstaller/PartmanPrc'>Partman Recipe Calculator (PRC)</a>. It doesn't work out of the box for python 2.3.5 but if you change line 114 from<br /><code><br />pie = gdchart.Pie()<br /></code><br />to<br /><code><br />pie = gdchart.Pie3D()<br /></code><br /><br />It will work nicely.<br />Since my recipe generated a nice piechart without any funny complications, I can only assume that my recipe is correct. This also implies that there is a bug in partman-auto...<br /><br />Since I'm dumb enough to try and find this bug, here is my progress so far:<br /><br />I believed (falsely) that partman-auto only used (ba)sh to create the partitions and speculated that it was using some type of kernel interface to create them.<br />After closer inspection, it seems that partman-auto makes use of the partman udeb. This last udeb has a "parted_server" daemon written in C, that seems to take of care of most of the lowlevel stuff.<br /><br />I tracked the code as follows:<br /><br />There exists a function <code>add_primary_partition()</code> which gets called by <code>command_new_partition()</code> if the first passed word is "primary". <code>command_new_partition()</code> is called by <code>main_loop()</code> when it receives a "NEW_PARTITION" command. Since "NEW_PARTITION" is nowhere else in the Partman udeb, I looked inside Partman-auto and found that it gets used in the "perform_recipe" script.<br /><br />This last script has 4 references to "NEW_PARTITION":<br /><code><br />106: open_dialog NEW_PARTITION primary $4 $free_space beginning ${1}000001<br />125: open_dialog NEW_PARTITION primary $4 $free_space end ${1}000001<br />180: open_dialog NEW_PARTITION $type $4 $free_space full ${1}000001<br />182: open_dialog NEW_PARTITION $type $4 $free_space beginning ${1}000001<br /></code><br /><br />The first 2 make a call with the "primary" argument hardcoded. So I assume they are not what I should look at. The interesting lines are 180 and 182.<br /><br />The "$type" variable is set as follows:<br /><pre><br />    case "$free_type" in<br />        primary|logical)<br />            type="$free_type"<br />            ;;<br />        pri/log)<br />            type=logical<br />            ;;<br />        unusable)<br />            db_progress STOP<br />            autopartitioning_failed<br />            ;;<br />    esac<br /></pre><br /><br />...<br />After looking for the answer long and hard, I've come to the conclusion that I'm on the outer edge of Debian knowledge. This means noone seems to know the answer, or noone wants to answer me. I prefer to believe the former because that makes noone an asshole.<br /><br />Partman-auto as it is, might do well for Debian installations aimed at newbies, but it sucks when you have to use it with preseed. I've tried about every recipe I think could work. In the end I even tried creating a 4th partition with the idea that I could delete it afterwards. No such luck.<br /><br />While I was looking around in the booted debian installer during the failed installation, I noticed that sfdisk is installed.<br />I might drop the entire partman thing and just create partitions myself with sfdisk and some wrapper.<br />With sfdisk you just say: <br /><code><br />(echo ",2048,82"; echo ",64,83"; echo ",,83") | sfdisk -uM /dev/discs/disc0/disc<br /></code><br /><br />Where ",2048,82" denotes: 2048 MB type 82 (swap), ",64,83": 64MB type 83 (ext2) and ",,83": the rest type 83 (ext2)<br />(In case you are wondering, -uM means: interpret sizes as MB)<br /><br />So, all I need now is a handy way to get the amount of RAM and I'm set :)<br />And seeing as the "free" command exists, I can't see further obstacles!<br />
+</div>
+
+
+    </div>
+
+  </body>
+</html>

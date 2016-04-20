@@ -1,0 +1,15 @@
+---
+layout: post
+title: downloading sourcecs in an RPM specfile
+date: '2008-08-22T11:04:00.002+02:00'
+author: Steven Van Acker
+tags:
+- English
+- Fedora
+- RPM
+modified_time: '2008-08-22T11:05:20.416+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6757684281061348799
+blogger_orig_url: http://www.singularity.be/2008/08/downloading-sourcecs-in-rpm-specfile.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />Here's a quick hack to download all sourcefiles from a specfile automatically.<br /><br />[PRE]<br />#!/bin/bash<br /><br />specfile=$1<br /><br />OLDIFS=$IFS<br />IFS="<br />"<br /><br />sedcmd="sed"<br /><br />for varline in `cat "$specfile" |grep "^%define"`;<br />do<br />    var=`echo "$varline" | awk '{print $2}'`<br />    val=`echo "$varline" | awk '{print $3}'`<br /><br />    sedscript="s:%{$var}:$val:g"<br />    sedcmd="$sedcmd -e $sedscript"<br />done<br /><br />IFS=$OLDIFS<br /><br />mkdir -p /usr/src/redhat/SOURCES<br />for url in `cat $specfile | $sedcmd | grep "^Source" | awk '{print $2}'`;<br />do<br /> f=`echo "$url" | sed 's:.*/::'`<br /> wget -O "/usr/src/redhat/SOURCES/$f" "$url"<br />done<br />[/PRE]<br />StevensBlogSpotFilterThing --><br />Here's a quick hack to download all sourcefiles from a specfile automatically.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />#!/bin/bash<br /><br />specfile=$1<br /><br />OLDIFS=$IFS<br />IFS="<br />"<br /><br />sedcmd="sed"<br /><br />for varline in `cat "$specfile" |grep "^%define"`;<br />do<br />    var=`echo "$varline" | awk '{print $2}'`<br />    val=`echo "$varline" | awk '{print $3}'`<br /><br />    sedscript="s:%{$var}:$val:g"<br />    sedcmd="$sedcmd -e $sedscript"<br />done<br /><br />IFS=$OLDIFS<br /><br />mkdir -p /usr/src/redhat/SOURCES<br />for url in `cat $specfile | $sedcmd | grep "^Source" | awk '{print $2}'`;<br />do<br /> f=`echo "$url" | sed 's:.*/::'`<br /> wget -O "/usr/src/redhat/SOURCES/$f" "$url"<br />done<br /></pre>

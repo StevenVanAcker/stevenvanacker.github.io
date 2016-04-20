@@ -1,0 +1,12 @@
+---
+layout: post
+title: rcsvimdiff or vimrcsdiff
+date: '2006-11-29T23:52:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-20T23:53:20.648+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-8802366789410959573
+blogger_orig_url: http://www.singularity.be/2006/11/rcsvimdiff-or-vimrcsdiff.html
+---
+
+RCS is nice to keep a history of how files changes over time. "rcsdiff" then is a tool that can generate a diff-file between 2 versions of the same file.<br /><br />However, the diff is shown in standard "diff" output format. I prefer the "vimdiff" program (which comes with vim in Debian).<br /><br />The vimdiff command takes 2 files and shows them side by side in vim, using syntax coloring and such. But vimdiff can't work with RCS...<br /><br />So I created this script which I'll call rcsvimdiff. It combines both functionalities in one.<br /><br /><pre><br />#!/bin/bash <br /><br />ver1=$1<br />ver2=$2<br />file=$3<br /><br /><br />if [ "x$file" = "x" ];<br />then<br />        echo "Usage: rcsvimdiff -rREV1 -rREV2 filename"<br />        exit 0<br />fi<br /><br />if [ ! -f $file ];<br />then<br />       echo "File $file doesn't exist."<br />       exit 1<br />fi<br /><br />if [ ! -f $file,v -a ! -f `dirname $file`/RCS/`basename $file`,v ];<br />then<br />       echo "File $file has no RCS history"<br />       exit 1<br />fi<br /><br />basefile=`basename $file`<br /><br />TMPDIR=/tmp/rcsvimdiff.$RANDOM$RANDOM$RANDOM<br /><br />for v in $ver1 $ver2;<br />do<br />    mkdir -p $TMPDIR$v || exit 1<br /><br />    cp -f $file $TMPDIR$v/<br />    cp -f `dirname $file`/RCS/`basename $file`,v $TMPDIR$v/<br />    cp -f $file,v $TMPDIR$v/<br /><br />    co -f $v $TMPDIR$v/$basefile<br />done<br /><br />vimdiff $TMPDIR$ver1/$basefile $TMPDIR$ver2/$basefile<br /><br />for v in $ver1 $ver2;<br />do<br />    rm -rf $TMPDIR$v<br />done<br /></pre><br /><br />Usage: rcsvimdiff <-rREV1> <-rREV2> <filename><br /><br />For example: rcsvimdiff -r1.1 -r1.3 /etc/motd

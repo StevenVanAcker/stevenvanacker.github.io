@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      openssh Cross-realm authentication with heimdal &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">openssh Cross-realm authentication with heimdal</h1>
+  <span class="post-date">30 May 2006</span>
+  Let's provide some more useful content for a change.<br /><br />Today I'll be documenting the setup of cross-realm authentication using Heimdal kerberos for openssh.<br /><br />We already have Kerberos setup for KULEUVEN.BE and it holds the accounts of all students and personnel. What I will do is setup a local (departemental) KDC and an SSH-server that has its keytab registered in that local KDC. The idea is that a departement can add local SSH-servers as much as it wants, and it should only change it's local KDC. The authentication of users still happens against the main KULEUVEN.BE KDC.<br /><br />OpenSSH supports kerberos authentication using tickets, but only from version 4.2p1 onward. This is because OpenSSH needs to be patched with the GSSAPI mechanism.<br />Lucky for us, Debian unstable's OpenSSH packages (openssh-server and openssh-client) are already patched this way.<br />Furthermore, I'll be using heimdal-kdc as the kerberos server (also in Debian).<br /><br />All that is left now it configuration.<br /><br />Let's start with an overview of the systems.<br /><br /><pre><br />The client:     192.168.2.103 (dhcp-103.kulnet-l)<br />The SSH server: 192.168.2.200 (vmware1.kulnet-l)<br />The local KDC:  192.168.2.201 (vmware2.kulnet-l, realm TMPKDC.NET)<br />The main KDC:   kdc1.kuleuven.be (realm KULEUVEN.BE)<br /></pre><br /><br />First, let's set things up so we can use kerberos to login to the ssh server.<br />I created a principle u0036393@TMPKDC.NET on the local KDC (kadmin -l and add u0036393)<br />and a host principle for the SSH server: host/vmware1.kulnet-l with a random key (kadmin -l and add --random-key host/vmware1.kulnet-l)<br />Now the key needs to exported to the SSH server:<br /><br /><pre><br />kadmin -l<br />ext -k /tmp/bla host/vmware1.kulnet-l<br />scp /tmp/bla 192.168.2.200:/etc/krb5.keytab<br />restart SSH after that<br /></pre><br /><br />some other things to do on the KDC:<br /><pre><br />open firewall for port 88/udp<br />keep clock in sync<br />edit /etc/krb5.conf<br /></pre><br /><br />I edited the krb5.conf file and cleaned up a bit.<br />Things you need to look out for:<br /><pre><br />[libdefaults]<br />    default_realm = TMPKDC.NET<br />...<br />[realms]<br />    TMPKDC.NET = {<br />        kdc=192.168.2.201<br />        admin_server=192.168.2.201<br />    }<br />...<br />[domain_realm]<br />    kulnet-l = TMPKDC.NET<br />    .kulnet-l = TMPKDC.NET<br />...<br /></pre><br /><br />Copy this file to the client as well (in my case, 192.168.2.103) as /etc/krb5.conf, otherwise you'll see something like this:<br /><br /><pre><br />(deepstar/tachyon) ~/debian$ kinit u0036393@TMPKDC.NET<br />u0036393@TMPKDC.NET's Password: <br />kinit: krb5_get_init_creds: unable to reach any KDC in realm TMPKDC.NET<br /></pre><br /><br />Let's try to get a ticket from the KDC now. First, I have to clean out my current tickets (kdestroy) so I can work cleanly.<br /><br /><pre><br />(deepstar/tachyon) ~/debian$ klist <br />Credentials cache: FILE:/tmp/krb5cc_1000<br />        Principal: u0036393@KULEUVEN.BE<br /><br />  Issued           Expires        Principal<br />May 29 15:51:13  &gt;&gt;&gt;Expired&lt;&lt;&lt;  krbtgt/KULEUVEN.BE@KULEUVEN.BE<br />May 29 15:51:26  &gt;&gt;&gt;Expired&lt;&lt;&lt;  krbtgt/TESTKDC.NET@KULEUVEN.BE<br />May 29 15:51:23  &gt;&gt;&gt;Expired&lt;&lt;&lt;  host/dhcp-103.kulnet-l@TESTKDC.NET<br />(deepstar/tachyon) ~/debian$ kdestroy <br />(deepstar/tachyon) ~/debian$ kinit u0036393@TMPKDC.NET<br />u0036393@TMPKDC.NET's Password: <br />(deepstar/tachyon) ~/debian$ klist <br />Credentials cache: FILE:/tmp/krb5cc_1000<br />        Principal: u0036393@TMPKDC.NET<br /><br />  Issued           Expires          Principal<br />May 30 11:03:39  May 31 00:14:27  krbtgt/TMPKDC.NET@TMPKDC.NET<br />(deepstar/tachyon) ~/debian$ <br /><br /></pre><br /><br />As you can see, it worked.<br /><br />Now for logging in.<br /><br />(Create the u0036393 account on the SSH-server before starting...)<br /><br />Add these lines to the sshd_config of the SSH-server:<br /><br /><pre><br />    GSSAPIAuthentication yes<br />    GSSAPIDelegateCredentials yes<br /></pre><br /><br />Also add them to the ssh_config of the client<br /><br />Something that gave me a lot of trouble before is the canonical hostname of the SSH-server.<br />Run /usr/sbin/sshd -de after /etc/init.d/ssh to start the SSH-server in debug mode. If you see something like this:<br /><pre><br />FIXME<br /></pre><br />Then add your hostname to /etc/hosts<br /><pre><br />127.0.0.1 vmware1.kulnet-l sshserver localhost localhost.localdomain<br /></pre><br /><br />It's important that "vmware1.kulnet-l" is first.<br />"sshserver" is listed second because that is what I have in /etc/hostname. If you use different hostnames as FQDN and hostname, do this too.<br /><br />check with "hostname -f" to see if it worked.<br /><br />Install heimdal-clients on the SSH-server and copy the krb5.conf from the client.<br /><br />If everything went ok, you can do this:<br /><pre><br />(deepstar/tachyon) ~/debian$ kdestroy <br />(deepstar/tachyon) ~/debian$ kinit u0036393@TMPKDC.NET<br />u0036393@TMPKDC.NET's Password: <br />(deepstar/tachyon) ~/debian$ ssh u0036393@vmware1.kulnet-l<br />Linux sshserver 2.6.8-2-386 #1 Thu May 19 17:40:50 JST 2005 i686<br /><br />The programs included with the Debian GNU/Linux system are free software;<br />the exact distribution terms for each program are described in the<br />individual files in /usr/share/doc/*/copyright.<br /><br />Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br />permitted by applicable law.<br />No mail.<br />Last login: Tue May 30 14:45:38 2006 from dhcp-103.kulnet-l<br />u0036393@sshserver:~$ logout<br />Connection to vmware1.kulnet-l closed.<br />(deepstar/tachyon) ~/debian$ klist <br />Credentials cache: FILE:/tmp/krb5cc_1000<br />        Principal: u0036393@TMPKDC.NET<br /><br />  Issued           Expires          Principal<br />May 30 14:53:53  May 31 00:53:57  krbtgt/TMPKDC.NET@TMPKDC.NET<br />May 30 14:54:01  May 31 00:53:57  host/vmware1.kulnet-l@TMPKDC.NET<br />(deepstar/tachyon) ~/debian$ <br /></pre><br /><br />(To test if you can get a ticket for some principle, try kgetcred ...)<br /><br />Ok, now authentication works and openssh works with a kerberos ticket.<br /><br />What's left now is the cross-realm authentication.<br /><br />We need to add the principle krbtgt/TMPKDC.NET@KULEUVEN.BE to both our local and main KDC.<br />They need to have the same password.<br /><br />(For some reason, after I added the principles to both KDC's, they had different kvno numbers. That stirred up trouble... So on the KDC that had kvno=0, I just changed the password and set it to the same thing. That does absolutely nothing, except increase the kvno :)<br /><br /><pre><br />(deepstar/tachyon) ~/debian$ kdestroy <br />(deepstar/tachyon) ~/debian$ kinit u0036393@KULEUVEN.BE<br />u0036393@KULEUVEN.BE's Password: <br />(deepstar/tachyon) ~/debian$ klist <br />Credentials cache: FILE:/tmp/krb5cc_1000<br />        Principal: u0036393@KULEUVEN.BE<br /><br />  Issued           Expires          Principal<br />May 30 15:18:05  May 31 01:18:04  krbtgt/KULEUVEN.BE@KULEUVEN.BE<br />(deepstar/tachyon) ~/debian$ ssh u0036393@vmware1.kulnet-l<br />Linux sshserver 2.6.8-2-386 #1 Thu May 19 17:40:50 JST 2005 i686<br /><br />The programs included with the Debian GNU/Linux system are free software;<br />the exact distribution terms for each program are described in the<br />individual files in /usr/share/doc/*/copyright.<br /><br />Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br />permitted by applicable law.<br />No mail.<br />Last login: Tue May 30 15:16:36 2006 from dhcp-103.kulnet-l<br />u0036393@sshserver:~$ logout<br />Connection to vmware1.kulnet-l closed.<br />(deepstar/tachyon) ~/debian$ klist <br />Credentials cache: FILE:/tmp/krb5cc_1000<br />        Principal: u0036393@KULEUVEN.BE<br /><br />  Issued           Expires          Principal<br />May 30 15:18:05  May 31 01:18:04  krbtgt/KULEUVEN.BE@KULEUVEN.BE<br />May 30 15:18:09  May 31 01:18:04  krbtgt/TMPKDC.NET@KULEUVEN.BE<br />May 30 15:18:09  May 31 01:18:04  host/vmware1.kulnet-l@TMPKDC.NET<br />(deepstar/tachyon) ~/debian$ <br /></pre><br /><br />Important to note:<br />the krb5.conf files on the client, SSH-server and local KDC need to be aware of the local realm (TMPKDC.NET). But only the SSH-server needs to have it's default_realm set to KULEUVEN.BE
+</div>
+
+
+    </div>
+
+  </body>
+</html>

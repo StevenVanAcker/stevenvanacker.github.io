@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Puppet ? No wait, mediawiki under Fedora 9 &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Puppet ? No wait, mediawiki under Fedora 9</h1>
+  <span class="post-date">23 Jul 2008</span>
+  <!-- StevensBlogSpotFilterThing<br />I was going to write about getting Puppet to work under Fedora 9, but I found out it's really nont difficult. As an excercise for myself I decided to try and make a puppet recipe for mediawiki.<br />This is turning out harder than expected. Not because puppet is so hard (it's really not), but because the mediawiki RPM package in Fedora 9 is terribly bad.<br /><br />As a comparison, let me tell you how to get mediawiki working on a freshly installed Debian. OK, ready ? Here it comes:<br /><br />[PRE]<br />apt-get install mediawiki<br />[/PRE]<br />And it's done !<br /><br />Right, now let's see what you need to do to get this working under Fedora 9. <br /><br />[PRE]yum install mediawiki[/PRE]<br />Everything starts off nice and fine<br /><br />[PRE]yum install mysql-server[/PRE]<br />Unlike under Debian, Fedora 9 doesn't assume that you want to have a local MySQL server running. By not installing it, it gives you the choice. Not a bad thing.<br /><br />[PRE]<br />chkconfig httpd on<br />service httpd start<br />chkconfig mysqld on<br />service mysqld start<br />[/PRE]<br />Things are already getting weird. Why would I install mediawiki and then not want to run httpd by default ?<br /><br />[PRE]<br />cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.orig<br />cat /etc/httpd/conf/httpd.conf.orig |sed 's:DocumentRoot \"/var.*:DocumentRoot \"/var/www\":' &gt; /etc/httpd/conf/httpd.conf<br />service httpd restart<br />[/PRE]<br />By default the DocumentRoot is set to /var/www/html, while mediawiki is installed under /var/www/wiki.<br /><br />[PRE]<br />system-config-firewall-tui -p 80:tcp<br />[/PRE]<br />Open up port 80 in the firewall, again this should have happened when I installed apache<br /><br />[PRE]<br />cd /tmp<br />mkdir config<br />cp /var/www/wiki/config/index.php config/index.php.orig<br />cat config/index.php.orig |sed 's:\$DIR=.*:\$DIR="/tmp";:' > config/index.php<br /><br /><br />(cat &lt;&lt;EOF;<br />&lt;?<br />\$_SERVER = array();<br />\$_POST = array();<br /><br />\$_SERVER["SCRIPT_NAME"] = "/wiki/config/index.php";<br />\$_SERVER["PHP_SELF"] = "/wiki/config/index.php";<br /><br />\$_SERVER["REQUEST_METHOD"] = "POST";<br /><br />\$_POST["Sitename"] = "My Little Wiki";<br />\$_POST["SysopPass"] = "xxx";<br />\$_POST["SysopPass2"] = "xxx";<br />\$_POST["DBtype"] = "mysql";<br />\$_POST["DBpassword"] = "xxx";<br />\$_POST["DBpassword2"] = "xxx";<br />\$_POST["useroot"] = "on";<br />\$_POST["RootPW"] = "";<br />\$_POST["DBprefix"] = "";<br /><br />include "config/index.php";<br />?&gt;<br />EOF<br />) &gt; genconfig.php<br /><br />php genconfig.php<br />cp config/LocalSettings.php /var/www/wiki/<br />rm -rf /tmp/genconfig.php /tmp/config<br />[/PRE]<br />What on earth is all this ? Well this code configures mediawiki with a default config. Instead of supplying a default config, Fedora lets you surf to your wiki, fill in some variables to generate a configfile, which you then have to copy to the correct place.<br /><br />In the script I just pasted, this is all done automagically. I fake the execution environment of the config/index.php script and execute it from commandline. It will create the necessary database and tables and generate a LocalSettings.php, which is then copied to the correct place.<br /><br />[PRE]ln -s /usr/share/mediawiki/skins/ /var/www/wiki/[/PRE]<br />After all this fiddling, the installed mediawiki still looks like crap. This is because the mediawiki apparently forgot where it placed the directory with all the skins. A symlink should fix that.<br /><br />[PRE]chmod a= /var/www/wiki/config[/PRE]<br />No need for this directory to be publicly avaiable.<br /><br />Some of you have commented that I should read the INSTALL file as specified on <a href="http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Fedora_Core">this wiki</a>.<br />Actually, I shouldn't have to because that's what packages are for. But just so you know, I did look there (/usr/share/mediawiki/INSTALL) (By the way, doesn't Fedora have some kind of policy where documentation should go ? What is /usr/share/doc for ?) and it doesn't mention anything about where to surf to (http://somewhere/wiki/) or whether or not to fix the skins directory.<br /><br /><br />StevensBlogSpotFilterThing --><br />I was going to write about getting Puppet to work under Fedora 9, but I found out it's really nont difficult. As an excercise for myself I decided to try and make a puppet recipe for mediawiki.<br />This is turning out harder than expected. Not because puppet is so hard (it's really not), but because the mediawiki RPM package in Fedora 9 is terribly bad.<br /><br />As a comparison, let me tell you how to get mediawiki working on a freshly installed Debian. OK, ready ? Here it comes:<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />apt-get install mediawiki<br /></pre><br />And it's done !<br /><br />Right, now let's see what you need to do to get this working under Fedora 9. <br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;">yum install mediawiki</pre><br />Everything starts off nice and fine<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;">yum install mysql-server</pre><br />Unlike under Debian, Fedora 9 doesn't assume that you want to have a local MySQL server running. By not installing it, it gives you the choice. Not a bad thing.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />chkconfig httpd on<br />service httpd start<br />chkconfig mysqld on<br />service mysqld start<br /></pre><br />Things are already getting weird. Why would I install mediawiki and then not want to run httpd by default ?<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />cp /etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf.orig<br />cat /etc/httpd/conf/httpd.conf.orig |sed 's:DocumentRoot \"/var.*:DocumentRoot \"/var/www\":' &gt; /etc/httpd/conf/httpd.conf<br />service httpd restart<br /></pre><br />By default the DocumentRoot is set to /var/www/html, while mediawiki is installed under /var/www/wiki.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />system-config-firewall-tui -p 80:tcp<br /></pre><br />Open up port 80 in the firewall, again this should have happened when I installed apache<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />cd /tmp<br />mkdir config<br />cp /var/www/wiki/config/index.php config/index.php.orig<br />cat config/index.php.orig |sed 's:\$DIR=.*:\$DIR="/tmp";:' > config/index.php<br /><br /><br />(cat &lt;&lt;EOF;<br />&lt;?<br />\$_SERVER = array();<br />\$_POST = array();<br /><br />\$_SERVER["SCRIPT_NAME"] = "/wiki/config/index.php";<br />\$_SERVER["PHP_SELF"] = "/wiki/config/index.php";<br /><br />\$_SERVER["REQUEST_METHOD"] = "POST";<br /><br />\$_POST["Sitename"] = "My Little Wiki";<br />\$_POST["SysopPass"] = "xxx";<br />\$_POST["SysopPass2"] = "xxx";<br />\$_POST["DBtype"] = "mysql";<br />\$_POST["DBpassword"] = "xxx";<br />\$_POST["DBpassword2"] = "xxx";<br />\$_POST["useroot"] = "on";<br />\$_POST["RootPW"] = "";<br />\$_POST["DBprefix"] = "";<br /><br />include "config/index.php";<br />?&gt;<br />EOF<br />) &gt; genconfig.php<br /><br />php genconfig.php<br />cp config/LocalSettings.php /var/www/wiki/<br />rm -rf /tmp/genconfig.php /tmp/config<br /></pre><br />What on earth is all this ? Well this code configures mediawiki with a default config. Instead of supplying a default config, Fedora lets you surf to your wiki, fill in some variables to generate a configfile, which you then have to copy to the correct place.<br /><br />In the script I just pasted, this is all done automagically. I fake the execution environment of the config/index.php script and execute it from commandline. It will create the necessary database and tables and generate a LocalSettings.php, which is then copied to the correct place.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;">ln -s /usr/share/mediawiki/skins/ /var/www/wiki/</pre><br />After all this fiddling, the installed mediawiki still looks like crap. This is because the mediawiki apparently forgot where it placed the directory with all the skins. A symlink should fix that.<br /><br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;">chmod a= /var/www/wiki/config</pre><br />No need for this directory to be publicly avaiable.<br /><br />Some of you have commented that I should read the INSTALL file as specified on <a href="http://www.mediawiki.org/wiki/Manual:Running_MediaWiki_on_Fedora_Core">this wiki</a>.<br />Actually, I shouldn't have to because that's what packages are for. But just so you know, I did look there (/usr/share/mediawiki/INSTALL) (By the way, doesn't Fedora have some kind of policy where documentation should go ? What is /usr/share/doc for ?) and it doesn't mention anything about where to surf to (http://somewhere/wiki/) or whether or not to fix the skins directory.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

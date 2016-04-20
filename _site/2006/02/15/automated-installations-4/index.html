@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      automated installations (4) &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">automated installations (4)</h1>
+  <span class="post-date">15 Feb 2006</span>
+  Now that I know that the bug is in partman-auto, I need to either fix it or work around it.<br />In any case, I will need to replace the udeb.<br /><br />I found a way to unpack the udeb by looking at the sourcecode of udpkg.<br />An udeb is an "ar" package with 3 files (or at least, partman-auto_41.udeb is):<br /><br /><pre><br />(deepstar/tachyon) ~/projects/kulnet-server-setup/cd/pool/main/p/partman-auto$ ar -t partman-auto_41_all.udeb <br />debian-binary<br />control.tar.gz<br />data.tar.gz<br />(deepstar/tachyon) ~/projects/kulnet-server-setup/cd/pool/main/p/partman-auto$ <br /></pre><br /><br />Each of these files can be extracted like so:<br /><pre><br />(deepstar/tachyon) /tmp/udebtest$ udeb=~/projects/kulnet-server-setup/cd/pool/main/p/partman-auto/partman-auto_41_all.udeb; for i in `ar -t $udeb`; do ar -p $udeb $i &gt; $i; done<br />(deepstar/tachyon) /tmp/udebtest$ ls -l<br />total 40<br />-rw-r--r-- 1 deepstar deepstar 28404 2006-02-15 17:28 control.tar.gz<br />-rw-r--r-- 1 deepstar deepstar  7428 2006-02-15 17:28 data.tar.gz<br />-rw-r--r-- 1 deepstar deepstar     4 2006-02-15 17:28 debian-binary<br />(deepstar/tachyon) /tmp/udebtest$ <br /></pre><br /><br />After altering the package, you can recreate the package with<br /><pre><br />(deepstar/tachyon) /tmp/udebtest$ ar -t $udeb<br />debian-binary<br />control.tar.gz<br />data.tar.gz<br />(deepstar/tachyon) /tmp/udebtest$ ls -la<br />(deepstar/tachyon) /tmp/udebtest$ ar -cr partman-auto_41_all.udeb debian-binary control.tar.gz data.tar.gz <br />(deepstar/tachyon) /tmp/udebtest$ <br /></pre><br /><br />The order doesn't seem to matter (from what I see in the sourcecode), but why take the chance.<br />After the udeb is packed again, copy it to the CD and don't forget to change the Packages and Packages.gz files.<br />Normally this is done with dpkg-scanpackages, but since these are udebs, it will probably not work.<br />Being lazy, I do a find on the old md5sum and replace it with the new one.<br /><br />I'll write a script for this as I will need to recreate the package a lot :)
+</div>
+
+
+    </div>
+
+  </body>
+</html>

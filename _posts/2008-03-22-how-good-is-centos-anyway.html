@@ -1,0 +1,14 @@
+---
+layout: post
+title: How good is CentOS anyway ?
+date: '2008-03-22T14:36:00.004+01:00'
+author: Steven Van Acker
+tags:
+- English
+- CentOS
+modified_time: '2008-03-22T14:51:13.209+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6037534029472463268
+blogger_orig_url: http://www.singularity.be/2008/03/how-good-is-centos-anyway.html
+---
+
+This past week I have been following a Microsoft course on ISA Server 2006, a very exhausting experience mainly because I had to use public transportation for 4 hours every day.<br /><br />Now I'm looking into automating CentOS 5 again. Just like my Debian installations, I want standardize my CentOS installations as much as possible.<br /><br />What does this mean ? Well, I want to reduce CentOS installation to a triviality. I've accomplished this by using kickstart and getting the installation of a barebones CentOS system to take up about 5 minutes.<br />I also want to install all the packages I use commonly on servers, on all servers by default. Things like bash-completion, tcpdump, nmap, SSH keys, and a lot more (including some homemade packages).<br /><br />To do this on Debian, I created a virtual package called "kulnet-common-packages" which has dependencies on all the packages I want to have on all servers. Installing this package will also install all the dependencies. Furthermore, if I ever add a new package to the dependencies of this virtual package, all servers will automatically install it on the next upgrade.<br /><br />Right. So CentOS uses RPM packages, which I have never created before. I get the feeling that creating RPM packages is a long and complicated process, while it shouldn't have to be. <br /><br />Someone on freenode's #centos or #fedora recommended that I use Yum groups for this. Basically, a Yum group is a list of packages that has a single name. You can install a group by doing "yum groupinstall &lt;groupnanme&gt;"<br /><br />This sounds like a good idea. However, I do have some questions regarding these yum groups. For example, how do I create one ? And if I created one and installed such group on a server, will the server install the new packages on this list if I add them ? Can I add any packages to a yum group ? What about packages that are already listed in another yum group ? And can I include a yumgroup into another yumgroup with a reference ?<br /><br />Noone seems to be able to answer those questions. Even worse, I can't find any documentation on yum groups, except on how to install those yumgroups that already exist.<br /><br />This makes me wonder about how good redhat systems actually are. On Debian systems, I have never needed any commercial support because I could find all the information I wanted on the internet. But now I can understand Redhats business model. Since there is no documentation on the internet, you have to buy it from Redhat instead.

@@ -1,0 +1,12 @@
+---
+layout: post
+title: 'ogre3d: it works'
+date: '2006-03-15T23:07:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:32:51.155+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-753940804026195609
+blogger_orig_url: http://www.singularity.be/2006/03/ogre3d-it-works.html
+---
+
+My 3D projects are getting way not enough attention.<br />I've looked at ogre3d once more today and finally found why it wouldn't work.<br /><br />I installed the Debian packages for ogre3d (libs, -dev and -docs) and tried to compile the SampleApp.cpp provided on the website. This of course didn't work because ExampleApplication.cpp and ExampleApplication.h are required, both nowhere to be found except in the sourcecode...<br />After installing even more files lige plugins.cfg and so on, It would finally DO something. It just didn't do much :( All I saw was a small black window asking me to select a renderer. And I couldn't select anything.<br /><br />Today I looked into plugins.cfg after a hint from google and made the plugins directory point to /usr/lib/OGRE<br /><br />Now at least it shows something :)<br />Just nothing in 3D yet...<br /><br />Screenshots soon ? I hope so

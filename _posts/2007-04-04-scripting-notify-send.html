@@ -1,0 +1,12 @@
+---
+layout: post
+title: scripting notify-send
+date: '2007-04-04T09:39:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-21T09:40:51.849+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-3123203055518684069
+blogger_orig_url: http://www.singularity.be/2007/04/scripting-notify-send.html
+---
+
+I don't feel like adding a line like <br /><pre><br />notify-send /usr/share/app-install/kalarm.png "some title goes here" "some other text goes here"<br /></pre><br />to every cronscript I write.<br /><br />Instead, I'm going to create a small script that I can call. That script should maybe also create a logfile, in case I can't read the message before it disappears.<br /><br />The script I have right now, is a bit small.<br /><br /><pre><br />#!/bin/bash<br /><br /># make_popup &lt;icon&gt; &lt;title&gt; [&lt;text&gt;]<br /><br />icon=$1<br />title=$2<br />text=$3<br /><br />notify-send -i $HOME/images/$icon.png "$title" "$text"<br /></pre><br /><br />I also create a directory "images" in my homedirectory, where I can store nice icons to use in my notifications.<br />I've found a couple of pretty ones in my standard ubuntu installation.<br /><br /><img src="/Trashcan/clock.png"><br /><img src="/Trashcan/cup.png"><br /><img src="/Trashcan/keys.png"><br /><img src="/Trashcan/virus.png"><br /><img src="/Trashcan/bug.png"><br /><img src="/Trashcan/exclamation.png"><br /><br />I should probably make a package out of this when I find the definitive form.<br /><br />[Update]<br /><br />Here's a screenshot:<br />[G2:11189]

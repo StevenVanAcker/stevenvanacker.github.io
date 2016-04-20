@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      rcsvimdiff or vimrcsdiff &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">rcsvimdiff or vimrcsdiff</h1>
+  <span class="post-date">29 Nov 2006</span>
+  RCS is nice to keep a history of how files changes over time. "rcsdiff" then is a tool that can generate a diff-file between 2 versions of the same file.<br /><br />However, the diff is shown in standard "diff" output format. I prefer the "vimdiff" program (which comes with vim in Debian).<br /><br />The vimdiff command takes 2 files and shows them side by side in vim, using syntax coloring and such. But vimdiff can't work with RCS...<br /><br />So I created this script which I'll call rcsvimdiff. It combines both functionalities in one.<br /><br /><pre><br />#!/bin/bash <br /><br />ver1=$1<br />ver2=$2<br />file=$3<br /><br /><br />if [ "x$file" = "x" ];<br />then<br />        echo "Usage: rcsvimdiff -rREV1 -rREV2 filename"<br />        exit 0<br />fi<br /><br />if [ ! -f $file ];<br />then<br />       echo "File $file doesn't exist."<br />       exit 1<br />fi<br /><br />if [ ! -f $file,v -a ! -f `dirname $file`/RCS/`basename $file`,v ];<br />then<br />       echo "File $file has no RCS history"<br />       exit 1<br />fi<br /><br />basefile=`basename $file`<br /><br />TMPDIR=/tmp/rcsvimdiff.$RANDOM$RANDOM$RANDOM<br /><br />for v in $ver1 $ver2;<br />do<br />    mkdir -p $TMPDIR$v || exit 1<br /><br />    cp -f $file $TMPDIR$v/<br />    cp -f `dirname $file`/RCS/`basename $file`,v $TMPDIR$v/<br />    cp -f $file,v $TMPDIR$v/<br /><br />    co -f $v $TMPDIR$v/$basefile<br />done<br /><br />vimdiff $TMPDIR$ver1/$basefile $TMPDIR$ver2/$basefile<br /><br />for v in $ver1 $ver2;<br />do<br />    rm -rf $TMPDIR$v<br />done<br /></pre><br /><br />Usage: rcsvimdiff <-rREV1> <-rREV2> <filename><br /><br />For example: rcsvimdiff -r1.1 -r1.3 /etc/motd
+</div>
+
+
+    </div>
+
+  </body>
+</html>

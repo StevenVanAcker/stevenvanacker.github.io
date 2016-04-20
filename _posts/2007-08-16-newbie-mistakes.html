@@ -1,0 +1,15 @@
+---
+layout: post
+title: newbie mistakes
+date: '2007-08-16T00:54:00.000+02:00'
+author: Steven Van Acker
+tags:
+- English
+- PIC
+- Building Stuff
+modified_time: '2009-02-03T14:05:56.352+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-5617138710873177243
+blogger_orig_url: http://www.singularity.be/2007/08/newbie-mistakes.html
+---
+
+I'm getting annoyed with the PIC business.<br /><br />It's one thing to create a working assembler program and upload it to a PIC. Running the PIC on my experiment board (Velleman K8048) gives no problems, but when I plug the PIC onto a breadboard, it does absolutely nothing.<br /><br />So how to debug this stuff ?<br /><br />Well, the first thing I did was look at the toggles that activate parts of the PIC hardware. Toggles like "Select oscillator type". It seemed that I had this set to "_XT_OSC" which means a crystal oscillator. I didn't have that on my board. I replaced it with "_INTRC_OSC_NOCLKOUT", which makes the PIC use the internal oscillator and doesn't do anything with the CLKOUT pin.<br /><br />This didn't work either.<br /><br />The K8048 has 2 jumpers that link the 4MHz crystal to the PIC. I pulled those out and the PIC still ran fine.<br /><br />So what is it now ? I thought I could just connect GND and +5V to the PIC and it would run ? No such luck...<br /><br />After setting the oscillator type to "_INTRC_OSC_CLKOUT" to enable the CLKOUT pin, I couldn't see anything on that pin with an oscilloscope. I should have seen the generated clock on that pin.<br /><br />...<br /><br />I have no idea how to debug this. Maybe someone can lend me a hand ?<br /><br />[Update 1:27AM]<br />After a long time of searching, I was ready to throw something heavy at something fragile. Good thing I took a break to watch some "Band Of Brothers" DVD.<br /><br />After that, I took another look at things. People have been telling me that all I needed to connect was the Vss (ground) and Vdd (+5V) pins.<br /><br />I finally found this page:<br />http://mirrors.techiesabode.com/linuxgazette/issue99/pramode.html<br /><br />Which indicates<br /><pre><br />After assembling and burning the above program, we are ready to<br /> see it in action. The running circuit can be built in a jiffy - place +5V<br />on the VDD pin of the PIC (pin 14), connect Vss (pin 5) to circuit <br />ground, connect MCLR (pin 4) to +5V through a 2K resistor, <br />connect the LED between RB0 and Gnd with a current limiting <br />resistor of say 1K in series - and that's all.<br /></pre><br /><br />Again, the MCLR pin surfaces. This time I actually tried to find what it was all about. The MCLR pin according to the 16F627 datasheet:<br /><pre><br />          Master clear. When configured as MCLR, this<br />          pin is an active low RESET to the device.<br />          Voltage on MCLR/VPP must not exceed VDD<br />          during normal device operation.<br /></pre><br />This means that, unless Vdd is set on the MCLR pin, my PIC was constantly being reset :)<br /><br />After connecting the MCLR pin to +5V, my leds started to blink.<br /><br />Yay for manuals !

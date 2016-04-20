@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      dependency problems in Ubuntu ? &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">dependency problems in Ubuntu ?</h1>
+  <span class="post-date">02 Apr 2007</span>
+  I needed to install python-gtk2-dev and python-gnome2-dev in order to "compile" Band Saw. When I ran bandsaw.py as a test, I got what looks like a dependency problem:<br /><br /><pre><br />guest@berta:~/Steven/Projects/bandsaw/bandsaw-0.3.0/src$ python bandsaw.py <br />Traceback (most recent call last):<br />  File "bandsaw.py", line 31, in ?<br />    import egg.trayicon<br />ImportError: /usr/lib/libgtk-x11-2.0.so.0: undefined symbol: gdk_font_from_description_for_display<br />guest@berta:~/Steven/Projects/bandsaw/bandsaw-0.3.0/src$ <br /></pre><br /><br />Apparently, the "gdk_font_from_description_for_display" function is <a href='http://developer.gnome.org/doc/API/2.0/gdk/gdk-Fonts.html#id2638107'>deprecated</a>. But libgtk2 still uses it.<br /><br />I'm not sure how to fix that yet.<br /><br />[Update]<br /><br />The problem is caused by a the library /usr/lib/libgdk-x11-2.0.so.0 (Mind GDK vs GTK). This library has a function called Gdk_font_from_description_for_display with uppercase G, probably to denote that the function is deprecated and shouldn't be called.<br /><br />While I wait for my subscription mail to the <a href='https://launchpad.net/distros/ubuntu/+source/gtk+2.0/+bugs'>Ubuntu bugtracker</a> to report this as a bug, I whipped up a quick hack.<br />I just create the function with lowercase first letter, and call the function with uppercase first letter.<br /><br />In the file gdk_font_from_description_for_display.c:<br /><pre><br />void *gdk_font_from_description_for_display(void *display, void *font_desc) {<br />    return Gdk_font_from_description_for_display(display, font_desc);<br />}<br /></pre><br /><br />Compile this with:<br /><pre><br />gcc -fPIC -g -c -Wall gdk_font_from_description_for_display.c<br />gcc -shared -Wl,-soname,libmystuff.so.1 -o libmystuff.so.1.0.1 gdk_font_from_description_for_display.o -lc<br /></pre><br /><br />Don't worry about the warnings ;) They can be ignored safely.<br /><br />Now to use this library:<br /><pre><br />guest@berta:~/.../src$ LD_PRELOAD=/.../libmystuff.so.1.0.1 python bandsaw.py <br /></pre><br /><br />You can read more about creating shared libraries here: http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html<br /><br />[Update]<br />I reported the bug here:<br />https://launchpad.net/ubuntu/+source/gtk+2.0/+bug/99932
+</div>
+
+
+    </div>
+
+  </body>
+</html>

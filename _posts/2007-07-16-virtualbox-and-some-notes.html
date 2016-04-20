@@ -1,0 +1,12 @@
+---
+layout: post
+title: VirtualBox and some notes
+date: '2007-07-16T17:38:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-19T21:36:22.426+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-8847080382913182397
+blogger_orig_url: http://www.singularity.be/2007/07/virtualbox-and-some-notes.html
+---
+
+Instead of running VMWare on my laptop, I will use <a href='http://www.virtualbox.org/'>VirtualBox</a> as a virtual machine thing. The reason ? It's open source and there are Ubuntu/Debian packages for it. The only thing that bugs me about it right now, is the complicated setup to get bridged networking. I will probably create singularity-virtualbox wrapper packages to deal with that.<br /><br />And for the notes... I've been using my new laptop setup for a while now, and some things bug me. First, I need to fix the EncFS setup so rtin doesn't complain. To do that, I need to toggle IV chaining mode for the filenames (either turn it on or off, not sure). EncFS bitches a lot in paranoia mode, and I don't need that :)<br /><br />Also, I need to get the automute feature working.<br /><br />My laptop needs to send it's IP to the backupserver somehow, because I work with DHCP and my IP changes all the time. So for the past week or so, I have no backups of my laptop.

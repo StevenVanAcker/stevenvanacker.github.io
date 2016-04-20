@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Fedora Core 8 &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Fedora Core 8</h1>
+  <span class="post-date">25 Feb 2008</span>
+  I've decided to try Fedora Core 8 to see what it is like and how easy it would be to create an automated installer for it, including making RPM packages for my needs.<br /><br />Unlike Debian, the Fedora Core 8 (FC8) installmedia is not a CD of 100MB, but rather a DVD of 3.2GB. It's just my luck that QEMU does not support DVDROMs.<br />I was merrily on my way to creating a loopmounted ext2 filesystem to copy the contents of the DVD when I discovered that the FC8 DVD can also use a HTTP mirror to install from. Actually, it was stupid of me to assume that FC8 didn't have that.<br /><br />So, what does the installer look like ? I'm spoiled by Debian and my own custom install CD. When using Debian, I don't need to type anything (for the most part). I can just select a mirror from a list for example.<br /><br />Under FC8, I need to enter the address of my HTTP server and the directory. The KULeuven FTP-server does not mirror FC8, so I was forced to use the next best thing: the BelNet FTP server.<br /><br />Information entered:<br />Server: ftp.belnet.be<br />Directory: /mirror/download.fedora.redhat.com/linux/... *time to breathe* .../releases/8/Fedora/i386/os/<br /><br />That's right, it's that complicated. When this install is finished, I will without a doubt need to buy a new keyboard because all the paint will be removed from the keys.<br /><br />I am installing FC8 while I am writing this post by the way.<br /><br />It now seems that FC8 failed to detect my (virtual) harddisk. This is quite odd, because I just created it, 5GB in size. Maybe I need to load some driver for it...<br /><br />I had to reboot because the installer didn't respond anymore (crash?)<br /><br />[Update 2 hours later]<br />I've tried extensively and failed to get FC8 to recognize my harddisk.<br /><br />This is my setup:<br /><br /><li>I use QEMU 0.9.0 on Ubuntu Gutsy 7.10 with kqemu</li><br /><li>tap1 is a tap device that is bridged with eth0 (networking is OK, since I'm able to fetch the minstg2.img)</li><br /><li>fc8.img is a 5GB large qcow file created with "qemu-img create -f qcow fc8.img 5G"</li><br /><li>/var/www/isos/FC8_boot_minimal.iso is downloaded <a href="ftp://ftp.belnet.be/mirror/download.fedora.redhat.com/linux/releases/8/Fedora/i386/os/images/boot.iso">here</a></li><br /><br />I run this command:<br /><pre><br />qemu -localtime -net nic,vlan=0,macaddr=1c:71:e9:f0:3a:1e -net tap,ifname=tap1,script=/bin/true,vlan=0 -cdrom /var/www/isos/FC8_boot_minimal.iso -boot d -m 128 -hda fc8.img<br /></pre><br /><br />Select the first option "Install or upgrade an existing system"<br />Then I selected the "English" language and keyboard "us"<br />Installation method: "HTTP"<br />I don't touch the network setup and just click OK (so it does DHCP over IPv4)<br />Web site name: "ftp.belnet.be"<br />Fedora directory: "/mirror/download.fedora.redhat.com/linux/releases/8/Fedora/i386/os/"<br /><br />The "images/imstg2.img" image is retrieved and used to boot the installer.<br />After the "Welcome to Fedora" screen, it asks about the "Partitioning Type" and I can't select any disk.<br /><br />When I switch to tty2 (alt-F2) and type "cat /proc/partitions"<br />, it only shows loop0 which is most likely the installer image.<br /><br />I'm puzzled...<br />Could anyone else try to replicate this ?
+</div>
+
+
+    </div>
+
+  </body>
+</html>

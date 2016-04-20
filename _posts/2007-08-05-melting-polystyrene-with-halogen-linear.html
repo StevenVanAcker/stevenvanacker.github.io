@@ -1,0 +1,12 @@
+---
+layout: post
+title: melting polystyrene with halogen linear tubes ?
+date: '2007-08-05T15:11:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-19T21:37:58.103+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6201558260051989321
+blogger_orig_url: http://www.singularity.be/2007/08/melting-polystyrene-with-halogen-linear.html
+---
+
+The normal approach to build the vacuform oven is to run a bunch of nichrome wire across some ceramic posts and hook it up to a powersource.<br /><br />But I don't have any idea where to get nichrome wire. I do however know that the efficiency of a halogen lamp is about 5%, which means that 95% of the power pumped into it is converted to heat.<br /><br />I tried heating up a piece of 5mm thick polystyrene using a 500W halogen lamp and was able to bend it after only a minute or 2. That's promising.<br /><br />Here's a picture of the bent plastic:<br />[G2:11637]<br /><br />Most circuits in this house are 230V at max 16A, which means about 3500W max (with some to spare...). I have 3 circuits with a 25A fuse especially for the cooking plates. Such a circuit would get me about 5500W.<br /><br />I'll be using a regular circuit for the vacuform, which means I can only put 7 500W halogen lamps in the vacuform. Another option would be to use 400W or 300W lamps, to have 8 or 11 lamps in there. I like the 11 lamps idea, because it's close to 9, which would make a nice 3x3 configuration.<br /><br />I've created a heat distribution simulator to calculate what the heat distribution of a linear tube would be on a flat surface. I wasn't trying to make it efficient, but I just wanted to practice some python ;)<br /><br />The program picks a random point on one of the configured linear tubes and then shoots a ray of light in a random direction. If the ray hits the flat surface (at a configured distance from the lamp), that spot is heated up. <br /><br />This technique is similar to stochastic raytracing, except that I have no idea if it's even accurate for anything :)<br /><br />The whole thing can be downloaded here:<br />http://www.singularity.be/Trashcan/heat-distribution.tar.gz<br /><br />An AVI movie can be found here (2.2MB)<br />http://www.singularity.be/Trashcan/heat-distribution.avi<br /><br />And an animated GIF is here (18MB)<br />http://www.singularity.be/Trashcan/heat-distribution.gif<br /><br />I will probably write a better simulator soon (I have lots of python to practice...)<br />

@@ -1,0 +1,21 @@
+# Dependencies
+#markdown:         redcarpet
+#highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+relative_permalinks: false
+gems: [jekyll-paginate]
+paginate:         5
+
+# Setup
+title:            Singularity.be
+tagline:          'Flawed logic inspecting flawed logic'
+description:      "Steven Van Acker's blog"
+url:              http://www.singularity.be
+baseurl:          /
+
+author:
+  name:           'Steven Van Acker'
+  url:            http://www.singularity.be
+

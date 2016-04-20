@@ -1,0 +1,12 @@
+---
+layout: post
+title: automated installations (4)
+date: '2006-02-15T18:23:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:27:01.750+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-8470807750658786364
+blogger_orig_url: http://www.singularity.be/2006/02/automated-installations-4.html
+---
+
+Now that I know that the bug is in partman-auto, I need to either fix it or work around it.<br />In any case, I will need to replace the udeb.<br /><br />I found a way to unpack the udeb by looking at the sourcecode of udpkg.<br />An udeb is an "ar" package with 3 files (or at least, partman-auto_41.udeb is):<br /><br /><pre><br />(deepstar/tachyon) ~/projects/kulnet-server-setup/cd/pool/main/p/partman-auto$ ar -t partman-auto_41_all.udeb <br />debian-binary<br />control.tar.gz<br />data.tar.gz<br />(deepstar/tachyon) ~/projects/kulnet-server-setup/cd/pool/main/p/partman-auto$ <br /></pre><br /><br />Each of these files can be extracted like so:<br /><pre><br />(deepstar/tachyon) /tmp/udebtest$ udeb=~/projects/kulnet-server-setup/cd/pool/main/p/partman-auto/partman-auto_41_all.udeb; for i in `ar -t $udeb`; do ar -p $udeb $i &gt; $i; done<br />(deepstar/tachyon) /tmp/udebtest$ ls -l<br />total 40<br />-rw-r--r-- 1 deepstar deepstar 28404 2006-02-15 17:28 control.tar.gz<br />-rw-r--r-- 1 deepstar deepstar  7428 2006-02-15 17:28 data.tar.gz<br />-rw-r--r-- 1 deepstar deepstar     4 2006-02-15 17:28 debian-binary<br />(deepstar/tachyon) /tmp/udebtest$ <br /></pre><br /><br />After altering the package, you can recreate the package with<br /><pre><br />(deepstar/tachyon) /tmp/udebtest$ ar -t $udeb<br />debian-binary<br />control.tar.gz<br />data.tar.gz<br />(deepstar/tachyon) /tmp/udebtest$ ls -la<br />(deepstar/tachyon) /tmp/udebtest$ ar -cr partman-auto_41_all.udeb debian-binary control.tar.gz data.tar.gz <br />(deepstar/tachyon) /tmp/udebtest$ <br /></pre><br /><br />The order doesn't seem to matter (from what I see in the sourcecode), but why take the chance.<br />After the udeb is packed again, copy it to the CD and don't forget to change the Packages and Packages.gz files.<br />Normally this is done with dpkg-scanpackages, but since these are udebs, it will probably not work.<br />Being lazy, I do a find on the old md5sum and replace it with the new one.<br /><br />I'll write a script for this as I will need to recreate the package a lot :)

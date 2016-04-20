@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      iCTF scorebot bugfixes &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">iCTF scorebot bugfixes</h1>
+  <span class="post-date">15 Aug 2012</span>
+  Recently, I've been looking into the python code of the iCTF ctfbot, because we are slapping together a new CTF team at our CS dept.<br />The ctfbot works pretty much out of the box... if you use a standard network setup.<br />Of course, for reasons I won't go into right now, we don't have a standard network setup.<br /><br /><h4>CTF and our setup</h4><br />A CTF game consists of a number of teams competing against eachother. Each of the teams has a server provided by the CTF organisers, and any number of client computers that the team provides itself. The provided server is vulnerable in a number of ways. The task of each team, is to defend their server from attackers, and to attack the other teams' servers and exploit the vulnerabilities. A central scorebot keeps an eye on all the servers, to make sure that nobody is cheating by e.g. just disabling the vulnerable services.<br /><br />the iCTF ctfbot is a scorebot that is freely downloadable and can be used with the iCTF server images of preceding years. The bot must be configured for each team with the location of the team's server, and the network range of the team clients computers.<br /><br />And this is where our freaky setup comes into play. In this particular case, we have 2 CTF images running. One server runs on 192.168.10.1, the other on 192.168.12.1. Two teams (called ChuckNorris and Superman) are located on their own networks. One on 192.168.2.0/25, the other on 192.168.2.128/25. Each team thus has about 128 addresses available (minus some for network housekeeping and routing)<br /><br />Looking at the code, the iCTF ctfbot seems to assume that both the server and the clients are in the same IP range. Because of this, I wrote a patch to fix that, and to be able to specify multiple IP ranges belonging to a single team. In doing so, I came across a bug in the ctfbot that seems to be based on a common misconception. The bug has to do with CIDR network masks and how they are calculated and matched against IP addresses.<br /><br />Let's have a look at this code (in&nbsp;scorebot/standard/submitbot/SubmitWebserver.py):<br /><br /><br /><span style="font-family: Courier New, Courier, monospace;">def extractNetworkValue(ip_txt,masksize):</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; mask = (2L&lt;<masksize -1="-1" font="font"></masksize></span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; ip = struct.unpack('I',socket.inet_aton(ip_txt))[0]</span><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; &nbsp; &nbsp; &nbsp; return ip &amp; mask</span><br /><br /><br />This function takes an IP address in textual form (e.g. "192.168.2.6") and a masksize in integer form (e.g. 25). The task of this function is to extract the base network address.<br /><br />For the values described here, this calculation goes as follows (you can use the ipcalc program to verify this):<br />A network with masksize 25 has a network mask of 255.255.255.128. IP addresses on today's internet are 32bit in size. The dotted-decimal notation of an IP address is the most common way to write such a netmask, but when dealing with CIDR netmasks, it makes more sense to write them in binary:<br /><br /><span style="font-family: Courier New, Courier, monospace;">255.255.255.128 = 11111111 11111111 11111111 10000000</span><br /><br />Similarly, the IP address can be written in binary notation:<br /><br /><span style="font-family: Courier New, Courier, monospace;">192.168.2.6 &nbsp; &nbsp; =&nbsp;11000000 10101000 00000010 00000110</span><br /><br />To calculate the base network address for this IP and this netmask, one must simply do a logical AND:<br /><br /><br /><span style="font-family: Courier New, Courier, monospace;">&nbsp; 11111111 11111111 11111111 1<b>0000000</b></span><br /><span style="font-family: 'Courier New', Courier, monospace;">&nbsp; 11000000 10101000 00000010 0<b>0000110</b></span><br /><span style="font-family: 'Courier New', Courier, monospace;">&amp; -----------------------------------</span><br /><span style="font-family: 'Courier New', Courier, monospace;">&nbsp; 11000000 10101000 00000010 0<b>0000000</b></span><br /><br /><span style="font-family: Times, Times New Roman, serif;">Notice how the last 7 bits are set to 0 because of this logical AND.</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">What is this base address used for? Well, it can be used by routers to determine whether a certain IP address falls in some range. The network base address of 192.168.2.6/25 is 192.168.2.0, while for e.g 192.168.2.200/25 it would be 192.168.2.128. The calculation done in the ctfbot code serves the same purpose. When a team submits a flag to the scorebot, the scorebot checks the base address of the IP address from which the submission came. If the scorebot finds that the IP address is not in any registered IP range, it responds with&nbsp;</span><span style="font-family: Courier New, Courier, monospace;">"Flag was submitted from an IP not associated with any team!"</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><br /><h4><span style="font-family: Times, Times New Roman, serif;">Wrong netmask calculation</span></h4><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">Let's take a closer look at the code now. The function first calculates the network mask, based on its size with the formula&nbsp;</span><span style="font-family: 'Courier New', Courier, monospace;">mask = (2L&lt;<masksize -1="-1" span="span"></masksize></span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">The following python oneliner will print out the binary notation of this mask for values ranging from 1 to 33(exclusive):</span><br /><span style="font-family: 'Courier New', Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;">python -c 'for masksize in range(1, 33): print "/%2d: %s" % (masksize, "{0:032b}".format((2L&lt;<masksize -1="-1" font="font"></masksize></span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Courier New, Courier, monospace;"></span><br /><span style="font-family: Courier New, Courier, monospace;">/ 1: 00000000000000000000000000000001</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 2: 00000000000000000000000000000011</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 3: 00000000000000000000000000000111</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 4: 00000000000000000000000000001111</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 5: 00000000000000000000000000011111</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 6: 00000000000000000000000000111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 7: 00000000000000000000000001111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 8: 00000000000000000000000011111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/ 9: 00000000000000000000000111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/10: 00000000000000000000001111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/11: 00000000000000000000011111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/12: 00000000000000000000111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/13: 00000000000000000001111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/14: 00000000000000000011111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/15: 00000000000000000111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/16: 00000000000000001111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/17: 00000000000000011111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/18: 00000000000000111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/19: 00000000000001111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/20: 00000000000011111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/21: 00000000000111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/22: 00000000001111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/23: 00000000011111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/24: 00000000111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/25: 00000001111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/26: 00000011111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/27: 00000111111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/28: 00001111111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/29: 00011111111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/30: 00111111111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/31: 01111111111111111111111111111111</span><br /><span style="font-family: Courier New, Courier, monospace;">/32: 11111111111111111111111111111111</span><br /><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">As you can see, there are 2 problems here. The first problem is that there is no value for a /0 network because python can not bitshift by a negative amount of positions (masksize-1 would be negative).</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">The second, and more important problem, is that the network mask is the inverse of what it should be!</span><br /><span style="font-family: Times, Times New Roman, serif;">An easy fix and more intuitive method of calculating the netmask in python, is with the following statement:</span><br /><br /><span style="font-family: Courier New, Courier, monospace;">mask = int('1' * masksize + '0' * (32-masksize), 2)</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">This statement just created a string with the correct amount of 1s and 0s, and then converts it to a number with the </span><span style="font-family: Courier New, Courier, monospace;">int</span><span style="font-family: Times, Times New Roman, serif;"> function.</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><br /><h4><span style="font-family: Times, Times New Roman, serif;">Wrong byte order</span></h4><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">The next line of code in the scorebot contains:</span><br /><span style="font-family: 'Courier New', Courier, monospace;">&nbsp; &nbsp; ip = struct.unpack('I',socket.inet_aton(ip_txt))[0]</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">In this code, the textual IP address is converted to numerical format with </span><span style="font-family: Courier New, Courier, monospace;">inet_aton</span><span style="font-family: Times, Times New Roman, serif;"> and compacted into an integer with the </span><span style="font-family: Courier New, Courier, monospace;">unpack</span><span style="font-family: Times, Times New Roman, serif;"> function</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">Testing this with the following python code and some example input:</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><br /><span style="font-family: Courier New, Courier, monospace;">ip="192.168.2.6"</span><br /><span style="font-family: Courier New, Courier, monospace;">print "%s: %s" % (ip, "{0:032b}".format(struct.unpack('I',socket.inet_aton(ip))[0]))</span><br /><div style="font-family: Times, 'Times New Roman', serif;"><br /></div><div style="font-family: Times, 'Times New Roman', serif;">results in:</div><div style="font-family: Times, 'Times New Roman', serif;"><br /></div><span style="font-family: Courier New, Courier, monospace;">192.168.2.6: &nbsp;00000110000000101010100011000000</span><br /><span style="font-family: Courier New, Courier, monospace;"><br /></span><span style="font-family: Times, Times New Roman, serif;">for 192.168.2.63:</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Courier New, Courier, monospace;">192.168.2.63: 00111111000000101010100011000000</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">Although the conversion is the function is a correct conversion for many cases, it is incorrect for usage with a CIDR netmask. Like everything on the internet, things must be ordered in network byte order or big endian. This implies that the byte order must be reversed when working on an Intel processor (like my computer).</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">Python luckily can do this conversion for you by specifying a </span><span style="font-family: Courier New, Courier, monospace;">'!'</span><span style="font-family: Times, Times New Roman, serif;"> in the format specifier on the unpack function, which fixes the problem:</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><br /><span style="font-family: Courier New, Courier, monospace;">ip="192.168.2.6"</span><br /><span style="font-family: Courier New, Courier, monospace;">print "%s: %s" % (ip, "{0:032b}".format(struct.unpack('<b>!</b>I',socket.inet_aton(ip))[0]))</span><br /><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><div><span style="font-family: Times, Times New Roman, serif;">resulting in:</span></div><div><span style="font-family: Courier New, Courier, monospace;"><br /></span></div><br /><span style="font-family: Courier New, Courier, monospace;">192.168.2.6: 11000000101010000000001000000110</span><br /><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;"><br /></span><br /><h4><span style="font-family: Times, Times New Roman, serif;">Patches</span></h4><div><span style="font-family: Times, Times New Roman, serif;"><br /></span></div><div><span style="font-family: Times, Times New Roman, serif;">The following patch fixes this problem:</span></div><div><span style="font-family: Times, Times New Roman, serif;"><br /></span></div><div><div><span style="font-family: 'Courier New', Courier, monospace;">--- ctf_scorebot5.orig/scorebot/standard/submitbot/SubmitWebserver.py</span><span class="Apple-tab-span" style="font-family: 'Courier New', Courier, monospace; white-space: pre;"> </span><span style="font-family: 'Courier New', Courier, monospace;">2010-03-17 16:04:59.000000000 +0000</span></div><div><span style="font-family: Courier New, Courier, monospace;">+++ ctf_scorebot5.patched/scorebot/standard/submitbot/SubmitWebserver.py<span class="Apple-tab-span" style="white-space: pre;"> </span>2012-08-15 11:07:35.702260891 +0000</span></div><div><span style="font-family: Courier New, Courier, monospace;">@@ -20,8 +20,8 @@</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;FLAG_MANAGER = None</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;def extractNetworkValue(ip_txt,masksize):</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;"> </span>mask = (2L&lt;&lt;<masksize -1="-1" font="font"></masksize>masksize-1)-1</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;"> </span>ip = struct.unpack('I',socket.inet_aton(ip_txt))[0]&nbsp;</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;"> </span>mask = int('1' * masksize + '0' * (32-masksize), 2)</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;"> </span>ip = struct.unpack('!I',socket.inet_aton(ip_txt))[0]&nbsp;</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>return ip &amp; mask</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;class SubmitHttpHandler(SimpleHTTPRequestHandler):</span></div><div style="font-family: Times, 'Times New Roman', serif;"><br /></div></div><span style="font-family: Times, Times New Roman, serif;"><br /></span><span style="font-family: Times, Times New Roman, serif;">Of course, you can also use a library like Python's "netaddr", which will do the calculation for you, resulting in much neater code. The following patch does exactly that, plus adds the logic code to support multiple client IP ranges (comma-separated in the config):</span><br /><div><span style="font-family: Times, Times New Roman, serif;"><br /></span></div><div><div><span style="font-family: Courier New, Courier, monospace;">--- ctf_scorebot5.orig/scorebot/standard/submitbot/SubmitWebserver.py<span class="Apple-tab-span" style="white-space: pre;"> </span>2010-03-17 16:04:59.000000000 +0000</span></div><div><span style="font-family: Courier New, Courier, monospace;">+++ ctf_scorebot5/scorebot/standard/submitbot/SubmitWebserver.py<span class="Apple-tab-span" style="white-space: pre;"> </span>2012-08-14 16:02:49.526286845 +0000</span></div><div><span style="font-family: Courier New, Courier, monospace;">@@ -5,6 +5,7 @@</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;import os</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;import cgi</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;import struct&nbsp;</span></div><div><span style="font-family: Courier New, Courier, monospace;">+import netaddr</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;from BaseHTTPServer import HTTPServer</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;from SimpleHTTPServer import SimpleHTTPRequestHandler</span></div><div><span style="font-family: Courier New, Courier, monospace;">@@ -16,13 +17,11 @@</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;VALID_FILE_REGEX = re.compile("^(/)?\w+\.(html|css|jpg)$")</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;FILE_PATH = "/"</span></div><div><span style="font-family: Courier New, Courier, monospace;">-TEAM_DATA = []</span></div><div><span style="font-family: Courier New, Courier, monospace;">+TEAM_DATA = [] #contains a list of (id, cidrs) tuples, with cidrs being an array of textual netblocks belonging to a team</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;FLAG_MANAGER = None</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">-def extractNetworkValue(ip_txt,masksize):</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;"> </span>mask =&nbsp;<masksize -1="-1" font="font"></masksize></span><span style="font-family: 'Courier New', Courier, monospace;">(2L&lt;&lt;</span><masksize -1="-1" font="font" style="font-family: 'Courier New', Courier, monospace;"></masksize><span style="font-family: 'Courier New', Courier, monospace;">masksize-1)-1</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;"> </span>ip = struct.unpack('I',socket.inet_aton(ip_txt))[0]&nbsp;</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;"> </span>return ip &amp; mask</span></div><div><span style="font-family: Courier New, Courier, monospace;">+def ipMatchesNetwork(ip, netblock):</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;"> </span>return netaddr.IPAddress(ip) in netaddr.IPNetwork(netblock)</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;class SubmitHttpHandler(SimpleHTTPRequestHandler):</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">@@ -52,10 +51,11 @@</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;"> </span>def __update(self,hacker_ip,flag_txt):</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;">  </span>hacker_id = -1</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">  </span>for id, net, cidr_size in TEAM_DATA:</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">   </span>if(extractNetworkValue(hacker_ip,cidr_size) == net):</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">    </span>hacker_id = id</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">    </span>break</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;">  </span>for id, cidrs in TEAM_DATA:</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;">   </span>for netblock in cidrs:</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;">    </span>if(ipMatchesNetwork(hacker_ip, netblock)):</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;">     </span>hacker_id = id</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;">     </span>break</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;">  </span>if(hacker_id == -1):</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;">   </span>return "Flag was submitted from an IP not associated with any team!"</span></div><div><span style="font-family: Courier New, Courier, monospace;">@@ -107,9 +107,7 @@</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;">  </span>for team in conf.teams:</span></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;">   </span>assert(team.id == len(TEAM_DATA))</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">   </span>cidr_ip,cidr_mask_txt = team.cidr.split("/")</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">   </span>team_ip = extractNetworkValue(team.host,int(cidr_mask_txt))</span></div><div><span style="font-family: Courier New, Courier, monospace;">-<span class="Apple-tab-span" style="white-space: pre;">   </span>TEAM_DATA.append((team.id,team_ip,int(cidr_mask_txt)))</span></div><div><span style="font-family: Courier New, Courier, monospace;">+<span class="Apple-tab-span" style="white-space: pre;">   </span>TEAM_DATA.append((team.id,team.cidr.split(",")))</span></div><div></div><div><span style="font-family: Courier New, Courier, monospace;">&nbsp;<span class="Apple-tab-span" style="white-space: pre;">  </span>FLAG_MANAGER = conf.buildFlagManager()</span></div><div style="font-family: Times, 'Times New Roman', serif;"><br /></div></div>
+</div>
+
+
+    </div>
+
+  </body>
+</html>

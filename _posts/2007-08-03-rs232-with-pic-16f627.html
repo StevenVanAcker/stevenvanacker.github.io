@@ -1,0 +1,15 @@
+---
+layout: post
+title: RS232 with a PIC 16F627
+date: '2007-08-03T01:34:00.000+02:00'
+author: Steven Van Acker
+tags:
+- English
+- PIC
+- Building Stuff
+modified_time: '2009-02-03T14:05:56.353+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-3440546645534743841
+blogger_orig_url: http://www.singularity.be/2007/08/rs232-with-pic-16f627.html
+---
+
+Yesterday I wrote some assembly programs to do halfstep, fullstep and wavedrive control of a steppermotor, but the program just ran continuously in 1 direction. That's of course not so cool.<br /><br />What I want is to tell the PIC how many steps it should make in a certain direction, and then it should do so. This means I need to send commands to it once it's running (i.e. interactively). The most likely way good way to do this, is by using the RS232 functionality (serial line).<br /><br />Here is some example code on how to use a serial line with a PIC:<br />http://piccourses.50megs.com/code/codesamples.htm#rs232sendback<br /><br />

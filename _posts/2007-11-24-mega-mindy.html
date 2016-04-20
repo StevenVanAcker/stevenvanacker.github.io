@@ -1,0 +1,12 @@
+---
+layout: post
+title: Mega Mindy!
+date: '2007-11-24T21:39:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-20T22:07:05.999+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-3890040088520147093
+blogger_orig_url: http://www.singularity.be/2007/11/mega-mindy.html
+---
+
+Ik ben mijn GSM-tune KOTSBEU. Echt waar. Dat is al jaar en dag datzelfde Siemens geluidje.<br /><br />Nu, aangezien ik mijn projectjes terug aan het opstarten ben, kan ik wat prullen aan wat ik wil. Eerst had ik het TV tune van Buck Rogers op mijn GSM gezet, maar daar ben ik nu vanaf aant kijken.<br /><br />Waarom ? Wel, ik ga voor het MegaMindy liedje. Mega Mindy is supercool !!!!!!!!!!!!!<br /><br />Nu is MegaMindy wel zo hard niet gekend op internet, dus MP3's of zo vinden lukt niet echt. Maar YouTube kent Mega Mindy wel.<br /><br /><pre><br />wget -O megamindy_mega_mindy_tijd.flv http://lax-v268.lax.youtube.com/get_video?video_id=5i251ai88Ig<br /></pre><br /><br />FLV is het fileformaat dat gebruikt wordt door die flash-brol van YouTube. Gelukkig kan mplayer daarmee overweg.<br />Om het muziekje uit de FLV te halen:<br /><br /><pre><br />mplayer -ao pcm:file=megamindy_mega_mindy_tijd.wav megamindy_mega_mindy_tijd.flv<br /></pre><br /><br />Mijn GSM moet dat liedje in een of ander exotisch formaat (IMA ADPCM) hebben, dus zetten we dat nog effe om:<br /><br /><pre><br />sox megamindy_mega_mindy_tijd.wav -i -r 16000 megamindy_mega_mindy_tijd_voor_gsm.wav<br /></pre><br /><br />Met hetvolgende formaat als resultaat:<br /><pre><br />deepstar@phoenix:/tmp$ file megamindy_mega_mindy_tijd_voor_gsm.wav <br />megamindy_mega_mindy_tijd_voor_gsm.wav: RIFF (little-endian) data, WAVE audio, IMA ADPCM, mono 16000 Hz<br /></pre><br /><br />Dit muziekje zet ik nu gewoon via bluetooth (OBEX) op mijn GSM en selecteer dat als default tune.<br />

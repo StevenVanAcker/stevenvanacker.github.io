@@ -1,0 +1,12 @@
+---
+layout: post
+title: I2C and Velleman K8000
+date: '2007-02-04T20:14:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-17T09:26:20.623+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6276971963676298877
+blogger_orig_url: http://www.singularity.be/2007/02/i2c-and-velleman-k8000.html
+---
+
+A long time ago, I got a Velleman K8000 interfaceboard as a birthday gift. Untill recently, I never actually plugged it in because I was afraid I would blow it up. But now I have...<br /><br />Linux uses the i2c-parport driver (type 2) to talk to the K8000, but there's not much to go on from there. I've successfully built a steppermotor controller by activating the coils on the motor using the K8000. I've also driven an L297/L298 circuit from the K8000, also to drive a steppermotor.<br /><br />Right now, I want to work out how exactly this K8000 works in combination with Linux. I know it has 16 IO ports, A couple DAC's with 64-step resolution as input, and a 256-step DAC input and output port.<br /><br />Besides the digital outputs (optocouplers), I haven't tried anything else yet. First things first.<br /><br />A quick search on google for I2C-parport resulted in this: http://archives.andrew.net.au/lm-sensors/msg27432.html<br /><br />[EDIT 18:35]<br />This link describes the ioctl calls to an I2C device:<br />http://www.charmed.com/txt/dev-interface.txt<br /><br />This indicates that I might want to use a batch read/write with the I2C_RDWR ioctl to drive a steppermotor directly...

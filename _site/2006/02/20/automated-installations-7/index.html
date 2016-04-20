@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      automated installations (7) &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">automated installations (7)</h1>
+  <span class="post-date">20 Feb 2006</span>
+  Welcome to a brand new week.<br /><br />The plan this week (at least till wednesday when I will be handling shit of week) is to program my own netcfg package. Before I can do that, I have to know what exactly this package is being used for.<br /><br />This is a list of files (probably) generated by netcfg (I found them in netcfg.h):<br /><pre><br />#define INTERFACES_FILE "/etc/network/interfaces"<br />#define HOSTS_FILE      "/etc/hosts"<br />#define HOSTNAME_FILE   "/etc/hostname"<br />#define NETWORKS_FILE   "/etc/networks"<br />#define RESOLV_FILE     "/etc/resolv.conf"<br />#define DHCLIENT_CONF   "/etc/dhclient.conf"<br />#define DHCLIENT3_CONF  "/etc/dhcp3/dhclient.conf"<br />#define DOMAIN_FILE     "/tmp/domain_name"<br /><br />#define DEVNAMES        "/etc/network/devnames"<br />#define DEVHOTPLUG      "/etc/network/devhotplug"<br />#define STAB            "/var/run/stab"<br /></pre><br /><br />Next to that, this is what is in the netcfg package (besides the control section)<br /><pre><br />/<br />/usr/<br />/usr/lib/<br />/usr/lib/base-installer.d/<br />/usr/lib/base-installer.d/40netcfg<br />/etc/<br />/etc/network/<br />/etc/dhcp/<br />/etc/dhcp3/<br />/etc/dhcp3/dhclient-script<br />/etc/dhclient-script<br />/bin/<br />/bin/netcfg<br />/bin/killall.sh<br />/bin/ptom<br />/var/<br />/var/dhcp/<br /></pre><br /><br />The files here have the following purpose:<br /><dl><br /><dt>/usr/lib/base-installer.d/40netcfg</dt><br /><dd>Copy the generated files to /target</dd><br /><dt>/etc/dhcp3/dhclient-script</dt><br /><dt>/etc/dhclient-script</dt><br /><dd>These scripts are the same. It's a miniature dhclient that uses netcfg (the binary)</dd><br /><dt>/bin/netcfg</dt><br /><dd>The binary</dd><br /><dt>/bin/killall.sh</dt><br /><dd>A script to kill all running DHCP clients</dd><br /><dt>/bin/ptom</dt><br /><dd>A symlink to the netcfg binary</dd><br /></dl><br /><br />Instead of replacing the code in the netcfg package, I decided I would make a new kulnet-netcfg package with all the new code. I would then remove the "installer-menu-item: 18" from netcfg and glue it behind the kulnet-netcfg package.<br />After doing all that, to my surprise, debian installer still loaded the first netcfg and skipped the kulnet-netcfg.<br /><br />So, I've cleaned out netcfg and started making my own script.<br />The current problem is that there is nothing decent inside the initrd to test a connection.<br />I'm using netcat with a program that kills all netcats after 3 seconds in the background.<br /><br />
+</div>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      building RPMs: the spec-file &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">building RPMs: the spec-file</h1>
+  <span class="post-date">22 Aug 2008</span>
+  <!-- StevensBlogSpotFilterThing<br />Today I find myself in the need to build an RPM of the "ratbox" ircd, with some patches. To get a headstart, I decided to look around for an existing spec-file and I found one here:<br /><a href="http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec">http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec</a><br /><br />Now, I was under the impression that RPM was some standard and that therefore, a spec-file had some standards as well. The spec-file I downloaded comes from the <a href="http://www.openpkg.org">OpenPKG project</a> and seems to have some non-standard "extensions".<br /><br />First of all, my rpmbuild complains about this line:<br />[PRE]<br />Class:        BASE<br />[/PRE]<br /><br />I removed that line<br /><br />Next, some pre-build dependencies fail<br />[PRE]<br />error: Failed build dependencies:<br /> OpenPKG is needed by ratbox-2.2.8-20080112.i386<br /> openpkg >= 20060823 is needed by ratbox-2.2.8-20080112.i386<br />[/PRE]<br /><br />I removed those dependencies<br /><br />After that, the %prep section fails:<br />[PRE]<br />Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.26173<br />+ umask 022<br />+ cd /usr/src/redhat/BUILD<br />+ %setup -q -c<br />/var/tmp/rpm-tmp.26173: line 24: fg: no job control<br />error: Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br /><br /><br />RPM build errors:<br />    Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br />[/PRE]<br /><br />That's apparently because there are spaces in front of "%setup" and friends. I removed them.<br /><br />And now I get:<br />[PRE]<br />error: File /usr/src/redhat/SOURCES/ircd-ratbox-2.2.8.tgz: No such file or directory<br />[/PRE]<br /><br />Right. Quadruple fail. I guess I'll just have to write my own spec file instead.<br />StevensBlogSpotFilterThing --><br />Today I find myself in the need to build an RPM of the "ratbox" ircd, with some patches. To get a headstart, I decided to look around for an existing spec-file and I found one here:<br /><a href="http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec">http://ftp.icm.edu.pl/packages/openpkg/sources/SRC/ratbox/ratbox.spec</a><br /><br />Now, I was under the impression that RPM was some standard and that therefore, a spec-file had some standards as well. The spec-file I downloaded comes from the <a href="http://www.openpkg.org">OpenPKG project</a> and seems to have some non-standard "extensions".<br /><br />First of all, my rpmbuild complains about this line:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />Class:        BASE<br /></pre><br /><br />I removed that line<br /><br />Next, some pre-build dependencies fail<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />error: Failed build dependencies:<br /> OpenPKG is needed by ratbox-2.2.8-20080112.i386<br /> openpkg >= 20060823 is needed by ratbox-2.2.8-20080112.i386<br /></pre><br /><br />I removed those dependencies<br /><br />After that, the %prep section fails:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.26173<br />+ umask 022<br />+ cd /usr/src/redhat/BUILD<br />+ %setup -q -c<br />/var/tmp/rpm-tmp.26173: line 24: fg: no job control<br />error: Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br /><br /><br />RPM build errors:<br />    Bad exit status from /var/tmp/rpm-tmp.26173 (%prep)<br /></pre><br /><br />That's apparently because there are spaces in front of "%setup" and friends. I removed them.<br /><br />And now I get:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />error: File /usr/src/redhat/SOURCES/ircd-ratbox-2.2.8.tgz: No such file or directory<br /></pre><br /><br />Right. Quadruple fail. I guess I'll just have to write my own spec file instead.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

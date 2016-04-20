@@ -1,0 +1,12 @@
+---
+layout: post
+title: FGLRX dualhead
+date: '2006-05-28T21:43:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-17T09:19:45.304+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-4132288325165186511
+blogger_orig_url: http://www.singularity.be/2006/05/fglrx-dualhead.html
+---
+
+I brought up my old 19 inch screen from the basement and hooked it up to my laptop. I remember how I had my svideo working in Windows on my old laptop and I wanted to see how easy it was in Linux.<br /><br />As it happens, it is extremely easy.<br />Debian has a package called fglrx-control which is a nice GUI-tool to set dualhead and whatnot.<br />Of course, you need the fglrx driver loaded for that.<br /><br />This <a href='http://www.ubuntuforums.org/showthread.php?t=65276'>post</a> on the Gentoo forums can be of some help.<br />Debian doesn't give us an fglrxconfig tool, but has renamed it to aticonfig.<br />running it like this:<br /><pre><br />aticonfig --initial=dual-head<br /></pre><br /><br />will get you a basic dualhead config. restarting X then lets the magic happen! :)

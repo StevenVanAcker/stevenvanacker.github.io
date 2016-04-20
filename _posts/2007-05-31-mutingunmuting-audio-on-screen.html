@@ -1,0 +1,12 @@
+---
+layout: post
+title: muting/unmuting audio on screen lock/unlock in gnome
+date: '2007-05-31T11:42:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-18T10:49:05.131+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-3483124480446598025
+blogger_orig_url: http://www.singularity.be/2007/05/mutingunmuting-audio-on-screen.html
+---
+
+I constantly listen to an online radio at work. Not because I like the music, but because it's a handy way to detect network problems.<br /><br />Whenever I leave my desk, I lock my screen. And when I come back later, the volume of my speakers is turned down most of the time. My colleague doesn't like the music either ;)<br />What I want to do, is mute the audio when my screen is locked (because I won't be there anyway), and unmute it when it's unlocked.<br /><br />There seems to be no way to call a script when the screensaver is activated, but the gnome-screensaver sends an event to DBUS which I can catch.<br /><br />More information on this in the <a href='http://live.gnome.org/GnomeScreensaver/FrequentlyAskedQuestions#head-ac43c8f33bc700a5e298e6a82ded0e8bb9b33043'>Gnome FAQ</a>. I need to get my hands on "dbus-monitor" :)

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      beating inertia &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">beating inertia</h1>
+  <span class="post-date">25 Aug 2007</span>
+  All entities in classical physics have inertia, a property that resist any force that tries to move the object. Beating this inertia is just a matter of pushing hard enough.<br /><br />This week, I've come in contact with OverTheWire's inertia. I believe I have analyzed the situation well enough and have started breaking it into smaller solvable pieces to get things on track once more.<br /><br />What is the situation like ? Summarized in 3 points: no communication, no documentation and unmaintainable systems.<br /><br />The first point applies to the way OTW (OverTheWire) "management" communicates internally. Besides an IRC channel, there is no communication channel. There used to be a mailinglist, but it was abandoned because it wasn't used enough.<br /><br />Anyone who has used IRC knows that it is probably the worst communication channel to do use as a primary form of communication.<br /><br />The second point (no documentation) applies to the way systems are set up. There are 2 servers right now, each running a VMWare server to host several other VMWare guest systems. Documentation of these systems is out of date (about 1 year old). Since this 1 year, a lot has changed and noone has documented it. The result of this is that it is very dangerous to change anything to the system, because almost noone can predict the effect of the change. This again results in a "let someone do it" policy where noone wants to tackle tasks.<br /><br />Third is the unmaintainability of the servers. Both physical servers run Gentoo, aswell as most (all?) of the guest machines inside the VMWare servers.<br />I have tried to install Gentoo inside a VMWare some time ago and I was very disappointed with the level of complexity. The philosophgy of Gentoo is: compile everything. This is probably a cool thing to do when working with a bleeding-edge quad-core processor or a compilecluster at your fingertips, but not something you want to do on a Pentium 3. Certainly not when this machine is running all production services.<br />I started an "emerge -u world" (equivalent of apt-get upgrade on a debian, which checks for newer software and installs it) on this machine yesterday and it took almost 3 hours before emerge spewed out an error and stopped compiling. After fixing the error (a dependency problem btw), I reran emerge and it started recompiling glibc. I know from experience that this is a long compilation process (I have done this once on a slackware in 1998 or so). I didn't stay around to see the result.<br /><br />In short, just updating the software on this machine took more than 4 hours. If this is considered normal for Gentoo-based systems, then I certainly don't want to make an update of updating this system. Hence, the system is unmaintained, something to be avoided.<br /><br />After realising these 3 points, it was very clear to me why we had been struggling to move to OTW for over a year.<br /><br />So, what needs to be done ?<br /><br />We are in need of a mailinglist or any other archivable, searchable communication channel. Obviously, IRC is out of the question as a real communications channel.<br />Next, we need to document all our systems. Because I'm not really fond of Gentoo, I don't have experience with documenting Gentoo setups. There seems to be a concensus about this: documenting gentoo is best achieved by documenting the USE flags for every package aswell as the configuration of every package. Thats good enough for me.<br /><br />In the meantime, I've set up agora as the http://www.overthewire.org website. OTW was in dire need of a new website design and it was clear that a site like agora is the best approach to building a community.<br /><br />Some quirks still need to be ironed out though: sendmail mail from the website proves to be a problem because of the complicated system setup. This will be fixed soon.<br /><br />I've also looked at the overthewire.org (and reverse DNS) zone and cleaned it up. That's 2 items I can scrap from my TODO-list and 2 steps closer to moving to OverTheWire.org<br /><br />Oh, by the way, I've also created irc.overthewire.org so all of you people can start using it :)
+</div>
+
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: 'new project: wallplotter'
+date: '2007-07-04T01:36:00.000+02:00'
+author: Steven Van Acker
+tags:
+- English
+- PIC
+- Building Stuff
+modified_time: '2009-02-03T14:06:56.723+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-4358739618152912389
+blogger_orig_url: http://www.singularity.be/2007/07/new-project-wallplotter.html
+---
+
+While doing research on robotics, I came across a link to http://www.hektor.ch/, which describes a robot capable of spraying grafitti.<br />What's interesting about this robot, is the way it moves. It uses 2 strings and 2 steppermotors to pull itself up/down and left/right.<br /><br />I decided to try this out, but without the spraycan (since I believe spraypaint is too dirty). Instead, I'll be using dry erase markers on a whiteboard.<br /><br />The hardware will consist of 2 steppermotors controlled by a Microchip PIC. This will be my first experience programming a PIC, I hope it doesn't turn me off too badly (PICs look like really handy devices for a lot of my future projects)<br /><br />To program a PIC, I need a PIC programmer which I don't already have. While I wait to buy one of those things, I'm working on the software to actually draw something pretty. Since I don't have the hardware yet, I have created a simulator in python (Actually Visual Python) for this project. It accepts very basic commands like "increase rope length by 10mm on engine 1" or "pen down".<br /><br />I expect that this is the kind of commands that my PIC will respond to. All I need now to draw pretty things, is a driver for this hardware. One that translates an image into the plotters language.<br /><br />The input language shall be PostScript level 1, since it was designed for this purpose. The ultimate goal is to create a GhostScript driver for my wallplotter, so I can print to it from CUPS using any application. It would be great to draw something in Inkscape and have it plotted on my wall with my own hardware.<br /><br />Postscript level 1 has only about 40 operators, which is not that bad if I have to write my own interpreter. Of course, I would like to avoid that. Ghostscript is meant to do all this stuff. My main concern right now is to find out if Ghostscript handles clipping and other funky stuff (like scaling, rotation, ...) If it does, then I don't need to worry about all this and I will sleep better tonight :)<br /><br />Here's a useful link for me about writing Ghostscript drivers:<br />http://web.mit.edu/ghostscript/www/Develop.htm

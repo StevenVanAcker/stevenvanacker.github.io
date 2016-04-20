@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      High Performance Packet Classificiation (HPPC) &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">High Performance Packet Classificiation (HPPC)</h1>
+  <span class="post-date">13 Feb 2007</span>
+  For some time now I've been using the <a href='http://www.hipac.org'>NF-HiPAC patch</a> on the netfilter infrastructure, to optimize packet classification time in firewalls. But since 2 years or so, no update has been made to the code and I consider it orphaned.<br /><br />Because I depend on such optimisation, I will try to bring it back to life or maybe even replace it and integrate it into netfilter. Before I can even attempt any of this, I need an understanding of the concept.<br /><br />Some history is in order. NF-HiPac was developed by Michael Bellion (now working at Mara Systems) and Thomas Heinz [updated as of 20070330] as some sort of masters thesis. It is based on a paper by <a href='http://citeseer.ist.psu.edu/feldmann00tradeoffs.html'>Anja Feldmann and S. Muthukrishnan called "Tradeoffs for Packet Classification"</a>. Anja Feldmann was a supervisor in the NF-HiPAC thesis.<br /><br />After the code was developped, it was supposed to be integrated into the mainstream kernelcode. But I suspect this integration is troublesome for 2 reasons: NF-HiPAC completely replaces the iptables infrastructure in the kernel instead of adding to it, and the code is so huge that noone would want to dig through it.<br /><br />Well then. First things first. I needed to read the thesis to get a look at what the concept was. But I can only get a copy of that thesis in Germany and that's too much effort. So instead, I read the underlying paper and started playing around with some ideas of my own. Once I get something working (that is decent enough...) I will go through the NF-HiPAC code and study the differences. Either the NF-HiPAC code is better than my code (or equally good), in which case I will at least understand that code, or it will be worse in which case I can replace it with my code.<br /><br />The main concept I retained from the paper, was that each rule can be matched faster than it is done now. I'm not sure how it is done now, but I imagine that the rules are matched one by one. If the match fails, the next rule is processed. What is the problem with this ? Imagine you have 1000 rules, each with a match dictating some IP address as the source address of a packet. If the incoming packet doesn't match there is no need to try it 999 times more, it won't match any better those times.<br /><br />So, to avoid unnecessary matching, I will build a (binary) tree of IP addresses. For every rule, I will take the source IP address and store it in the binary tree, together with the rule ID number.<br /><br />When a packet comes in, I can quickly lookup it's source IP and retrieve all rules where this source IP would match on. Then, it's a matter of masking out everything that's not in my list of matching rules.<br /><br />The list can be trimmed down even more by building a tree for destination IP (duh), source/destination port number, protocol number, interface ID, ... etc.<br /><br />My first attempt went to trying to build an efficient binary tree to store IP addresses and IP networks (CIDR). Inspired by the paper, I built a binary tree with depth 32 (IPv4) which looks like this:<br />[G2:10982]<br />This example shows what the tree looks like for 100 randomly generated IP addresses.<br /><br />The problem with this approach is pretty obvious: the tree is huge. It has useless filler nodes with only 1 child. If I want to lookup an IP address, I would need to do 32 matches. I can improve on that.<br /><br />The second attempt will follow soon.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

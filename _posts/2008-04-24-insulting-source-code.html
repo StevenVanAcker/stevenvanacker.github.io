@@ -1,0 +1,14 @@
+---
+layout: post
+title: Insulting source code
+date: '2008-04-24T11:16:00.001+02:00'
+author: Steven Van Acker
+tags:
+- Debian
+- English
+modified_time: '2008-04-24T11:40:57.667+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6955208947802243046
+blogger_orig_url: http://www.singularity.be/2008/04/insulting-source-code.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />This is why you don't piss off software maintainers :)<br /><br /><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=477454">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=477454</a><br /><br /><pre><br />--- player.py (Revision 4026)<br />+++ player.py (Revision 4027)<br />@@ -287,7 +287,9 @@<br /><br /> def init(pipeline, librarian):<br />     gst.debug_set_default_threshold(gst.LEVEL_ERROR)<br />- if gst.element_make_from_uri(gst.URI_SRC, "file://", ""):<br />+ if gst.element_make_from_uri(<br />+ gst.URI_SRC,<br />+ "file:///Sebastian/Droge/please/choke/on/a/bucket/of/cocks", ""):<br />         global playlist<br />         playlist = PlaylistPlayer(pipeline or "gconfaudiosink",<br />librarian)<br />         return playlist<br /></pre><br /><br />StevensBlogSpotFilterThing --><br />This is why you don't piss off software maintainers :)<br /><br /><a href="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=477454">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=477454</a><br /><br /><pre><br />--- player.py (Revision 4026)<br />+++ player.py (Revision 4027)<br />@@ -287,7 +287,9 @@<br /><br /> def init(pipeline, librarian):<br />     gst.debug_set_default_threshold(gst.LEVEL_ERROR)<br />- if gst.element_make_from_uri(gst.URI_SRC, "file://", ""):<br />+ if gst.element_make_from_uri(<br />+ gst.URI_SRC,<br />+ "file:///Sebastian/Droge/please/choke/on/a/bucket/of/cocks", ""):<br />         global playlist<br />         playlist = PlaylistPlayer(pipeline or "gconfaudiosink",<br />librarian)<br />         return playlist<br /></pre>

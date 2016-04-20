@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      automated installations (I forgot which number) &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">automated installations (I forgot which number)</h1>
+  <span class="post-date">20 Apr 2006</span>
+  Today I wanted to play with serial console a bit, because it doesn't work like I want it to.<br />So I started VMWare and started installing debian with the installation CD.<br />To my surprise, the installation fubars.<br /><br />It appears that the locales package panics when it tries to generate locale for the "en" locale. Which is normal because it doesn't exist.<br />I don't remember ever telling debian to use that locale ?<br /><br />So I started tracking the problem. There is a file /etc/locale.gen which contains a list of locales to work with. This file is generated at installation time by the locales package. The input for that generation process comes from the languagechooser udeb(?) in the debian-installer.<br />This last one parser a file /usr/share/languagelist and extracts the entry for the "English" language, which is:<br /><pre><br />English;en;en_US@euro;en;US;en_US:en_GB:en;kbd=lat0-sun16(iso15)<br /></pre><br /><br />The /usr/bin/languagemap then extracts the second value "en" from that list and that is used as the locale later on.<br /><br />OK, I know the CD hasn't changed, but the locales package might have.<br /><br />So what is actually erroring in there that didn't error before ?<br />The postinst script calls /usr/bin/locale-gen which reads /etc/locale.gen and calls "localedef" on it.<br />That generates an error:<br /><pre><br />cannot open local definition file 'en': No such file or directory<br /></pre><br /><br /><pre><br />(deepstar/tachyon) ~$ strace -s 1500 -ifo /tmp/localedef.log localedef -i en -c -f ISO-8859-1 -A /etc/locale.alias en<br />cannot open locale definition file `en': No such file or directory<br />(deepstar/tachyon) ~$ cat /tmp/localedef.log |grep i18n<br />10009 [b7f2b09e] open("/usr/share/i18n/charmaps/ISO-8859-1", O_RDONLY) = -1 ENOENT (No such file or directory)<br />10009 [b7f2b09e] open("/usr/share/i18n/charmaps/ISO-8859-1.gz", O_RDONLY) = 3<br />10009 [b7f2b09e] open("/usr/share/i18n/locales/en", O_RDONLY) = -1 ENOENT (No such file or directory)<br />(deepstar/tachyon) ~$ strace -s 1500 -ifo /tmp/localedef.log localedef -i en_US -c -f ISO-8859-1 -A /etc/locale.alias en_US<br />cannot open locale archive "/usr/lib/locale/locale-archive": Permission denied<br />(deepstar/tachyon) ~$ cat /tmp/localedef.log |grep i18n<br />10018 [b7ebd09e] open("/usr/share/i18n/charmaps/ISO-8859-1", O_RDONLY) = -1 ENOENT (No such file or directory)<br />10018 [b7ebd09e] open("/usr/share/i18n/charmaps/ISO-8859-1.gz", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/en_US", O_RDONLY) = 3<br />10018 [b7ebd09e] open("i18n", O_RDONLY) = -1 ENOENT (No such file or directory)<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/i18n", O_RDONLY) = 4<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/iso14651_t1", O_RDONLY) = 4<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_neutral", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_circle", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_cjk_compat", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_compat", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_font", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_fraction", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_narrow", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_small", O_RDONLY) = 3<br />10018 [b7ebd09e] open("/usr/share/i18n/locales/translit_wide", O_RDONLY) = 3<br />(deepstar/tachyon) ~$ <br /></pre><br /><br />From this strace, I conclude that localedef looks for /usr/share/i18n/locales/en and doesn't find it.<br /><br />When I try installing Debian without modifications, the locale is set to en_US, which is puzzling.<br />Somehow, the custom CD sets locale to en, and does it differently from standard Debian. I don't recall modifying anything that could touch it though.<br /><br />Instead of figuring out what settings I need to fix to make this problem go away, I'll just overwrite /etc/environment from within the debian installer.<br />The correct file to change is /usr/lib/prebaseconfig.d/05languagechooser<br />
+</div>
+
+
+    </div>
+
+  </body>
+</html>

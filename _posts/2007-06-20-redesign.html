@@ -1,0 +1,12 @@
+---
+layout: post
+title: redesign
+date: '2007-06-20T01:08:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-19T21:06:27.147+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-888105108300462255
+blogger_orig_url: http://www.singularity.be/2007/06/redesign.html
+---
+
+Allright, it's been a long time since I worked on HPPC. The reason is that I couldn't understand how the nf-HIPAC people got to a O(log(log(N)) time complexity (where N is 2^32 btw), which would mean 5 steps to lookup an IP address in the entire namespace, and still be memory efficient.<br /><br />I still don't understand the log(log(n)) part, but nonw I'm a step closer to a more efficient algorithm. A colleague of mine claimed that he knew how to get this kind of complexity by splitting IP-addresses in their bytes and using those to index a tree of tables. <br /><br />This seems to work nicely in theory: 32 bits split in bytes is 4 bytes, so only 4 lookups. That's less than the 5 HIPAC claims, so it's even better :)<br />But ! This method is not O(log(log(N)) because it doesn't scale. In a 32bit world like IPv4, the time complexity would be 4 steps, but for IPv6 (128 bit), it would be 16 steps. This is because we don't "search" the bytes in a binary tree, but treat them linearly. First byte 0, then byte 1, etc. So the true complexity of this method is actually log(N)/8, which is O(log(N)). That's the same as my previous method, but a lot faster.<br /><br />The memory complexity is also doable. The entire tree (minus the end-nodes), would be about 64MB big (assuming 32bit pointers, each table with 256 entries would be 1KB in size. Then there are 1 + 2^8 + 2^16 tables, which is 65792 KB total).<br /><br />Definitely worth implementing. I already copied the HPPC code to my new laptop installation and installed the build-essential package.

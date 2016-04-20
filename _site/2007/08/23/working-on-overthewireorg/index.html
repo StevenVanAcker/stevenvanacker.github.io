@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Working on OverTheWire.org &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Working on OverTheWire.org</h1>
+  <span class="post-date">23 Aug 2007</span>
+  I returned to PullThePlug.org some weeks ago. When I left for a (not so short apparently) break in august or september 2006, we had been struggling with the move to our new domainname overthewire.org. We still haven't made the move...<br /><br />I will be putting my weight into it to make sure that the move happens this time.<br /><br />Before I left, I had a website http://agora.singularity.be/ that provided a content-richt environment for the PullThePlug community. The problem with it was that lots of the website was personal code and I did not have the incentive to maintain it. This time around, I'm setting up the website again, but with as few special tweaks as possible. This should assure that the website can run without me having to maintain PHP code.<br /><br />For the past couple weeks, I have been setting up the website again based on the following ideas:<br /><br /><ul><br /><li>Every community website should provide content. If a website does not provide content, then there is no reason to have the website in the first place.</li><br /><li>Content needs to be fresh. Websites with "last updated october 2006" or similar stand no chance because it's users will only put up with the outdated content 3 or 4 times before turning away. Fresh content is vital to a sites survival because it makes visitors come back.</li><br /><li>Content needs to be provided by the community. This is what the magical "Web 2.0" theme is all about and it makes sense. A community wants to be interactive. It has news, ideas and discussions, all waiting to happen. The community website is the place to host them on. The agora website will be setup to allow 3 major types of community-provided content: blogs, weblinks and an archive with links posted to IRC.</li><br /><li>Blogs provide people a means to report to the community what they are doing. Since the OverTheWire community is full of hackers with many cool and interesting projects, it should be no problem for any of these people to write a blog about their doings. Of course, many of these hackers probably already have a blog somewhere and will not want to move it to agora. That's OK (I don't want to move myself). Agora provides a way to aggregate blogs (or part of blogs) by means of RSS feeds.</li><br /><li>Next to blogs, agora will also provide a database of links. What used to be the portal in a farflung past, and was also implemented in the previous agora, is implemented in this agora as well. Users will be able to post links on the site and file them under some category. Interesting URL's can be shared to the community this way.</li><br /><li>Additionally, just like in the previous setup, an IRC-bot will keep track of all URL's posted on IRC channels it is on. These URL's are stored in a database and displayed on the website to provide the community with some more-or-less random pointers into the Interweb. If you are bored, this irc-log is the place to jump to some random part of the internet and perhaps write about it on agora.</li><br /><li>Of course, all content on the website will be subject to commenting by the community.</li><br /></ul><br /><br />That about sums it up for now. Stay tuned for more news.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

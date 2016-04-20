@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Qemu bumps Virtualbox off my table ? &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Qemu bumps Virtualbox off my table ?</h1>
+  <span class="post-date">27 Sep 2007</span>
+  In <a href="http://www.singularity.be/node/6455">one of my previous posts</a> I explained how to do bridged networking in Virtualbox. But since then, I haven't blogged much.<br /><br /><pre><br />The observant reader will notice how I'm straying from my "no projects untill personal life crap sorted" blogging policy<br />when writing about this subject. I should point out that virtualisation is very useful to me at work and by claiming that<br />this is not really a project, I should be able to sneak out of anything I have said earlier.<br /></pre><br /><br />Last time I played with Virtualbox, I hit a bug and <a href="http://www.virtualbox.org/ticket/645">reported it</a>. But I haven't seen any change with respect to that bug. Because I really needed to do some virtual machining, I turned to Qemu and was happily surprised. True, Qemu doesn't have the nice GUI frontend that Virtualbox has, but it's totally free and opensource, and it works.<br /><br />I wrote this script to automagically start my Qemu machines with randomised MAC-addresses, and to be able to setup networking much easier.<br /><br /><pre><br />#!/usr/bin/perl<br /><br />sub randomMac {<br />    my $out = "1c:71";<br />    my $i = 0;<br /><br />    for($i = 0; $i < 4; $i++) {<br />        $rand = rand(255);<br />        $out .= sprintf(":%02x", $rand);<br />    }<br /><br />    return $out;<br />}<br /><br /># format: diskimage, cd=cdrom, nw=interfaces<br /><br /><br />$globalDiskImage       = "";<br />$globalCDROMImage      = "";<br />$globalMemory          = "128";<br /><br />foreach $arg (@ARGV) {<br />    if($arg =~ /^cd=(\S+)/) {<br />        $globalCDROMImage = $1;<br />    } elsif($arg =~ /^nw=(\S+)/) {<br />        @globalInterfaces = split(/,/,$1);<br />    } elsif($arg =~ /^mem=(\S+)/) {<br />        $globalMemory = $1;<br />    } else {<br />        $globalDiskImage = $arg;<br />    }<br />}<br /><br />$cmdline = "qemu -localtime";<br /><br />print "########################################################\n";<br />$counter = 0;<br />foreach $int (@globalInterfaces) {<br />    $mac = randomMac();<br />    $cmdline .= " -net nic,vlan=$counter,macaddr=$mac";<br />    print "# Interface eth$counter (MAC: $mac) = ";<br />    if($int ne "") {<br />        $cmdline .= " -net tap,ifname=$int,script=/bin/true,vlan=$counter";<br />        print "$int\n";<br />    } else {<br />        print "<disconnected>\n";<br />    }<br />    $counter++;<br />}<br /><br />if($globalCDROMImage ne "") {<br />    $cmdline .= " -cdrom $globalCDROMImage -boot d";<br />    print "# CDROM = $globalCDROMImage\n";<br />}<br /><br />if($globalMemory ne "") {<br />    $cmdline .= " -m $globalMemory";<br />    print "# Memory = $globalMemory MB\n";<br />}<br /><br />if($globalDiskImage) {<br />    $cmdline .= " $globalDiskImage";<br />    print "# Harddisk = $globalDiskImage\n";<br />}<br /><br />print "########################################################\n\n";<br />system($cmdline);<br /></pre><br /><br />"1c:71" in the MAC-address is the l33t-speak version of ICTI, which is the division I work for ;)<br /><br />Oh, I should also say some stuff about my attempts to play with Gnome NetworkManager. I found out the hard way that NM is still very much a work in progress... My attempts to automatically create a bridge and accompaning tap devices have worked OK, but when my eth0 device (ethernet interface) goes down, NetworkManager doesn't detect it anymore because it is watching the bridge named "eth0" instead of the old device named like that.<br /><br />It turns out that I was reinventing the wheel with my entire setup. Debians (and thus Ubuntus) /etc/network/interfaces configuration file has support for bridges. And maybe NetworkManager will do a better job if I create a bridge that way.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

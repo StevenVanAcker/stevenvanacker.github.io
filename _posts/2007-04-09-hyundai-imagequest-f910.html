@@ -1,0 +1,12 @@
+---
+layout: post
+title: Hyundai ImageQuest F910
+date: '2007-04-09T15:17:00.000+02:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-18T10:44:27.326+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-315804432271501817
+blogger_orig_url: http://www.singularity.be/2007/04/hyundai-imagequest-f910.html
+---
+
+I'm tired of looking at the 800x600 @ 80Hz version of my screen, just because a projector I borrowed couldn't handle a higher resolution.<br /><br />Time to fix that.<br /><br />My monitor is an "old" Hyundai ImageQuest F910, 19 inch.<br /><br />Information:<br />http://www.hyundaiq.ch/support/download.htm<br /><br />Horizontal frequency range: 31.5-106.3KHz<br />Vertical frequency range: 60-120Hz<br />Dotclock (bandwidth): 261MHz<br /><br />Going here to create modelines:<br />http://xtiming.sourceforge.net/cgi-bin/xtiming.pl<br /><br />With 261MHz dotclock.<br /><br />This is the screen section I use:<br /><br /><pre><br />Section "Monitor"<br />        Identifier      "Hyundai ImageQuest F910"<br />        Option          "DPMS"<br />        HorizSync       31.5-106.3<br />        VertRefresh     60-120<br /><br />Modeline "1600x1200@78" 261.00 1600 1632 2616 2648 1200 1223 1238 1261<br />Modeline "1280x1024@85" 188.40 1280 1312 2024 2056 1024 1043 1057 1076<br />Modeline "1024x768@100" 126.64 1024 1056 1536 1568 768 781 794 807<br />Modeline "800x600@85" 58.20 800 832 1048 1080 600 611 620 631<br />Modeline "640x480@120" 55.43 640 672 880 912 480 487 497 505<br /><br />EndSection<br /></pre>

@@ -1,0 +1,15 @@
+---
+layout: post
+title: Automatically creating Samba accounts with adduser
+date: '2008-08-16T19:28:00.002+02:00'
+author: Steven Van Acker
+tags:
+- Debian
+- English
+- Ubuntu
+modified_time: '2008-08-16T19:35:51.316+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-5523788817081394372
+blogger_orig_url: http://www.singularity.be/2008/08/automatically-creating-samba-accounts.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />I'm setting up an environment with a lot of Windows users. This means using Samba.<br />On the samba server, each user has a unix account for mail, and a samba account. Setting up password syncing between unix accounts and samba accounts is <a href="http://jaka.kubje.org/wp/2007/05/14/unix-samba-password-sync-on-debian-etch/">described el is sewhere</a>.<br /><br />Now it would be nice if the "adduser" command also created a samba user. I've searched for a way to do this, and found no pre-baked solution.<br /><br />"adduser" is a perlscript which calls "groupadd", "useradd" and "passwd" to create the user.<br />What I did is hijack the "useradd" command to execute "/usr/sbin/useradd" (What it was supposed to execute) and "smbpasswd -n -a username".<br /><br />This is the script:<br />[PRE]<br />#!/usr/bin/perl<br /><br />system "/usr/sbin/useradd", @ARGV;<br />my $ret = $?;<br /><br />system "/usr/bin/smbpasswd", ("-n", "-a", $ARGV[-1]);<br /><br />exit $ret;<br />[/PRE]<br /><br />Place it in "/root/bin/" and add "/root/bin/" to your PATH. "adduser" will now automagically create samba accounts aswell.<br />StevensBlogSpotFilterThing --><br />I'm setting up an environment with a lot of Windows users. This means using Samba.<br />On the samba server, each user has a unix account for mail, and a samba account. Setting up password syncing between unix accounts and samba accounts is <a href="http://jaka.kubje.org/wp/2007/05/14/unix-samba-password-sync-on-debian-etch/">described el is sewhere</a>.<br /><br />Now it would be nice if the "adduser" command also created a samba user. I've searched for a way to do this, and found no pre-baked solution.<br /><br />"adduser" is a perlscript which calls "groupadd", "useradd" and "passwd" to create the user.<br />What I did is hijack the "useradd" command to execute "/usr/sbin/useradd" (What it was supposed to execute) and "smbpasswd -n -a username".<br /><br />This is the script:<br /><pre style="background-color: #EEEEEE; border: black 1px dashed; line-height: 100%; padding: 10px;"><br />#!/usr/bin/perl<br /><br />system "/usr/sbin/useradd", @ARGV;<br />my $ret = $?;<br /><br />system "/usr/bin/smbpasswd", ("-n", "-a", $ARGV[-1]);<br /><br />exit $ret;<br /></pre><br /><br />Place it in "/root/bin/" and add "/root/bin/" to your PATH. "adduser" will now automagically create samba accounts aswell.

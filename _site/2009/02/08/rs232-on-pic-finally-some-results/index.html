@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      RS232 on a PIC - finally some results &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">RS232 on a PIC - finally some results</h1>
+  <span class="post-date">08 Feb 2009</span>
+  <!-- StevensBlogSpotFilterThing<br />This past week, I've tried to get RS232 communication working between my PC and 16F627 PIC over a serial cable. And finally succeeded today.<br /><br />[IMG:http://data.singularity.be/images/full/2009/02/02/cimg1935.jpg][IMG:http://data.singularity.be/images/full/2009/02/02/cimg1936.jpg][IMG:http://data.singularity.be/images/full/2009/02/02/cimg1937.jpg][IMG:http://data.singularity.be/images/full/2009/02/03/cimg1939.jpg]<br /><br />Here are a couple lessons I've learned:<br /><br /><h3>Windows is a piece of turd - getting the PIC programmer working in Linux</h3><br />I've said it before, but I can't repeat it enough: Windows is crap. One could say that <br />the development platform created by Microchip is probably the best to do PIC programming, but it's not. I've been using GPSim to do my simulations and codetesting under linux and it works fantastically. <br /><br />I would have used Linux for the entire development and testing, but my PIC programmer (Velleman K8048) seemed unsupported in Linux. Everytime I had some working code, I had to reboot to Windows just so I could burn the code on a PIC. That's just stupid.<br /><br />Luckily I've found a way to program the PIC from Linux.<br /><br /><h3>Moving an IC between programmer and breadboard all the time comes at a cost - ICSP</h3><br />Moving the PIC between programmer and breadboard all the time has an unforeseen side-effect: after a while pins start being bent and break off. I've lost 3 already.<br /><br />Instead of moving the PIC around all the time I figured it would be better to use ICSP. So I created a cable for it and tried it out: no joy.<br /><br />I don't know why it doesn't work, more research and testing is needed.<br /><br /><h3>When the oscilloscope is showing some weird Klingonlike signal, something is wrong with it</h3><br /><br />Meaning when it looks like this:<br />[IMG:http://data.singularity.be/images/full/2009/02/03/cimg1941.jpg]<br /><br />I found out that the cable of the scope is damaged or broken in some way. After replacing it, the signal looked OK.<br /><br /><h3>Simulation environments differ from the real world</h3><br />GPSim runs with a 20MHz clock while the internal oscillator of my PIC runs at 4Mhz. Blindly uploading the same code to the PIC will therefor not work. It needs to be modified to take that lover speed in to account.<br />StevensBlogSpotFilterThing --><br />This past week, I've tried to get RS232 communication working between my PC and 16F627 PIC over a serial cable. And finally succeeded today.<br /><br /><a href="http://data.singularity.be/images/full/2009/02/02/cimg1935.jpg"><img src="http://data.singularity.be/images/thumb/2009/02/02/cimg1935.jpg.png"></a><a href="http://data.singularity.be/images/full/2009/02/02/cimg1936.jpg"><img src="http://data.singularity.be/images/thumb/2009/02/02/cimg1936.jpg.png"></a><a href="http://data.singularity.be/images/full/2009/02/02/cimg1937.jpg"><img src="http://data.singularity.be/images/thumb/2009/02/02/cimg1937.jpg.png"></a><a href="http://data.singularity.be/images/full/2009/02/03/cimg1939.jpg"><img src="http://data.singularity.be/images/thumb/2009/02/03/cimg1939.jpg.png"></a><br /><br />Here are a couple lessons I've learned:<br /><br /><h3>Windows is a piece of turd - getting the PIC programmer working in Linux</h3><br />I've said it before, but I can't repeat it enough: Windows is crap. One could say that <br />the development platform created by Microchip is probably the best to do PIC programming, but it's not. I've been using GPSim to do my simulations and codetesting under linux and it works fantastically. <br /><br />I would have used Linux for the entire development and testing, but my PIC programmer (Velleman K8048) seemed unsupported in Linux. Everytime I had some working code, I had to reboot to Windows just so I could burn the code on a PIC. That's just stupid.<br /><br />Luckily I've found a way to program the PIC from Linux.<br /><br /><h3>Moving an IC between programmer and breadboard all the time comes at a cost - ICSP</h3><br />Moving the PIC between programmer and breadboard all the time has an unforeseen side-effect: after a while pins start being bent and break off. I've lost 3 already.<br /><br />Instead of moving the PIC around all the time I figured it would be better to use ICSP. So I created a cable for it and tried it out: no joy.<br /><br />I don't know why it doesn't work, more research and testing is needed.<br /><br /><h3>When the oscilloscope is showing some weird Klingonlike signal, something is wrong with it</h3><br /><br />Meaning when it looks like this:<br /><a href="http://data.singularity.be/images/full/2009/02/03/cimg1941.jpg"><img src="http://data.singularity.be/images/thumb/2009/02/03/cimg1941.jpg.png"></a><br /><br />I found out that the cable of the scope is damaged or broken in some way. After replacing it, the signal looked OK.<br /><br /><h3>Simulation environments differ from the real world</h3><br />GPSim runs with a 20MHz clock while the internal oscillator of my PIC runs at 4Mhz. Blindly uploading the same code to the PIC will therefor not work. It needs to be modified to take that lover speed in to account.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

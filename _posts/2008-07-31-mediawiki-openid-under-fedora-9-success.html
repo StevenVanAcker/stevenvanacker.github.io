@@ -1,0 +1,16 @@
+---
+layout: post
+title: 'MediaWiki + OpenID under fedora 9: success !'
+date: '2008-07-31T13:55:00.004+02:00'
+author: Steven Van Acker
+tags:
+- MediaWiki
+- OpenID
+- English
+- Fedora
+modified_time: '2008-07-31T14:01:07.275+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6250560583617398689
+blogger_orig_url: http://www.singularity.be/2008/07/mediawiki-openid-under-fedora-9-success.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />I finally managed to get things working, although it involved using original sources instead of RPMs.<br /><br />I made 2 main errors:<br /><ul><br /><li>My MediaWiki was too old, and I needed to install it from source. I hope I can find more recent RPM packages or maybe I can convince the maintainer to upgrade to the latest version</li><br /><li>I set $wgTrustRoot in /var/local/wiki/LocalSettings.php, which is the wrong place. I needed to set that in OpenID.setup.php instead.</li><br /></ul><br /><br />I hope to post a full guide soon, followed by a puppet recipe<br />StevensBlogSpotFilterThing --><br />I finally managed to get things working, although it involved using original sources instead of RPMs.<br /><br />I made 2 main errors:<br /><ul><br /><li>My MediaWiki was too old, and I needed to install it from source. I hope I can find more recent RPM packages or maybe I can convince the maintainer to upgrade to the latest version</li><br /><li>I set $wgTrustRoot in /var/local/wiki/LocalSettings.php, which is the wrong place. I needed to set that in OpenID.setup.php instead.</li><br /></ul><br /><br />I hope to post a full guide soon, followed by a puppet recipe

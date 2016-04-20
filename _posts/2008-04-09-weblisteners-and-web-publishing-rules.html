@@ -1,0 +1,15 @@
+---
+layout: post
+title: Weblisteners and Web Publishing rules in ISA 2006, with Powershell (mostly)
+date: '2008-04-09T21:12:00.003+02:00'
+author: Steven Van Acker
+tags:
+- PowerShell
+- English
+- ISA
+modified_time: '2008-04-10T14:27:38.870+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-676396602323611135
+blogger_orig_url: http://www.singularity.be/2008/04/weblisteners-and-web-publishing-rules.html
+---
+
+The last 4 days have been very interesting. I have created about 10 weblisteners, each with their own IP and SSL certificate, and about 5 Web publishing rules. And all of it with Powershell.<br /><br />Of course, thats not all I did. All the powershell scripts have been revised and tested in a production environment. I'll get to that in a moment.<br /><br />First, a friendly warning after a "WTF?!" moment.<br /><br />Previously, I had created a new ISA array by creating and joining it when ISA1 was being installed. I have now decided to create the ISA array from powershell instead, because that way I can populate all the rules in the CSS before the ISA software is even installed. It makes the installation process a lot more uniform: install CSS, populate it and then install N ISA servers that join the array.<br /><br />When doing it this way, I was able to add all of the ISA configuration, but none of the Web Listeners worked. When I looked at the Weblistener, there was no certificate specified. Trying to add one resulted in a "there are no certificates configured on this server" error, even after I made sure that the certificates were there.<br /><br />The reasonn for this ? Apparently, I can create all the weblisteners and specify which certificates to use. But if no ISA server is installed (so only the management console), no certificates can be found. Just installing ISA solved the problem. The weblisteners automagically found the certificates and everything was OK. So keep all of that in mind.<br /><br />[Update]<br />I will post the powershell scripts here at a later time.

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      An evolution plugin for Symantec Enterprise Vault &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">An evolution plugin for Symantec Enterprise Vault</h1>
+  <span class="post-date">31 May 2008</span>
+  <!-- StevensBlogSpotFilterThing<br />Dilbert is one of my favorite comics, but I never realised how close it came to the truth.<br /><br />But I can't talk about that any further, because we've been strongly influenced to tell everyone how great the entire Microsoft Exchange groupware project is.<br /><br />Frequent readers of this blog will without a doubt know that I'm an advocate of free software and open standards. That's one of the reasons I'm paying close attention to non-Microsoft usage of this groupware project.<br /><br />We will use an excellent mail archiving solution from Symantec called "Enterprise Vault" (E-vault) which is more or less like a "sophisticated" cronjob pulling old mails from the Exchange server and archives them in a database somewhere else. The archived mail is then replaced by a mailstub on the Exchange server so that users can use that mailstub to retrieve their archived mail from E-vault.<br />This solution from Symantec is much better than the solution we have now (which does the same thing). because it's more expensive and works together with a proprietary closed-protocol, closed-source system.<br /><br />E-vault can be queried in 2 ways. It has a website that users can login to and search for their archived mails, and it has a plugin for Microsoft Outlook that has the same functionality but baked into the Outlook interface.<br /><br />Everyone else at our university will have to go through the webinterface.<br /><br />Jealous of the Outlook users, I decided to take a look at how the E-vault plugin retrieves the mails from the E-vault server. It does that by retrieving a DVS file (Digital Vault Saveset) which is a <a href="https://forums.symantec.com/syment/board/message?board.id=106&message.id=834">compressed version of the archived mail with some metadata</a> but of which the specification is a secret and no tools exist in the wild to analyze them.<br />This of course raises the question what we will ever do if we decide to migrate away from E-vault, but then I'm sure that Symantec will help us to convert our DVS files to a mailformat of our chosing, because they are such nice guys.<br /><br />Obviously, the DVS files are of no use for me because I can't read them, but I've found a way to retrieve the uncompressed version of the DVS file and parse it. This type of file is refered to as the MSG format and is actually a <a href="http://sc.openoffice.org/compdocfileformat.pdf">Microsoft Compound document</a> containing a pre-parsed version of the original mail.<br />I wrote a parser for this format using Python and it works. Next, I will look into how I can make an Evolution plugin that can retrieve such MSG file and render it in Evolution.<br /><br /><br /><br />StevensBlogSpotFilterThing --><br />Dilbert is one of my favorite comics, but I never realised how close it came to the truth.<br /><br />But I can't talk about that any further, because we've been strongly influenced to tell everyone how great the entire Microsoft Exchange groupware project is.<br /><br />Frequent readers of this blog will without a doubt know that I'm an advocate of free software and open standards. That's one of the reasons I'm paying close attention to non-Microsoft usage of this groupware project.<br /><br />We will use an excellent mail archiving solution from Symantec called "Enterprise Vault" (E-vault) which is more or less like a "sophisticated" cronjob pulling old mails from the Exchange server and archives them in a database somewhere else. The archived mail is then replaced by a mailstub on the Exchange server so that users can use that mailstub to retrieve their archived mail from E-vault.<br />This solution from Symantec is much better than the solution we have now (which does the same thing). because it's more expensive and works together with a proprietary closed-protocol, closed-source system.<br /><br />E-vault can be queried in 2 ways. It has a website that users can login to and search for their archived mails, and it has a plugin for Microsoft Outlook that has the same functionality but baked into the Outlook interface.<br /><br />Everyone else at our university will have to go through the webinterface.<br /><br />Jealous of the Outlook users, I decided to take a look at how the E-vault plugin retrieves the mails from the E-vault server. It does that by retrieving a DVS file (Digital Vault Saveset) which is a <a href="https://forums.symantec.com/syment/board/message?board.id=106&message.id=834">compressed version of the archived mail with some metadata</a> but of which the specification is a secret and no tools exist in the wild to analyze them.<br />This of course raises the question what we will ever do if we decide to migrate away from E-vault, but then I'm sure that Symantec will help us to convert our DVS files to a mailformat of our chosing, because they are such nice guys.<br /><br />Obviously, the DVS files are of no use for me because I can't read them, but I've found a way to retrieve the uncompressed version of the DVS file and parse it. This type of file is refered to as the MSG format and is actually a <a href="http://sc.openoffice.org/compdocfileformat.pdf">Microsoft Compound document</a> containing a pre-parsed version of the original mail.<br />I wrote a parser for this format using Python and it works. Next, I will look into how I can make an Evolution plugin that can retrieve such MSG file and render it in Evolution.
+</div>
+
+
+    </div>
+
+  </body>
+</html>

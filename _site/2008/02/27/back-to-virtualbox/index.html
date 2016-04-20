@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Back to virtualbox &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">Back to virtualbox</h1>
+  <span class="post-date">27 Feb 2008</span>
+  I've decided to use VirtualBox again as my primary virtualisation solution on the desktop, mainly because I was unable to install Fedora in a QEMU VM.<br /><br />Last time I played with VirtualBox, it had an annoying bug that has since been fixed. I also managed to screw up my Ubuntu installation by doing things in NetworkManager that I shouldn't have done.<br /><br />So how did I fix it this time ?<br /><br /><b>Step 1: Installing Virtualbox</b><br />More information about this can be found on the <a href="http://www.virtualbox.org/wiki/Downloads">VirtualBox wiki</a><br /><br />Added this line to /etc/apt/sources.list<br /><pre><br />deb http://www.virtualbox.org/debian gutsy non-free<br /></pre><br /><br />Executed <br /><pre><br />wget -q http://www.virtualbox.org/debian/innotek.asc -O- | sudo apt-key add -<br /></pre><br /><br />and finally:<br /><pre><br />apt-get update<br />apt-get install virtualbox<br /></pre><br /><br /><b>Step 2: Fixing networking</b><br />I have no 802.1q trunk on my laptop as I do on many other computers, but I still want to be able to interface my virtual machines with real networks. The answer: tap-devices and bridging<br /><br />My main network interface is eth0, my userid is 1000 (this is the first created user on Ubuntu, so it should work for everyone). To avoid that NetworkManager gets in the way, you need to list eth0 in /etc/network/interfaces. In my case, I have to shut down NetworkManager completely because it started configuring my wireless interface.<br /><br />Anyway, I configured /etc/network/interfaces by replacing is with this:<br /><pre><br />auto tap0<br />iface tap0 inet manual<br />    pre-up tunctl -t tap0 -u 1000<br />    pre-up ifconfig tap0 up<br />    post-down tunctl -d tap0<br /><br />auto br0 <br />iface br0 inet dhcp<br />    bridge_ports eth0 tap0<br />    bridge_fd 9 <br />    bridge_hello 2 <br />    bridge_maxage 12 <br />    bridge_stp off<br /><br />auto eth0<br />iface eth0 inet manual<br /></pre><br /><br /><b>Step 3: Configuring udev to automatically set ownership of /dev/net/tun</b><br />By default, the permissions on /dev/net/tun are wrong (is this a bug ?!)<br />To set them correctly, we can modify the udev configuration.<br />Edit /etc/udev/rules.d/20-names.rules and change the following line:<br /><pre><br />KERNEL=="tun", NAME="net/%k"<br /></pre><br />To<br /><pre><br />KERNEL=="tun", NAME="net/%k", GROUP="vboxusers", MODE="0660"<br /></pre><br /><br />This assumes that your user belongs to the group "vboxusers". If it doesn't, fix it with:<br /><pre><br />adduser &lt;username&gt; group<br /></pre><br /><br />That's it. I can now use tap0 as a Host interface in VirtualBox.<br /><br />I will probably make a singularity package for this because after all, who wants to do all of this manually these days ?
+</div>
+
+
+    </div>
+
+  </body>
+</html>

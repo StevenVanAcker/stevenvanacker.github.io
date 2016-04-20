@@ -1,0 +1,12 @@
+---
+layout: post
+title: ranges and negations
+date: '2007-03-12T01:14:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-18T10:42:01.188+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-313123722163513465
+blogger_orig_url: http://www.singularity.be/2007/03/ranges-and-negations.html
+---
+
+I've been playing with ugly algorithms the last couple days. I already had an infrastructure to add separate subnets to the tree and query for them. But I had no solution for negations ( ! 10.0.36.0/24) or ranges (1023-65535). That last item already reveals my plan. The tree I'm building is meant for 32-bit IP addresses, but it can be used for 16-bit port-numbers as well. While IP-ranges are not addressed in netfilter as far as I know, port ranges are. That's why I need such a thing.<br /><br />I now have the capability to specify ranges and negations in my tree. Well actually, a range just spawns a lot of other subnets (for 32-bit, the theoretical maximum would be 64 subnets) that are added to the tree. The negations are similar. Combined, they can lead to a lot of extra nodes...<br /><br />But anyway. In order to implement these, I introduced the Subnet and SubnetList structures in ALL of my code. In 1 go. Without testing. You probably know where this is leading... After I had replaced all unsigned long int code (for IP-addresses) with Subnet structures, the code broke. It took me a while to track down the bug, but I squashed it now. Things like this make me appreciate my coding-style, where I code and test incrementally.<br /><br />As a testcase, I negate a subnetlist with 1 subnet in it, and then negate that too. The last result should be the same as the first subnet.<br /><br /><pre><br />(deepstar/tachyon) ~/projects/hppc$ ./a.out 1.2.3.4 24<br />Subnetlist: 1.2.3.4/24 <br />Negated subnetlist: 0.0.0.0/8 1.0.0.0/15 1.2.0.0/23 1.2.2.0/24<br /> 1.2.4.0/22 1.2.8.0/21 1.2.16.0/20 1.2.32.0/19 1.2.64.0/18 <br />1.2.128.0/17 1.3.0.0/16 1.4.0.0/14 1.8.0.0/13 1.16.0.0/12 <br />1.32.0.0/11 1.64.0.0/10 1.128.0.0/9 2.0.0.0/7 4.0.0.0/6 <br />8.0.0.0/5 16.0.0.0/4 32.0.0.0/3 64.0.0.0/2 128.0.0.0/1 <br />Negated negated subnetlist: 1.2.3.0/24 <br />(deepstar/tachyon) ~/projects/hppc$ <br /></pre><br /><br />It works! :)

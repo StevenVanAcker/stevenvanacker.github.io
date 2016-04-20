@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/04/03/notification-daemon/">
+        notification-daemon
+      </a>
+    </h1>
+
+    <span class="post-date">03 Apr 2007</span>
+
+    I was wrong.<br /><br />After looking around some more, I found that there is a notification-daemon package that uses <a href="http://www.freedesktop.org/wiki/Software/dbus">D-BUS</a>.<br /><br />"D-Bus is a message bus system, a simple way for applications to talk to one another."<br /><br />There is libnotify, which is a library to send notifications through D-BUS, and there is libnotify-bin, which contains a tool "notify-send" to send single notifications.<br /><br />There are also Python bindings in python-notify, which can be used to post notifications to D-BUS, through libnotify. Too complicated ? Not really.<br /><br />I was so fixed on creating a "file watching daemon" that would constantly query a file, read new lines and post those as notifications.<br />I decided to create such a daemon using the python bindings, and it actually works nicely.<br /><br /><pre><br />#!/usr/bin/python<br />import time<br />import string<br />import gtk, pynotify<br /><br />pynotify.init("test")<br /><br />TypeImages = { <br />                'info': "icon.png",<br />                'alert': "/usr/share/app-install/icons/blam.png"<br />             }<br />TypeTitles = { <br />                'info': "Informational", <br />                'alert': "Alert"<br />             }<br /><br /><br />fp=open('/tmp/workfile', 'r')<br /><br />lastdate = int(time.time())<br />while 1:<br />    line = fp.readline()<br />    while line:<br />        line = line.rstrip()<br />        parts = line.split(" ", 2)<br />        i = line.find(" ") # let's assume this is not -1<br />        ts = line[0:i]<br />        line = line[i+1:]<br /><br />        i = line.find(" ") # let's assume this is not -1<br />        tag = line[0:i]<br />        rest = line[i+1:]<br /><br />        if lastdate <= int(ts):<br />            #print "[" + ts + "][" + rest + "]"<br />            if TypeTitles.has_key(tag):<br />                n = pynotify.Notification(TypeTitles[tag], rest)<br />                p = gtk.gdk.pixbuf_new_from_file(TypeImages[tag])<br />                n.set_icon_from_pixbuf(p)<br />            else:<br />                n = pynotify.Notification("Unknown", rest)<br />            <br />            n.show()<br /><br />        line = fp.readline()<br /><br />    lastdate = int(time.time())<br />    time.sleep(1)<br /><br />fp.close()<br /></pre><br /><br />This program works nicely, but there is no advantage over calling notify-send manually. Well, not a lot anyway.<br /><br />So instead of creating a new package with this daemon in it, I'll just use notify-send everywhere (or maybe write a wrapper around it)<br /><br />For example:<br /><pre><br />notify-send -i /usr/share/app-install/icons/kalarm.png "Test"<br /></pre>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/04/02/dependency-problems-in-ubuntu/">
+        dependency problems in Ubuntu ?
+      </a>
+    </h1>
+
+    <span class="post-date">02 Apr 2007</span>
+
+    I needed to install python-gtk2-dev and python-gnome2-dev in order to "compile" Band Saw. When I ran bandsaw.py as a test, I got what looks like a dependency problem:<br /><br /><pre><br />guest@berta:~/Steven/Projects/bandsaw/bandsaw-0.3.0/src$ python bandsaw.py <br />Traceback (most recent call last):<br />  File "bandsaw.py", line 31, in ?<br />    import egg.trayicon<br />ImportError: /usr/lib/libgtk-x11-2.0.so.0: undefined symbol: gdk_font_from_description_for_display<br />guest@berta:~/Steven/Projects/bandsaw/bandsaw-0.3.0/src$ <br /></pre><br /><br />Apparently, the "gdk_font_from_description_for_display" function is <a href='http://developer.gnome.org/doc/API/2.0/gdk/gdk-Fonts.html#id2638107'>deprecated</a>. But libgtk2 still uses it.<br /><br />I'm not sure how to fix that yet.<br /><br />[Update]<br /><br />The problem is caused by a the library /usr/lib/libgdk-x11-2.0.so.0 (Mind GDK vs GTK). This library has a function called Gdk_font_from_description_for_display with uppercase G, probably to denote that the function is deprecated and shouldn't be called.<br /><br />While I wait for my subscription mail to the <a href='https://launchpad.net/distros/ubuntu/+source/gtk+2.0/+bugs'>Ubuntu bugtracker</a> to report this as a bug, I whipped up a quick hack.<br />I just create the function with lowercase first letter, and call the function with uppercase first letter.<br /><br />In the file gdk_font_from_description_for_display.c:<br /><pre><br />void *gdk_font_from_description_for_display(void *display, void *font_desc) {<br />    return Gdk_font_from_description_for_display(display, font_desc);<br />}<br /></pre><br /><br />Compile this with:<br /><pre><br />gcc -fPIC -g -c -Wall gdk_font_from_description_for_display.c<br />gcc -shared -Wl,-soname,libmystuff.so.1 -o libmystuff.so.1.0.1 gdk_font_from_description_for_display.o -lc<br /></pre><br /><br />Don't worry about the warnings ;) They can be ignored safely.<br /><br />Now to use this library:<br /><pre><br />guest@berta:~/.../src$ LD_PRELOAD=/.../libmystuff.so.1.0.1 python bandsaw.py <br /></pre><br /><br />You can read more about creating shared libraries here: http://tldp.org/HOWTO/Program-Library-HOWTO/shared-libraries.html<br /><br />[Update]<br />I reported the bug here:<br />https://launchpad.net/ubuntu/+source/gtk+2.0/+bug/99932
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/04/01/generic-notification-system-for-gnome/">
+        generic notification system for GNOME ?
+      </a>
+    </h1>
+
+    <span class="post-date">01 Apr 2007</span>
+
+    So, yesterday I found out that my harddisk is about to crash. That's probably the reason why I couldn't get my bazaar-ng autocommit script to work like it should (it kept complaining about IO and CRC errors)<br /><br />To avoid problems like this on my laptop, I want to be informed of any event that interests me. Something that would watch logfiles and pop up a notification when something interesting happens, would be very welcome. <br /><br />At work I was running KDE before a Debian upgrade decided that KDE was not good enough for me and installed GNOME over it. Under KDE, I found an applet called <a href='http://metamonitor.sourceforge.net/'>MetaMonitor</a> which watches any file for changes, and then pops up a notification. I used it for some time but never tried to found out how to start it when KDE starts. So eventually, after some reboot, it didn't come back and I didn't notice.<br /><br />Even before I found MetaMonitor, I was playing around with perl scripts that use QT bindings, and even the <a href='http://developer.kde.org/documentation/other/dcop.html'>DCOP protocol</a>. The DCOP protocol allows you to interact with the desktop environment through the commandline. You can pop up messages and all that, it's really something.<br /><br />But since I now use GNOME, I would love to find a similar functionality. As far as I know, GNOME doesn't have something like DCOP. In fact, Ubuntu repositories (universe and multiverse) don't have a GNOME panel that can watch a syslog file. This is really a shame.<br /><br />I found a program called <a href='http://bandsaw.sourceforge.net/'>"Band Saw"</a> which sits in the taskbar and reports interesting syslog events. Unfortunately, it doesn't come in an Ubuntu package. But I guess that's ok, I can learn how to make those (and I assume it's not much different than building Debian packages).<br /><br />Band Saw is written in Python, which is also a good thing, since I wanted to learn python anyway ;)<br />Who knows, maybe I'll make some contributions to this project.<br /><br />[Update]<br />The Debian Administration website has an article about desktop notifications, which may give some pointers. I'll read it later<br /><br />http://www.debian-administration.org/articles/407
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/03/31/new-laptop-phase-2-rough-edges-of/">
+        new laptop phase 2: rough edges of versioned backup
+      </a>
+    </h1>
+
+    <span class="post-date">31 Mar 2007</span>
+
+    I've been busy writing a guide on setting up the versioned backup I want. The script to automate it all is very basic right now, and I didn't bother with all the little details.<br /><br />But it's time I do that now.<br /><br />As a standalone solution, I could automatically backup the directory using that script right away. But the problem in my case is that my homedirectory is encrypted with EncFS. When I'm not logged in, the script (in my homedirectory) can't be executed and the data in my homedirectory can't even be read.<br /><br />So, when I'm not logged in, the script shouldn't be run.<br /><br />Also, I need to keep in mind that the remote site might not be available. There are many ways this can happen. <br /><ul><br /><li>I might not be online</li><br /><li>maybe I'm online but don't want to backup because my bandwidth is too small (dialin, GPRS, broadband connection with capped upload)</li><br /><li>maybe the remote server is down and can't be reached</li><br /><li>maybe it can be reached but I can't login (missing SSH-key)</li><br /><li>maybe the hostkey changed or someone is trying to do man-in-the-middle</li><br /><li>the disk might be full</li><br /><li>I might not have write permissions</li><br /><li>maybe BZR is not installed on the remote server</li><br /><li>maybe someone removed the .bzr directory on the remote server</li><br /></ul><br /><br />Or maybe some other reason I can't think of now.<br />The script should also inform me when something goes wrong.<br /><br />I'll be running this script from cron at a regular interval, say 15 minutes. Of course I have no idea if the script can complete it's run in 15 minutes. 10 minutes at 100MBit/s is 60000 Mbit or about 7GB. I hope I never have to synch that much in 1 run ;) If this happens though, I'll want to get notified by the script right ?<br /><br />So my script should self-terminate after 10 minutes, just in case it hangs for some reason. If it didn't self-terminate, the cronjobs would start piling up untill I kill them or, worse, my machine crumbles under the load.<br /><br />To set a timer on the script, I'll just use the trap function and listen for a signal I start in the background. <a href='http://www.andyd.net/index.php/2006/10/01/handling-timeout-properly/'>More info here...</a><br /><br />[Intermezzo]<br />I haven't reinstalled my laptop yet and all my tests are on VMWare workstation or server. I decided it would be good idea to have a versioned backup of my files on my desktop too, so I created a BZR branch, and tried adding my entire personal directory (shared computer).<br /><br />I got this message:<br /><pre><br />ignored 1 file(s).<br />If you wish to add some of these files, please add them by name.<br /></pre><br /><br />I wasn't sure what happened, so I looked into it (obviously ;)<br /><br />BZR has a file called ~/.bazaar/ignore, which contains a list of filename patterns that it will ignore.<br />My file (which I guess is the default) contains these lines:<br /><pre><br />guest@berta:~$ cat .bazaar/ignore <br />*.a<br />*.o<br />*.py[co]<br />*.so<br />*.sw[nop]<br />*~<br />.#*<br />[#]*#<br />guest@berta:~$ <br /></pre><br /><br />All these patterns match temporary files, so it's a good default :)<br />To check which file was being ignored, I reran the command, this time with the verbose flag:<br /><pre><br />guest@berta:~$ bzr add -v Steven/<br />ignored Steven/python/box.pyc matching "*.py[co]"<br />If you wish to add some of these files, please add them by name.<br />guest@berta:~$ <br /></pre><br /><br />So it appears I have a compiled python script that wasn't added to the branch. Fine by me :)<br /><br />When I tried doing a commit, everything seemed to go fine untill my machine totally freaked. I was doing a recode of a TV-show I recorded earlier, which may have caused heavy disk activity. Still, my machine froze for about a minute, then killed the running bzr command.<br /><br />Now I get this after I rerun "bzr commit":<br /><pre><br />guest@berta:~$ bzr commit<br />bzr: ERROR: Could not acquire lock LockDir(file:///home/guest/.bzr/repository/lock)<br />guest@berta:~$ <br /></pre><br /><br />The lock can be broken with "bzr break-lock".<br /><br />The reason why my machine froze and killed bzr, is because I tried adding a 700MB iso to the branch, which is not a good idea. According to the developers, BZR can hold as much as 3 times the entire file in memory, which would be about 2.1GB.<br /><br />I'll have to make sure that huge files are not added to the repository and that corrupt locks are reported...<br /><br />[End of intermezzo]<br /><br />I've added code to the script that makes sure it will terminate itself nicely when it receives a SIGALRM. Bash can't send itself that signal in a clean way, so we have to use an external program like timeout or doalarm, as suggested <a href='http://wooledge.org/mywiki/BashFaq#faq68'>in the Bash FAQ</a>.<br /><br />Ubuntu has the "timeout" command in it's universe repository, so I'll use that one.<br /><pre><br />root@berta:~# apt-get install timeout<br />Reading package lists... Done<br />Building dependency tree       <br />Reading state information... Done<br />The following NEW packages will be installed:<br />  timeout<br />0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.<br />Need to get 6388B of archives.<br />After unpacking 53.2kB of additional disk space will be used.<br />Get:1 http://be.archive.ubuntu.com edgy/universe timeout 1.11-6.2 [6388B]<br />Fetched 6388B in 0s (17.1kB/s)<br />Selecting previously deselected package timeout.<br />(Reading database ... 130989 files and directories currently installed.)<br />Unpacking timeout (from .../timeout_1.11-6.2_i386.deb) ...<br />Setting up timeout (1.11-6.2) ...<br /><br />root@berta:~# <br /></pre><br />On receiving the SIGALRM signal, the script will print out what part of the script it was before exiting. This message will be vital to report an error to me.<br /><br />I've also added a check to see whether or not the BZR repository was locked.<br /><br />Making sure that noone is doing man-in-the-middle can be done by setting the <a href='http://www.faqs.org/docs/securing/chap15sec121.html'>StrictHostKeyChecking</a> option to yes in the SSH-config. We can even do it for our remote-site only.<br /><br />[Several coredumps later]<br />It appears that my harddisk is about to die (talk about luck...)<br />So in case things take a turn for the worst, I'll post the current version of the script here:<br /><pre><br />#!/bin/bash<br /><br />dirlist=$HOME/.bzr-dirlist<br />remotesite=sftp://guest2@localhost/home/guest2/<br /><br /># Don't run this script for too long.<br /># When running this script from cron, it's not a good idea<br /># to start a second instance of this script before the <br /># previous run is over<br /># <br /># because bash has no decent way to do an alarm() style signal,<br /># we'll have to count on an external program to do so <br /># (either doalarm or timeout as specified in http://wooledge.org/mywiki/BashFaq#faq68)<br />trap timeup 14<br /><br /># this variable will store a string that describes what we're doing<br /># in case the script gets killed.<br />TimeupReason="Script didn't start yet."<br /><br />timeup()<br />{<br />    echo "Killed by SIGALRM while: \"$TimeupReason\""<br />    exit 1<br />}<br /><br /># Starting from the homedirectory<br />TimeupReason="Entering home directory [$HOME]"<br />cd $HOME<br /><br /># check to see if there are locks<br />TimeupReason="Checking for a BZR lock."<br />if bzr info | grep -q locked; <br />then <br />        echo "Can't autocommit: Lock exists."<br />        exit 1<br />fi<br /><br /># for every directory we want to keep in the repository...<br />TimeupReason="Reading directory listing [$dirlist]"<br />for dir in `cat $dirlist`;<br />do<br />        # ... add the directory and all the (new) files in it<br />        TimeupReason="Adding files in [$dir] to BZR."<br />        bzr add $dir<br />done<br /><br /># Now commit all this data to BZR with a logmessage that indicates where<br /># the new versions come from, and the date.<br />TimeupReason="Committing changes to BZR."<br />bzr commit --message "Auto-commit `whoami`@`hostname` on `date`"<br /><br />TimeupReason="Push-and-Update to remote site [$remotesite]"<br />bzr push-and-update "$remotesite"<br /><br /><br />TimeupReason="Script is done."<br />exit 0<br /></pre><br /><br />To be run with <br /><pre><br />timeout -14 600 ./autocommit<br /></pre><br /><br />Cleanup script:<br /><pre><br />rm -rf ~/.bzr; cd ; bzr init; cd -<br />ssh guest2@localhost "rm -rf ~/.bzr; bzr init"<br /></pre>
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2007/03/30/mail-from-thomas-heinz/">
+        mail from Thomas Heinz !
+      </a>
+    </h1>
+
+    <span class="post-date">30 Mar 2007</span>
+
+    I received a mail from Thomas Heinz today, one of the authors of NF-HiPAC. It seems that I wanted to replace the "..." in <a href='/node/6304'>one of my previous posts</a> with his name at some point, but forgot that somehow. Anyway, it's nice to see that I'm reaching some people with my website ;)<br /><br />In addition, Thomas also provided me a link to their <a href='http://www.net.t-labs.tu-berlin.de/papers/H-HiPAC-04.pdf'>master thesis</a>, which I couldn't find at first. I'll be reading it soon.
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page59">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page57">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

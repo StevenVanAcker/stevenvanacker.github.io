@@ -1,0 +1,12 @@
+---
+layout: post
+title: automated partitions (13)
+date: '2006-03-16T10:33:00.000+01:00'
+author: Steven Van Acker
+tags: 
+modified_time: '2008-01-16T09:32:53.049+01:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-6396242197633906532
+blogger_orig_url: http://www.singularity.be/2006/03/automated-partitions-13.html
+---
+
+The 13 in the title is not promising, good thing I'm not superstitious :)<br /><br />I had some problems with grub not wanting to install on the RAID system yesterday, but that's solved. I apparently didn't mention it in the blog from yesterday.<br /><br />Inside the Debian installer, the RAID set is referred to as /dev/md/0, while the installed Debian environment refers to it as /dev/md0. Grub looks at the /etc/fstab on the target system when it executes grub-install (inside a chroot /target/) and then can't find /dev/md/0.<br /><br />So, changing /dev/md/0 to /dev/md0 in /target/etc/fstab solved all the problems. The debian-installer happily installs grub as if nothing happened.<br /><br />I've spent the rest of the day perfecting 2 scripts: make_partitions_single and make_partitions_raid. The first is to partition a single disk, the second to partition 2 disks in a RAID set.

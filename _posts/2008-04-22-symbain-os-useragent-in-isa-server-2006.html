@@ -1,0 +1,16 @@
+---
+layout: post
+title: '"Symbain OS" UserAgent in ISA Server 2006 EE'
+date: '2008-04-22T14:43:00.006+02:00'
+author: Steven Van Acker
+tags:
+- PowerShell
+- English
+- ISA
+- Windows
+modified_time: '2008-04-22T15:04:31.991+02:00'
+blogger_id: tag:blogger.com,1999:blog-5513234137363262204.post-4760895458011091712
+blogger_orig_url: http://www.singularity.be/2008/04/symbain-os-useragent-in-isa-server-2006.html
+---
+
+<!-- StevensBlogSpotFilterThing<br />Our Microsoft Exchange setup is terribly complicated. So much so that I've somehow stumbled upon a Microsoft typo in something most of you will never come across.<br /><br />The object description of <a href="http://msdn2.microsoft.com/en-us/library/bb425723.aspx">FPCUserAgentMapping</a> refers to "Symbain OS", which should obviously be "Symbian OS" or even "SymbianOS".<br />And this is really not a bug in the documentation:<br /><br /><pre><br />PS C:\&gt; $arr.RuleElements.UserAgentMappings | where-object {$_.UserAgent -like "*ym*"}<br /><br />PersistentName       : {5DED74B6-C22E-4a11-9702-27EBB340AF1B}<br />VendorParametersSets : {}<br />UserAgent            : *Symbain OS*<br />Description          :<br />Enabled              : True<br />FBAFormsType         : 2<br />Order                : 4<br /><br /></pre><br /><br />Thomas Shinder has also <a href="http://blogs.isaserver.org/shinder/2007/02/28/fix-the-nokia-isa-firewall-smart-phone-problem/">noticed and fixed this typo</a> some time ago, but it still exists. I don't know if it was reported to Microsoft, but I will try to do so now<br /><br /><br />StevensBlogSpotFilterThing --><br />Our Microsoft Exchange setup is terribly complicated. So much so that I've somehow stumbled upon a Microsoft typo in something most of you will never come across.<br /><br />The object description of <a href="http://msdn2.microsoft.com/en-us/library/bb425723.aspx">FPCUserAgentMapping</a> refers to "Symbain OS", which should obviously be "Symbian OS" or even "SymbianOS".<br />And this is really not a bug in the documentation:<br /><br /><pre><br />PS C:\&gt; $arr.RuleElements.UserAgentMappings | where-object {$_.UserAgent -like "*ym*"}<br /><br />PersistentName       : {5DED74B6-C22E-4a11-9702-27EBB340AF1B}<br />VendorParametersSets : {}<br />UserAgent            : *Symbain OS*<br />Description          :<br />Enabled              : True<br />FBAFormsType         : 2<br />Order                : 4<br /><br /></pre><br /><br />Thomas Shinder has also <a href="http://blogs.isaserver.org/shinder/2007/02/28/fix-the-nokia-isa-firewall-smart-phone-problem/">noticed and provided a fix for this typo</a> some time ago, but it still exists. I don't know if it was reported to Microsoft, but I will try to do so now<br /><br />[Update]<br /><br />The <a href="http://support.microsoft.com/gp/contactbug/">official way to report bugs to Microsoft</a> is by phone. Since I can't make international phonecalls from my desk here, that will not be an option.<br /><br />After a search on the (slow) Microsoft supportsite, I found a <a href="http://support.microsoft.com/kb/942180/en-us">knowledge base article</a> called "You cannot access Outlook Web Access that is published by ISA Server 2006 from a mobile device that runs the Symbian operating system".<br />If Microsoft knows about this bug, why isn't it fixed yet ?

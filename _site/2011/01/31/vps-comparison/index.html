@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      VPS Comparison &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">VPS Comparison</h1>
+  <span class="post-date">31 Jan 2011</span>
+  In the past, I've used hosting provided by the university for a couple of my projects. With the closure of <a href="http://www.acl.be">ACL</a> however, that option is getting more difficult.<br /><br />In addition, The hosting solution used by <a href="http://www.overthewire.org">OverTheWire</a> is a dedicated server, on which we run our own virtualization platform. The resources on that server are getting exhausted.<br /><br />So I'm faced with a couple of solutions, the most realistic being to either get another dedicated server or get a bunch of virtual private servers. Since a dedicated server is too expensive to buy at once (I don't have 10 projects ligned up to fill a single dedicated server at once), I decided to go for VPS.<br /><br />There are a lot of VPS providers out there, and a lot of virtualization platforms. For the OverTheWire projects, I prefer Xen since that allows to run a custom kernel. For other projects, I don't really care that much, but it seems OpenVZ is a standard container-based solution.<br /><br />So, I set out to find the optimal hosting for my projects. I extracted the list of VPS providers that were listed on <a href="http://lowendbox.com">LowEndBox</a> and went over them one by one. Most VPS providers have more than one offer and I decided to look at the most common configuration to make it easier to compare.<br /><br />This is the list of requirements:<br /><ul><br /><li>as close to 512MB of dedicated (as opposed to burstable) RAM as possible</li><br /><li>Xen VPS is preferred over OpenVZ over any other platform</li><br /><li>Unmanaged is preferred, we like to do thing ourselves</li><br /><li>PayPal payment is preferred</li><br /><li>Should allow setting reverse DNS</li><br /><li>Should have some out-of-band console</li><br /></ul><br /><br />The list contains 287 entries of which 57 providers were down/out of business/no longer support VPS.<br /><br />I thought it would be an interesting excersise, with results that would be interesting to a lot of people. So I made it a community effort by putting up a google spreadsheet where people could help fill in the details.<br /><br />The result of the survey can be found here: <a href="https://spreadsheets.google.com/ccc?key=0AimYZRRoPGFidFhPTF9TdXRneVFxdkREeG5OcFhFZHc&authkey=CLDn6p8J&hl=en">https://spreadsheets.google.com/ccc?key=0AimYZRRoPGFidFhPTF9TdXRneVFxdkREeG5OcFhFZHc&authkey=CLDn6p8J&hl=en</a><br /><br />Although a lot of fields are not filled in, like whether a VPS accepts PayPal, does rDNS or has a console (VPS providers should be more clear about this type of thing on their website), it is clear that there is a wide variety of solutions. Especially in price.<br /><br /><table border=1><br /><tr><th></th>                <th>Xen</th>    <th>OpenVZ</th>    <th>Other</th><th>Unknown</th></tr><br /><tr><th>Amount</th>          <td>85</td>     <td>81</td>        <td>10</td><td>54</td></tr><br /><tr><th>Cheapest</th>        <td> 6 $</td>   <td>1.66 $</td>    <td>5.211 $(vServer)</td><td>5 $</td></tr><br /><tr><th>Most expensive</th>  <td>120 $</td>  <td>60.125 $</td>  <td>49.95 $ (HyperV)</td><td>63.46 $</td></tr><br /></table>
+</div>
+
+
+    </div>
+
+  </body>
+</html>

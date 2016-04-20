@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      push or pull &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">push or pull</h1>
+  <span class="post-date">10 Apr 2007</span>
+  I've looked at sbackup and I'm a bit disappointed :(<br /><br />It's true that it has a nice GUI and has many interesting features. But I can't get it to work nicely. First of all, I could not add my root directory (/) as a directory to be backed up. I had to edit the configuration file manually to get it in there. Then, for some reason, it started backing up my files locally instead of remote by making a giant tarball in /var/backup. That's not good :/<br />It's not like I forgot to set it to "remote backup". I even entered the correct information and setup an SSH-key. But sbackup "forgot" my settings and decided to stay local anyway.<br /><br />There's also a <a href="https://bugs.launchpad.net/ubuntu/+source/sbackup/+bug/102577">bugreport</a> that claims sbackup is slow on a large collection of files (O(n^2)). The buglist makes it appear as if sbackup has been abandoned. And this feeling is only strengthened by the spam on the <a href="http://sbackup.sourceforge.net/RestoringFiles">SBackup wiki</a><br /><br />In light of all this, I decided to look away from sbackup and consider alternatives. Most of the backup solutions (if not all...) are concerned with backing up specific directories and archiving them.<br />In my case, I want a FULL system backup and I don't need an archive. A mirror is enough.<br /><br />So I'm going to drop the search and go with rsync. One of the problems I encountered during testing, is that I have to login as root on the remote host to preserve ownerships of files. There will have to be a large shift in my life before I allow something like root-ssh-keys stored on my laptop, just to do backups....<br /><br />Instead of pushing the backups, I will do a pull from my desktop computer. I can store a public SSH-key of my desktop machine on my laptop to allow automatic backups. If I don't want backups at some point, I can just remove the key. <br />Another advantage of using pull instead of push, is that I can backup at work AND at home, without modifying my laptop setup. Added bonus: if there's no network on my laptop, backups won't be started anyway because they are initiated from the remote site.<br /><br />I'll be working on a script to send me a notification when backup starts and when it ends. This script should be called by the remote host so that I'm notified that my laptop might be sluggish.<br /><br />[Update]<br />This is what I whipped up.<br /><br />On the remote site I have this script:<br /><pre><br />#!/bin/bash<br /><br />remotesite=192.168.1.49<br />localstore=/tmp/testbackup/<br />startstopscript="su guest -c \"/home/guest/bin/backup_startstop"<br />host=`hostname`<br /><br /><br /># notify the client that backup is about to start<br />starttime=`date +%s`<br />ssh root@$remotesite "$startstopscript start $host\""<br /><br /># do an rsync of the entire disk<br />rsync -e "ssh -l root" -ax $remotesite:/ $localstore &> /dev/null<br /><br /># notify the client that backup has ended and report runtime<br />stoptime=`date +%s`<br />delta=$(($stoptime - $starttime))<br />ssh root@$remotesite "$startstopscript stop $host $delta\""<br /></pre><br /><br />On the client computer (the laptop), I have this script:<br /><pre><br />#!/bin/bash<br /><br />cmd=$1<br />host=$2<br />delta=$3<br /><br /># the send_notification function sends a notification message to the dbus-daemon<br /># which pops up a message on the screen of the user.<br /># This script is sortof dirty because we locate an environment variable in /proc/<br /># somewhere, and the icon used is hardcoded.<br />send_notification()<br />{<br />    local title=$1<br />    local text=$2<br /><br />    for i in `pgrep -fu guest x-session-manager`;<br />    do<br />        x=`cat /proc/$i/environ 2> /dev/null| grep -z DBUS_SESSION_BUS_ADDRESS`<br />        if [ -n "$x" ];<br />        then<br />            export "$x"<br />        fi<br />    done<br /><br />    notify-send -i /home/guest/images/backup.gif "$title" "$text"<br />}<br /><br />function sec_to_read {<br />    s=$1<br />    d=0<br />    out=""<br /><br />    d=$(($s / 86400)); s=$(($s % 86400)); if [ $d -gt 0 ]; then out="$out$d day(s) ";    fi<br />    d=$(($s /  3600)); s=$(($s %  3600)); if [ $d -gt 0 ]; then out="$out$d hour(s) ";   fi<br />    d=$(($s /    60)); s=$(($s %    60)); if [ $d -gt 0 ]; then out="$out$d minute(s) "; fi<br />                                          if [ $s -gt 0 ]; then out="$out$s second(s)";  fi<br /><br />    echo $out;<br />}<br /><br /><br />case "$cmd" in<br />  start)<br />        send_notification "Autobackup started" "Automatic backup has started from $host"<br />        ;;<br />  stop)<br />        delta=$(sec_to_read $delta)<br />        send_notification "Autobackup ended" "Automatic backup from $host has ended. Total runtime: $delta"<br />        ;;<br />esac<br /><br />exit 0<br /></pre><br /><br />And this is backup.gif:<br /><img src="/Trashcan/backup.gif"><br /><br />(Shamelessly ripped from <a href="http://www.dobrysoft.com/products/backuper/img/backuper_icon_small.gif">some site</a>)
+</div>
+
+
+    </div>
+
+  </body>
+</html>

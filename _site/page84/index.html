@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Singularity.be &middot; Flawed logic inspecting flawed logic
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="posts">
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/03/08/ogre3d/">
+        ogre3d
+      </a>
+    </h1>
+
+    <span class="post-date">08 Mar 2006</span>
+
+    Since the gym is overcrowded (AGAIN), I'm gonna try and get a small Ogre3D example working.<br /><br />My journey begins here: <a href='http://www.ogre3d.org/phpBB2/viewtopic.php?t=5706'>http://www.ogre3d.org/phpBB2/viewtopic.php?t=5706</a>. I don't want to compile Ogre3D from source and want to use the Debian packages instead.<br />
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/03/06/assembling/">
+        assembling
+      </a>
+    </h1>
+
+    <span class="post-date">06 Mar 2006</span>
+
+    Now that the mainboard is picked, the new machine is getting some form.<br />The mainboard will be a MSI K8N-Diamond-54G, with Socket 939 processor. The people from MSI <a href="http://www.msi.com.tw/program/products/mainboard/mbd/pro_mbd_detail.php?UID=638">recommend</a> a 450W power supply (w00t). I'm sure I'll need that anyway if the machine will have 6 disks.<br /><br />Damnit, I just checked the snogard site again, and they are no longer selling the mainboard I want :( They still sell the more expensive version though, the K8N Diamond Plus<br /><br /><!--break--><br /><br /><table><br /><tr><br /><th colspan=2></th><br /><th>Quantity</th><br /><th>Unit Price</th><br /><th>Total Price</th><br /></tr><br /><tr><br /><td>Mainboard</td><br /><td>MSI K8N Diamond Plus</td><br /><td>1</td><br /><td>196,90 €</td><br /><td>196,90 €</td><br /></tr><br /><tr><br /><td>Processor</td><br /><td>Athlon 64 3000+ Sockel 939, 1800MHz, Venice</td><br /><td>1</td><br /><td>139,90 €*</td><br /><td>139,90 €*</td><br /></tr><br /><tr><br /><td>RAM</td><br /><td>1GB VS1GB533D2 DDR2 533, CL4</td><br /><td>1</td><br /><td>99,90 €*</td><br /><td>99,90 €*</td><br /></tr><br /><tr><br /><td>Data Harddisks</td><br /><td>6V300F0 300GB, 7200U/min, 16MB Cache, 9ms, S-ATA II, NCQ</td><br /><td>5</td><br /><td>109,90 €*</td><br /><td>550 €*</td><br /></tr><br /><tr><br /><td>Root Harddisk</td><br /><td>6V080EO 80GB, 7200U/min, 8MB Cache, 9ms, S-ATA II, NCQ</td><br /><td>1</td><br /><td>54,90 €*</td><br /><td>54,90 €*</td><br /></tr><br /><tr><br /><td>Video</td><br /><td>NX6200-TD128E 128MB, GeForce 6200, DDR, DVI, TV-Out, retail</td><br /><td>1</td><br /><td>62,90 €*</td><br /><td>62,90 €*</td><br /></tr><br /><tr><br /><td>TV card</td><br /><td>Hauppauge PVR500</td><br /><td>1</td><br /><td>???</td><br /><td>???</td><br /></tr><br /><tr><br /><td>Case</td><br /><td>DA-01BL-D o. Netzteil, blau</td><br /><td>1</td><br /><td>74,90 €*</td><br /><td>74,90 €*</td><br /></tr><br /><tr><br /><td>Power supply</td><br /><td>TG480-U15 EasyCon 480 Watt, ATX/E-ATX, 1 Lüfter, S-ATA-Anschlüsse, PCIe, Silent</td><br /><td>1</td><br /><td>84,90 €*</td><br /><td>84,90 €*</td><br /></tr><br /><td>DVD writer</td><br /><td>DRW-1608P2S 16x DVD+/-R, 8x DVD+RW, 6x DVD-RW, 8x DVD+/-DL, 5x DVD-RAM, IDE, beige, bulk</td><br /><td>1</td><br /><td>52,90 €*</td><br /><td>52,90 €*</td><br /></tr><br /><tr><br /><th colspan=5> </th><br /></tr><br /><tr><br /><th colspan=4></th><br /><th>1317.20 + TV-card</th><br /></tr><br /><br /></table><br /><br /><br /><br /><br />Power supply can be found under Gehäuse: Netzteile
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/03/05/quest-for-mainboard-3/">
+        quest for a mainboard (3)
+      </a>
+    </h1>
+
+    <span class="post-date">05 Mar 2006</span>
+
+    <a href="http://www.bit-tech.net/hardware/2005/12/20/asus_a8n32-sli/1.html">This</a> is a review for the <a href="http://www.asus.com/products.aspx?l1=3&l2=15&l3=226&model=744&modelmenu=1">ASUS A8N32-SLI Deluxe</a><br /><br />On <a href="http://www.tomshardware.com/2006/01/26/msi_k8n_diamond_plus/">this page</a> (aswell as the previous review) it is said that the MSI motherboards have better sound than the MSI.<br /><br />Considering all this, I'm going for the MSI K8N-Diamond-54G. It has more SATA controllers and better sound than the ASUS A8N32-SLI Deluxe, yet is cheaper than the MSI K8N-Diamond Plus.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/03/04/my-kingdom-for-book/">
+        my kingdom for a book
+      </a>
+    </h1>
+
+    <span class="post-date">04 Mar 2006</span>
+
+    After going to Pearl Vision to buy me some contact lenses (they will call me when they arrive), I went to the book-fair with Spie.<br />There were some fine books last year and I remember that we spent quite some time over there last time. This year however, the choice was somewhat limited. And when I say limited I mean there were no good books. At all. I any category. At the entire fair.<br /><br />I'm starting to become aware of the difference in knowledge between the average joe and university students...<br />You can find just about any book on computers that talks about how to do whatever in Windows, or how to use the internet (after 10 years, I think most people know how to use it, really). But if you look for some scientific work, where are you supposed to go ? Are there actually some fairs for scientific books ?<br />Well, we left much sooner than expected, and I didn't buy anything.<br /><br />On a totally different subject, the battery of my car died again. Instead of jumpstarting again, I bought a battery charger this time. It works nicely and I'm sure I'll have to use it a lot in the future.
+  </div>
+  
+  <div class="post">
+    <h1 class="post-title">
+      <a href="/2006/03/04/quest-for-mainboard-2/">
+        quest for a mainboard (2)
+      </a>
+    </h1>
+
+    <span class="post-date">04 Mar 2006</span>
+
+    I started looking at the mainboards with builtin videocard, but then I noticed none of them have more than 4 SATA ports. And I need atleast 5, preferably 6 (5 for the RAID and 1 for the /)<br /><br />Looking at the SATA ports, there are 2 with 8 ports, 2 with 6 and 1 with 5.<br />Both mainboards with 8 ports don't actually have 8 ports but only 4, I was wrong :(<br /><br />The choice is between these motherboards:<br />Asus A8N32-SLI Deluxe<br />MSI K8N-Diamond-54G<br />MSI K8N Diamond Plus<br />
+  </div>
+  
+</div>
+
+<div class="pagination">
+  
+    <a class="pagination-item older" href="/page85">Older</a>
+  
+  
+    
+      <a class="pagination-item newer" href="/page83">Newer</a>
+    
+  
+</div>
+
+    </div>
+
+  </body>
+</html>

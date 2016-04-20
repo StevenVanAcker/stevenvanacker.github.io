@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      using the 16F627 (or any PIC) UART &middot; Singularity.be
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/hyde.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+                                 <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="/">
+          Singularity.be
+        </a>
+      </h1>
+      <p class="lead">Steven Van Acker's blog</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="/">Home</a>
+
+      
+
+      
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/about/">About</a>
+          
+        
+      
+        
+          
+        
+      
+        
+      
+        
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/projects/">Projects</a>
+          
+        
+      
+        
+          
+            <a class="sidebar-nav-item" href="/publications/">Publications</a>
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+        
+          
+        
+      
+    </nav>
+
+    <!-- <p>&copy; 2016. All rights reserved.</p> -->
+  </div>
+</div>
+
+
+    <div class="content container">
+      <div class="post">
+  <h1 class="post-title">using the 16F627 (or any PIC) UART</h1>
+  <span class="post-date">17 Aug 2007</span>
+  <!-- StevensBlogSpotFilterThing<br />Last night, I have successfully used the PIC in my own circuit. Blinking some leds is the equivalent of a "hello world" program. Now it's time to do something more interactive.<br /><br />Instead of jumping in the deep water straight away, I'll just make a LED blinker that is interactive. By writing a byte to the PIC, I can drive 8 bits.<br /><br />First things first though: I need to learn about how the UART is used on the PIC.<br /><br />I've read the first paragraphes on http://www.rentron.com/Myke7.htm and I'm finding it very interesting. Most pages I find concerning PIC are either way over my head (hundreds of lines of assembler) or just contain links to other places.<br />I'm glad there is also some information for newbies on the web :)<br /><br />[Update]<br />After reading most of the site mentioned above, I know this is not what I need. Instead of using the UART, the site talks about bit banging, which is actually reading out the individual bits sent over the serial line...<br /><br />Next link: http://www.epanorama.net/links/microprocessor.html#pic<br /><br />[Update]<br />http://www.avitresearch.co.uk/USBTTL/tutorial.htm<br />StevensBlogSpotFilterThing --><br />Last night, I have successfully used the PIC in my own circuit. Blinking some leds is the equivalent of a "hello world" program. Now it's time to do something more interactive.<br /><br />Instead of jumping in the deep water straight away, I'll just make a LED blinker that is interactive. By writing a byte to the PIC, I can drive 8 bits.<br /><br />First things first though: I need to learn about how the UART is used on the PIC.<br /><br />I've read the first paragraphes on http://www.rentron.com/Myke7.htm and I'm finding it very interesting. Most pages I find concerning PIC are either way over my head (hundreds of lines of assembler) or just contain links to other places.<br />I'm glad there is also some information for newbies on the web :)<br /><br />[Update]<br />After reading most of the site mentioned above, I know this is not what I need. Instead of using the UART, the site talks about bit banging, which is actually reading out the individual bits sent over the serial line...<br /><br />Next link: http://www.epanorama.net/links/microprocessor.html#pic<br /><br />[Update]<br />http://www.avitresearch.co.uk/USBTTL/tutorial.htm
+</div>
+
+
+    </div>
+
+  </body>
+</html>
