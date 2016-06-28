@@ -20,7 +20,7 @@ It's OverTheWire.org's 10th anniversary today, and that deserves some celebratin
 
 I have already announced some changes on Twitter, but there is room here for a bit more elaboration.
 
-# 1. Password changes
+### 1. Password changes
 <https://twitter.com/StevenVanAcker/status/719812528436551680>
 
 In general, we do not like it when write-ups of our challenges are posted online for the whole world to see.
@@ -32,7 +32,7 @@ It is perfectly possible for a new player to completely solve a game, just by co
 The only measure we have to keep the games from being flooded by dishonest players, is to change the passwords
 from time to time. And this is exactly what we will do in the near future. 
 
-# 2. Docker containers
+### 2. Docker containers
 <https://twitter.com/StevenVanAcker/status/719847958678736897>
 
 OverTheWire currently hosts 12 wargames on a limited budget. In practice this
@@ -56,21 +56,21 @@ via SSH, each player is dropped into a fresh container as if playing completely
 alone on the server.  There are no stray files or processes left by other games
 or users, so that there is no interference.
 
-# 3. New Natas levels
+### 3. New Natas levels
 <https://twitter.com/StevenVanAcker/status/719881977009188864>
 
 Morla, awesome as always, has created several new levels for our web wargame natas.
 Currently these levels are undergoing testing in the docker setup.
 Be sure to check back when they go online!
 
-# 4. New game Formula1
+### 4. New game Formula1
 <https://twitter.com/StevenVanAcker/status/719897764545564672>
 
 A while back, OverTheWire adopted several games from intruded.net after they shut down.
 A presumed lost game called formula1, has been recovered and we have been converting it (with adc's help)
 to be used as an OverTheWire game. For now, this game is only available in the docker setup.
 
-# 5. Bringing back tag files
+### 5. Bringing back tag files
 <https://twitter.com/StevenVanAcker/status/719941350154747904>
 
 Players like to show off when they beat a certain challenge. In the past, we
@@ -79,7 +79,7 @@ tag-files were a recipe for abuse (especially in the lower-ranking levels of
 games) and required us to keep backups of the tag-files.  We've decided to give
 tag-files another go, so you can expect to see them again in the near future.
 
-# 6. Uplink to the warzone
+### 6. Uplink to the warzone
 <https://twitter.com/StevenVanAcker/status/719981262702800897>
 
 The OverTheWire warzone has been around for a while now, but is mostly unused.
