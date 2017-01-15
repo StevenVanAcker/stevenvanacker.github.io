@@ -7,11 +7,12 @@ permalink:        pretty
 relative_permalinks: false
 gems: [jekyll-paginate]
 paginate:         5
+paginate_path:    /blog/page:num
 
 # Setup
-title:            Singularity.be
-tagline:          'Flawed logic inspecting flawed logic'
-description:      "Steven Van Acker's blog"
+#title:            Singularity.be
+#tagline:          'Flawed logic inspecting flawed logic'
+#description:      "Steven Van Acker's blog"
 url:              http://www.singularity.be
 baseurl:          /
 

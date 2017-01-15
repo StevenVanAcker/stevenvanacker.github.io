@@ -1,3 +1,85 @@
 .float-right {
 	float: right;
 }
+
+.sidebar .logo {
+	background-image:    url(/images/logo.png);
+	background-size:     cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+	height: 420px;
+	left: 0px;
+	top: 0px;
+}
+
+.frontpicture {
+	background-image:    url(/images/IMG_20160604_144701437_HDR.jpg);
+	background-size:     cover;
+	background-repeat:   no-repeat;
+	background-position: center center;
+	height: 300px;
+	border: 1px solid black;
+	margin-bottom: 20px;
+}
+
+.textbox {
+}
+
+.textbox h1 {
+	color: white;
+	font-size: 150%;
+}
+
+.textbox .indentbox {
+	border-left: 2px solid blue;
+	margin-left: 2px;
+	padding-left: 10px;
+	position: relative;
+	font-size: small;
+}
+
+.textbox .links {
+	margin-bottom: 10px;
+}
+
+.textbox .contact {
+	/*position: absolute;
+	bottom: 0; */
+}
+
+.smalltext {
+	font-size: small;
+}
+
+.paper {
+	margin-left: 2em;
+	margin-bottom: 1em;
+	font-size: medium;
+}
+
+.paper .title {
+	font-weight: bold;
+	margin-left: -2em;
+}
+
+.paper .authors {
+	font-style: italic;
+}
+
+.paper .authors .authors_me {
+	font-weight: bold;
+}
+
+.paper .doipdf {
+}
+
+.paper .abstract .body {
+	border-left: 2px solid blue;
+	margin-left: 2px;
+	padding-left: 10px;
+}
+
+.paper .abstract {
+}
+
+

@@ -32,7 +32,7 @@
  */
 
 html {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  /* font-family: "PT Sans", Helvetica, Arial, sans-serif; */
 }
 @media (min-width: 48em) {
   html {
@@ -55,9 +55,9 @@ html {
 
 .sidebar {
   text-align: center;
-  padding: 2rem 1rem;
+  /* padding: 2rem 1rem; */
   color: rgba(255,255,255,.5);
-  background-color: #202020;
+  background-color: #000; /* #202020; */
 }
 @media (min-width: 48em) {
   .sidebar {
@@ -65,7 +65,7 @@ html {
     top: 0;
     left: 0;
     bottom: 0;
-    width: 18rem;
+    width: 360px; /* 18rem; */
     text-align: left;
   }
 }
@@ -109,8 +109,9 @@ a.sidebar-nav-item:focus {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;
-    bottom: 1rem;
+    bottom: 1rem; 
     left:   1rem;
+    background-color: rgba(0,0,0,0.5);
   }
 }
 

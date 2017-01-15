@@ -1,27 +1,49 @@
 <div class="sidebar">
+  <div class="logo"></div>
   <div class="container sidebar-sticky">
-    <div class="sidebar-about">
-      <h1>
-        <a href="{{ site.baseurl }}">
-          {{ site.title }}
-        </a>
-      </h1>
-      <p class="lead">{{ site.description }}</p>
-    </div>
+
+        <div class="textbox">
+                <h1>Steven Van Acker</h1>
+                <div class="indentbox">
+			<div class="links">
+				  <A href="http://www.chalmers.se/cse/EN">Department of Computer Science and Engineering</A><br>
+				  <A href="http://www.chalmers.se/">Chalmers University of Technology</A><br>
+				  <A href="http://www.gu.se/">Gothenburg University</A><br>
+			</div>
+			<div class="contact">
+				E-mail: acker AT chalmers DOT se<br>
+				Office: EDIT 5472<br>
+				Rännvägen 6B, 41296 Gothenburg, Sweden<br>
+			</div>
+                </div>
+        </div>
 
     <nav class="sidebar-nav">
+
+
+      <hr>
       <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Home</a>
 
-      {% comment %}
-        The code below dynamically generates a sidebar nav of pages with
-        `layout: page` in the front-matter. See readme for usage.
-      {% endcomment %}
-
-      {% assign pages_list = site.pages %}
+      {% assign pages_list = site.pages | sort: 'rank' %}
       {% for node in pages_list %}
         {% if node.title != null %}
           {% if node.layout == "page" and node.sidebar %}
+	    {% unless node.undersep %}
             <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+	    {% endunless %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <hr>
+      <a class="sidebar-nav-item{% if page.url == "/blog/" %} active{% endif %}" href="/blog/">Blog</a>
+
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" and node.sidebar %}
+	    {% if node.undersep %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+            {% endif %}
           {% endif %}
         {% endif %}
       {% endfor %}
