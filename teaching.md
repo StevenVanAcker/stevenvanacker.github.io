@@ -8,7 +8,12 @@ rank: 4
 
 ## Lecturer/Course responsible (Chalmers)
 
-* [TDA357/DIT620 - Databases (LP2 2016)](http://www.cse.chalmers.se/edu/year/2016/course/TDA357/HT2016/): 199 students
+* [FDAT085 - Frontiers in Security Research (PhD course, LP3+4 2016-2017)](https://www.chalmers.se/sv/forskning/forskarutbildning/doktorandkurser/Sidor/institutionernas-doktorandkurser.aspx?course=FDAT085)
+* [TDA357/DIT620 - Databases (LP2 2016-2017)](http://www.cse.chalmers.se/edu/year/2016/course/TDA357/HT2016/): 199 students
+
+## Course supervisor (Chalmers)
+
+* [DAT147 - Technical writing in Computer Systems and Networks (LP1 2016-2017)](https://pingpong.chalmers.se/public/courseId/6970/publicPage.do)
 
 ## Teaching assistant (KU Leuven)
 
