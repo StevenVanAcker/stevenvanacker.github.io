@@ -11,9 +11,13 @@ rank: 4
 * [FDAT085 - Frontiers in Security Research (PhD course, LP3+4 2016-2017)](https://www.chalmers.se/sv/forskning/forskarutbildning/doktorandkurser/Sidor/institutionernas-doktorandkurser.aspx?course=FDAT085): 11 students
 * [TDA357/DIT620 - Databases (LP2 2016-2017)](http://www.cse.chalmers.se/edu/year/2016/course/TDA357/HT2016/): 199 students
 
+## Co-lecturer (Chalmers)
+* [TDA357/DIT620 - Databases (LP3 2017-2018)](http://www.cse.chalmers.se/edu/year/2017/course/TDA357/VT2017/)
+
 ## Course supervisor (Chalmers)
 
-* [DAT147 - Technical writing in Computer Systems and Networks (LP1 2016-2018)](https://pingpong.chalmers.se/public/courseId/6970/publicPage.do)
+* [DAT147 - Technical writing in Computer Systems and Networks (LP1 2016-2017)](https://pingpong.chalmers.se/public/courseId/6970/publicPage.do)
+* [DAT147 - Technical writing in Computer Systems and Networks (LP1 2017-2018)](https://pingpong.chalmers.se/public/courseId/6970/publicPage.do)
 
 ## Teaching assistant (KU Leuven)
 
@@ -25,6 +29,15 @@ rank: 4
 
 ## PhD student supervision (Chalmers)
 * Daniel Hausknecht
+
+## Master thesis supervision (Chalmers + KU Leuven)
+
+|-----------------------------------------------+---------------+---------------+-------------------------------------------------------------------------------|
+| Master student name(s)			| Academic year	| Pass? 	| Thesis title 									|
+|-----------------------------------------------|---------------|---------------|-------------------------------------------------------------------------------|
+| Asier Rivera Fernandez 			| 2017-		| 		| 										|
+|-----------------------------------------------+---------------+---------------+-------------------------------------------------------------------------------|
+{: .smalltext }
 
 ## Master thesis supervision (KU Leuven)
 
