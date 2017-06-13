@@ -5,13 +5,16 @@ sidebar: true
 rank: 4
 ---
 
+## Examiner (Chalmers)
+
+* [FDAT085 - Frontiers in Security Research (PhD course, LP3+4 2016-2017)](http://www.cse.chalmers.se/edu/course/FDAT085/): 12 students
 
 ## Lecturer/Course responsible (Chalmers)
 
-* [FDAT085 - Frontiers in Security Research (PhD course, LP3+4 2016-2017)](https://www.chalmers.se/sv/forskning/forskarutbildning/doktorandkurser/Sidor/institutionernas-doktorandkurser.aspx?course=FDAT085): 11 students
 * [TDA357/DIT620 - Databases (LP2 2016-2017)](http://www.cse.chalmers.se/edu/year/2016/course/TDA357/HT2016/): 199 students
 
 ## Co-lecturer (Chalmers)
+
 * [TDA357/DIT620 - Databases (LP3 2017-2018)](http://www.cse.chalmers.se/edu/year/2017/course/TDA357/VT2017/)
 
 ## Course supervisor (Chalmers)
