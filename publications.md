@@ -381,6 +381,63 @@ papers:
 	interest of extensions. Finally, we discuss a browser architecture that allows
 	a user to take control in arbitrating the conflicting security goals."
 
+ - title: "Raising the Bar: Evaluating Origin-wide Security Manifests"
+   authors: "Steven Van Acker, Daniel Hausknecht, Andrei Sabelfeld"
+   longconf: "Proceedings of the 34th Annual Computer Security Applications Conference"
+   shortconf: "ACSAC 2018"
+   date: "2018"
+   doi: "10.1145/3274694.3274701"
+   pdflink: "/public/papers/raisingthebar.pdf"
+   abstract: "Defending a web application from attackers requires the correct
+	configuration of several web security mechanisms for each and every web page in
+	that web application. This configuration process can be difficult and result in
+	gaps in the defense against web attackers because some web pages may be
+	overlooked. In this work we provide a first evaluation of the standard draft
+	for an origin-wide security configuration mechanism called the \"origin
+	manifest\". The mechanism raises the security level of an entire web origin at
+	once while still allowing the specification of web security policies at the web
+	page level. We create prototype implementations of the origin manifest
+	mechanism for both the client-side and server-side, and provide security
+	officers with an automated origin manifest learner and generator to aid them
+	with the configuration of their web origins. To resolve potential collisions of
+	policies defined by the web origin with policies defined by web pages we
+	formalize the comparison and combination of web security policies and integrate
+	it into our prototype implementation. We evaluate the feasibility of the origin
+	manifest mechanism with a longitudinal study of popular websites to determine
+	whether origin manifest files are stable enough to not require frequent
+	reconfiguration, and perform performance measurements on the Alexa top 10,000
+	to determine the network traffic overhead. Our results show that the origin
+	manifest mechanism can effectively raise the security level of a web origin
+	while slightly improving network performance."
+
+ - title: "LATEX GLOVES: Protecting Browser Extensions from Probing and Revelation Attacks"
+   authors: "Alexander Sjösten, Steven Van Acker, Pablo Picazo-Sanchez, Andrei Sabelfeld"
+   longconf: "Proceedings of the 26th Annual Network and Distributed System Security Symposium"
+   shortconf: "NDSS 2019"
+   date: "2019"
+   doi: "10.14722/ndss.2019.23309"
+   pdflink: "/public/papers/latexgloves.pdf"
+   abstract: "Browser extensions enable rich experience for the users of
+	today’s web. Being deployed with elevated privileges, extensions are given the
+	power to overrule web pages. As a result, web pages often seek to detect the
+	installed extensions, sometimes for benign adoption of their behavior but
+	sometimes as part of privacy-violating user fingerprinting. Researchers have
+	studied a class of attacks that allow detecting extensions by probing for Web
+	Accessible Resources (WARs) via URLs that include public extension IDs.
+	Realizing privacy risks associated with WARs, Firefox has recently moved to
+	randomize a browser extension’s ID, prompting the Chrome team to plan for
+	following the same path. However, rather than mitigating the issue, the
+	randomized IDs can in fact exacerbate the extension detection problem, enabling
+	attackers to use a randomized ID as a reliable fingerprint of a user. We study
+	a class of extension revelation attacks, where extensions reveal themselves by
+	injecting their code on web pages. We demonstrate how a combination of
+	revelation and probing can uniquely identify 90% out of all extensions
+	injecting content, in spite of a randomization scheme. We perform a series of
+	large-scale studies to estimate possible implications of both classes of
+	attacks. As a countermeasure, we propose a browser-based mechanism that enables
+	control over which extensions are loaded on which web pages and present a proof
+	of concept implementation which blocks both classes of attacks."
+
  - title: "Isolating and Restricting Client-Side JavaScript"
    authors: "Steven Van Acker"
    longconf: "PhD Text"
